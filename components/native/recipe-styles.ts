@@ -186,11 +186,11 @@ footer[data-node="footer"]{
 .wn-chance-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .wn-chance-pct{font-variant-numeric:tabular-nums;color:#f9a3c0;font-weight:600;flex:none}
 .wn-btn-primary:disabled,.wn-btn-primary[aria-disabled="true"],.wn-btn-primary[data-ready="false"]{
-  background:rgba(249,163,192,.22);color:#ffd3e3;border-color:rgba(249,163,192,.55);
+  background:rgba(249,163,192,.30);color:#ffffff;border:2px solid var(--wn-pink);font-weight:600;
   cursor:not-allowed;
 }
 .wn-btn-primary[data-ready="false"]:hover,.wn-btn-primary[aria-disabled="true"]:hover{
-  background:rgba(249,163,192,.36);color:#fff;border-color:var(--wn-pink);
+  background:rgba(249,163,192,.44);color:#fff;border-color:var(--wn-pink);
 }
 .wn-btn-primary[data-ready="false"]:active,.wn-btn-primary[aria-disabled="true"]:active{
   background:rgba(249,163,192,.5);
@@ -388,7 +388,7 @@ footer[data-node="footer"]{
 .wn-prose table{margin:16px 0}
 .wn-table-wrap{overflow-x:auto;border-radius:12px}
 .wn-table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
-.wn-table caption{text-align:left;font-size:var(--fs-xs);color:var(--wn-meta);padding-bottom:8px}
+.wn-table caption{display:block;width:100%;text-align:left;font-size:var(--fs-xs);color:var(--wn-meta);padding-bottom:8px;white-space:normal}
 .wn-table th,.wn-table td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--wn-line-soft);vertical-align:top}
 .wn-table thead th{background:#1c2440;font-size:var(--fs-xs);color:var(--wn-meta);font-weight:600}
 .wn-table tbody tr:nth-child(even){background:rgba(238,241,248,.03)}
@@ -637,7 +637,7 @@ a.wn-btn{justify-content:center;text-decoration:none;display:inline-flex;align-i
   .wn-slip{padding:12px}
   .wn-slip-name{font-size:clamp(26px,7.6vw,34px)}
   .wn-stage{padding:8px}
-  .wn-wheel-wrap{max-width:220px}
+  .wn-wheel-wrap{max-width:200px}
   .wn-options-body{gap:2px}
 }
 
@@ -678,4 +678,11 @@ body[data-atmosphere="true"]::before{display:none}
 @media (max-width:700px){
   body[data-atmosphere="true"] main > *{padding-inline:16px}
 }
+/* /fairness/ — the DevTools recipe below the audit result */
+.wn-options[data-devtools]{grid-column:1/-1;width:100%;max-width:none;margin:12px 0 0;align-self:stretch}
+.wn-devtools-body{padding:14px 16px 18px;display:grid;gap:10px}
+.wn-devtools-body ol{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;color:var(--wn-soft)}
+.wn-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.55;background:var(--wn-panel-2);border-radius:8px;padding:12px 14px;overflow-x:auto;white-space:pre-wrap;word-break:break-word;color:var(--wn-soft);margin:0}
+.wn-devtools-body ol li{font-size:14.5px;line-height:1.5}
+
 `;

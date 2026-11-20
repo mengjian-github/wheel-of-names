@@ -161,6 +161,27 @@ export default function FairnessAuditTool() {
               </p>
             )}
           </div>
+          <details className="wn-options" data-devtools>
+            <summary>Check it yourself in DevTools</summary>
+            <div className="wn-devtools-body">
+              <ol>
+                <li>Open this page’s developer tools (F12, or ⌥⌘I on a Mac) and choose the Console tab.</li>
+                <li>Paste this with six names in the list, press Enter: it draws 10,000 winners the way this wheel does, dropping the tail of the random range so no name gets a second chance.</li>
+              </ol>
+              <pre className="wn-code"><code>{`const n = ["Ada","Bo","Chen","Dara","Eve","Finn"], c = n.map(() => 0);
+for (let i = 0; i < 10000; i++) {
+  const b = new Uint32Array(1); let v;
+  do { crypto.getRandomValues(b); v = b[0]; }
+  while (v >= 4294967296 - (4294967296 % n.length));
+  c[v % n.length]++;
+}
+console.table(n.map((name, i) => ({ name, draws: c[i] })));`}</code></pre>
+              <p className="wn-hint">
+                Each count lands near 1,667 of 10,000 — the same 1-in-6 promise this page reports, on your
+                own machine.
+              </p>
+            </div>
+          </details>
         </div>
       </div>
     </div>

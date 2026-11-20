@@ -640,7 +640,7 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
             }}
             data-ready={!spinning && n < 2 ? "false" : "true"}
           >
-            {spinning ? "Stop spin" : n < 2 ? "Add names to spin" : "Spin my list"}
+            {spinning ? "Stop spin" : "Spin my list"}
           </button>
           <div
             className="wn-progress"

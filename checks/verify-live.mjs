@@ -39,6 +39,9 @@ function watch(page) {
     const where = (m.location() && m.location().url) || "";
     if (/\/api\/auth\/me/.test(where) && /401/.test(t)) return;
     if (/\/api\/_site\/contact/.test(where) && /501/.test(t)) return;
+    // Chromium's console text for a failed fetch carries the status, not the
+    // URL; the response watcher below already records every real one.
+    if (/Failed to load resource/.test(t) && /status of (401|501)\b/.test(t)) return;
     consoleErrors.push(t.slice(0, 300));
   });
   page.on("pageerror", (e) => consoleErrors.push(String(e).slice(0, 300)));
@@ -148,7 +151,7 @@ async function driveNameWheel(page, label, opts = {}) {
         await page.waitForTimeout(200);
         const c2 = (await page.locator("[data-name-count]").first().innerText()).trim();
         ctl(`${label} try a sample`, /^8 names$/.test(c2), c2);
-        await page.getByRole("button", { name: /clear list/i }).first().click();
+        await page.getByRole("button", { name: /^clear$/i }).first().click();
         await page.waitForTimeout(150);
       }
     }
@@ -176,6 +179,15 @@ async function driveNameWheel(page, label, opts = {}) {
     ctl(`${label} spin lasts its set time`, seconds >= 2.5, `${seconds.toFixed(2)}s`);
   }
   return { winner, seconds, settled: true };
+}
+
+async function openMore(page) {
+  const more = page.locator("details.wn-more").first();
+  if (!(await more.count())) return;
+  if (!(await more.evaluate((el) => el.open))) {
+    await more.locator("summary").first().click();
+    await page.waitForTimeout(200);
+  }
 }
 
 async function driveNameWheelResultActions(page, label) {
@@ -219,6 +231,7 @@ async function driveNameWheelResultActions(page, label) {
 
   // share link: hash carries the list and a fresh page restores it
   const before2 = await page.locator('[data-tool-input="names"]').inputValue();
+  await openMore(page);
   await page.getByRole("button", { name: /share link/i }).first().click();
   await page.waitForTimeout(400);
   const hash = await page.evaluate(() => window.location.hash);
@@ -535,6 +548,8 @@ try {
 
   // the desktop loop stays on the first screen
   await page.setViewportSize({ width: 1440, height: 900 });
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(300);
   await setNames(page, NAMES);
   await clickPrimary(page);
   try {
@@ -611,6 +626,9 @@ try {
   page = await open(ctx, "/contact/", 1440, 900);
   await page.locator('input[name="email"]').fill("visitor@example.com");
   await page.locator('textarea[name="message"]').fill("Testing the contact form from the site's own check.");
+  // A person takes longer than the form's anti-bot window to type; the check
+  // submits at that pace so it meets the same path a visitor does.
+  await page.waitForTimeout(1600);
   await page.getByRole("button", { name: /send message/i }).click();
   await page.waitForTimeout(3500);
   const status = (await page.locator("[data-shipsite-status]").innerText()).trim();

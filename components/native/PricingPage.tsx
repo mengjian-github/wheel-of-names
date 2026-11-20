@@ -51,7 +51,7 @@ export default function PricingPage({ route, content, config }: PageProps) {
 
   return (
     <PageFrame route={route} config={config}>
-      <PageHead content={content} crumbs={[{ label: "Wheel of Names", href: "/" }]} />
+      <PageHead content={content} />
       <div className="wn-page-body">
         {plans ? (
           <section className="wn-section" id="plans" aria-labelledby="plans-h">

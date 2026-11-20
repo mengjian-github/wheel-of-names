@@ -15,7 +15,7 @@ import {
 export default function RaffleWheelPage({ route, content, config }: PageProps) {
   return (
     <PageFrame route={route} config={config}>
-      <PageHead content={content} crumbs={[{ label: "Wheel of Names", href: "/" }]} />
+      <PageHead content={content} />
       <RaffleTool />
       <div className="wn-page-body">
         <SectionList content={content} />

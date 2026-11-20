@@ -17,7 +17,7 @@ export default function LegalPage({
 }: PageProps) {
   return (
     <PageFrame route={route} config={config}>
-      <PageHead content={content} crumbs={[{ label: "Wheel of Names", href: "/" }]} />
+      <PageHead content={content} />
       <div className="wn-page-body wn-legal-body">
         <nav className="wn-toc" aria-label="Contents">
           <ul>

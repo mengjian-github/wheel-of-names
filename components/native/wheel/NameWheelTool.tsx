@@ -204,7 +204,6 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
         : "success";
 
   useEffect(() => {
-    if (optionsRef.current && window.innerWidth >= 1080) optionsRef.current.open = true;
     setOptions(readOptions());
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     setReduced(mq.matches);
@@ -580,7 +579,7 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
         {/* ---------- list editor ---------- */}
         <section className="wn-editor-col" aria-labelledby="wn-list-title">
           <div className="wn-panel-head">
-            <h2 className="wn-label" id="wn-list-title">Names, one per line</h2>
+            <h2 className="wn-list-title" id="wn-list-title">Names</h2>
             <span className="wn-count" data-name-count>{entries.length} {entries.length === 1 ? "name" : "names"}</span>
           </div>
           <textarea
@@ -617,7 +616,7 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
               className="wn-btn wn-btn-ghost wn-btn-sm"
               onClick={() => { setRaw(""); setDraws([]); clearResult(); setUndoRaw(null); }}
             >
-              Clear list
+              Clear
             </button>
           </div>
         </section>
@@ -641,7 +640,7 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
             }}
             data-ready={!spinning && n < 2 ? "false" : "true"}
           >
-            {spinning ? "Stop spin" : result ? "Spin again" : n < 2 ? "Add names to spin" : "Spin my list"}
+            {spinning ? "Stop spin" : n < 2 ? "Add names to spin" : "Spin my list"}
           </button>
           <div
             className="wn-progress"
@@ -674,7 +673,7 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
 
         {/* ---------- winner slip ---------- */}
         <div className="wn-slip-col">
-          <div className={`wn-slip${result ? " is-answered" : ""}`} data-state={state}>
+          <div className={`wn-slip${result ? " is-answered" : ""}${!result && state !== "working" ? " is-empty" : ""}`} data-state={state}>
             <div>
               <div className="wn-slip-top">
                 <span>{spinning ? "Drawing" : result ? `Drawn No. ${result.no}` : "Winner slip"}</span>
@@ -728,10 +727,12 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
               ) : null}
             </div>
           </div>
+          <details className="wn-more">
+            <summary>Results &amp; sharing <span className="wn-badge" data-draw-count>{draws.length}</span></summary>
           <section className="wn-draws" aria-labelledby="wn-draws-title">
             <div className="wn-draws-head">
               <h2 id="wn-draws-title">
-                Draw list <span className="wn-badge" data-draw-count>{draws.length}</span>
+                Draw list
               </h2>
               <button type="button" className="wn-btn wn-btn-ghost wn-btn-sm" onClick={clearDraws} disabled={!draws.length}>
                 Clear
@@ -783,6 +784,7 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
               <textarea className="wn-embed" readOnly rows={3} aria-label="Embed code" value={embedCode} />
             </details>
           </section>
+          </details>
         </div>
 
         {/* ---------- wheel ---------- */}

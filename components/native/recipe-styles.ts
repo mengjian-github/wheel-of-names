@@ -129,8 +129,8 @@ footer[data-node="footer"]{
 .wn-lede{color:var(--wn-soft);max-width:86ch;font-size:15px;columns:2;column-gap:34px;margin-top:4px}
 .wn-bench{
   display:grid;grid-template-columns:minmax(230px,290px) minmax(0,1fr) minmax(230px,300px);
-  grid-template-areas:"editor stage slip" "editor action slip";
-  gap:12px 16px;align-items:start;
+  grid-template-areas:"editor stage slip" "editor action slip" "editor options slip";
+  gap:10px 16px;align-items:start;
   background:var(--wn-panel);border-radius:18px;padding:14px;
 }
 .wn-editor-col{grid-area:editor;display:flex;flex-direction:column;min-width:0}
@@ -139,6 +139,17 @@ footer[data-node="footer"]{
 .wn-action{grid-area:action;display:flex;flex-direction:column;gap:8px;min-width:0;margin-top:10px}
 .wn-bench .wn-panel{background:none;padding:0}
 .wn-tool{min-width:0}
+.wn-list-title{font-size:15px;font-weight:600;color:var(--wn-ink);margin:0}
+.wn-options{grid-area:options;margin:0;background:var(--wn-panel-2);border-radius:12px;padding:0 12px}
+.wn-options>summary{list-style:none;cursor:pointer;min-height:44px;display:flex;align-items:center;justify-content:space-between;font-size:14px;color:var(--wn-soft)}
+.wn-options>summary::-webkit-details-marker{display:none}
+.wn-options>summary::after{content:"+";color:var(--wn-meta)}
+.wn-options[open]>summary::after{content:"–"}
+.wn-more{margin-top:12px;background:var(--wn-panel-2);border-radius:12px;padding:0 12px}
+.wn-more>summary{list-style:none;cursor:pointer;min-height:44px;display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:14px;color:var(--wn-soft)}
+.wn-more>summary::-webkit-details-marker{display:none}
+.wn-draws{padding:2px 0 12px}
+.footer-groups{margin-left:0}
 .wn-panel{background:var(--wn-panel);border-radius:var(--wn-radius);padding:16px}
 .wn-panel-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px}
 .wn-label{font-size:var(--fs-xs);color:var(--wn-meta);font-weight:600}
@@ -543,18 +554,19 @@ footer[data-node="footer"]{
   .wn-item-list{grid-template-columns:1fr}
 }
 
-/* ---- rev4: the wheel at the drawing's size, settings inside the panel ---- */
+/* rev7: the drawing's three parts — names | wheel with Spin under it | draw slip */
 .wn-page-head{background:none;padding:0}
 .wn-bench{
-  grid-template-columns:minmax(0,300px) minmax(0,1fr) minmax(0,300px);
-  grid-template-areas:"editor stage slip" "action stage slip" "options stage slip";
-  gap:14px 18px;padding:14px;align-items:start;
+  grid-template-columns:minmax(0,290px) minmax(0,1fr) minmax(0,300px);
+  grid-template-areas:"editor stage slip" "editor action slip" "editor options slip";
+  gap:6px 22px;padding:16px;align-items:start;
 }
-.wn-stage{height:100%;justify-content:center;padding:0;background:none}
-.wn-wheel-wrap{max-width:622px}
+.wn-stage{height:auto;justify-content:flex-start;padding:0;background:none}
+.wn-wheel-wrap{max-width:440px;margin:0 auto}
+.wn-action{grid-area:action;width:100%;max-width:440px;margin:8px auto 0}
 .wn-label{font-family:var(--wn-font);font-size:14px;font-weight:600;letter-spacing:0;line-height:1.4;color:var(--wn-ink);text-decoration:none}
 .wn-count{font-size:14px}
-.wn-options{grid-area:options;margin:0;background:var(--wn-panel-2);border-radius:12px;overflow:hidden}
+.wn-options{grid-area:options;width:100%;max-width:440px;margin:6px auto 0;background:var(--wn-panel-2);border-radius:12px;overflow:hidden}
 .wn-options > summary{display:flex;align-items:center;min-height:40px;padding:0 12px;cursor:pointer;font-family:var(--wn-font);font-size:14px;font-weight:600;color:var(--wn-ink);list-style:none}
 .wn-options > summary::-webkit-details-marker{display:none}
 .wn-options > summary::after{content:"+";margin-left:auto;font-size:16px;color:var(--wn-soft)}
@@ -581,11 +593,13 @@ a.wn-btn{justify-content:center;text-decoration:none;display:inline-flex;align-i
   .wn-bench{grid-template-columns:minmax(0,270px) minmax(0,1fr) minmax(0,270px);gap:12px}
 }
 @media (max-width:1080px){
-  .wn-bench{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"editor stage" "action stage" "slip slip" "options options"}
+  .wn-bench{grid-template-columns:minmax(0,1fr);grid-template-areas:"editor" "stage" "action" "slip" "options";gap:10px}
+  .wn-wheel-wrap{max-width:320px}
+  .wn-action,.wn-options{max-width:none}
 }
 @media (max-width:900px){
-  .wn-bench{grid-template-columns:1fr;grid-template-areas:"editor" "action" "slip" "stage" "options";gap:12px}
-  .wn-wheel-wrap{max-width:320px;margin:0 auto}
+  .wn-bench{grid-template-columns:1fr;grid-template-areas:"editor" "stage" "action" "slip" "options";gap:10px}
+  .wn-wheel-wrap{max-width:300px;margin:0 auto}
   .wn-stage{padding:10px}
   .wn-opt .wn-seg{width:auto}
   .wn-opt .wn-range{flex:1 1 auto;max-width:180px}
@@ -597,7 +611,7 @@ a.wn-btn{justify-content:center;text-decoration:none;display:inline-flex;align-i
 .wn-input{min-height:116px}
 .wn-hint{margin:0;font-size:12.5px;line-height:1.45}
 .wn-editor-actions{margin:0}
-.wn-action{margin:0;gap:6px}
+.wn-action{margin:8px auto 0;gap:6px}
 .wn-spin-btn{min-height:48px}
 .wn-progress-track{height:4px}
 .wn-progress-line{min-height:20px;font-size:13px}
@@ -616,7 +630,7 @@ a.wn-btn{justify-content:center;text-decoration:none;display:inline-flex;align-i
   .wn-slip{padding:12px}
   .wn-slip-name{font-size:clamp(26px,7.6vw,34px)}
   .wn-stage{padding:8px}
-  .wn-wheel-wrap{max-width:268px}
+  .wn-wheel-wrap{max-width:220px}
   .wn-options-body{gap:2px}
 }
 
@@ -636,4 +650,20 @@ a.wn-btn{justify-content:center;text-decoration:none;display:inline-flex;align-i
 .wn-swatch input[type="radio"]:checked{
   box-shadow:inset 0 0 0 3px var(--wn-bg),inset 0 0 0 5px #ffffff;
 }
+
+
+/* ---- rev7: the slip waits quiet and fills with the brand colour when a draw lands ---- */
+.wn-slip.is-empty{
+  background:var(--wn-panel-2);border:2px solid rgba(249,163,192,.45);color:var(--wn-ink);
+  min-height:150px;justify-content:flex-start;
+}
+.wn-slip.is-empty::before{display:none}
+.wn-slip.is-empty .wn-slip-top{color:var(--wn-soft)}
+.wn-slip.is-empty .wn-slip-name.is-empty{color:var(--wn-pink);font-size:clamp(20px,2vw,24px)}
+.wn-slip.is-empty .wn-slip-note{color:var(--wn-soft);margin-top:auto}
+.wn-slip.is-empty .wn-slip-slot{opacity:.5}
+/* the field is flat: a wash behind the text is a measured tell, so the atmosphere layer stays off */
+body[data-atmosphere="true"] .atmosphere-layer,
+body[data-atmosphere="true"]::before{display:none}
+
 `;

@@ -53,7 +53,7 @@ export default function ContactPage({ route, content, config }: PageProps) {
 
   return (
     <PageFrame route={route} config={config}>
-      <PageHead content={content} crumbs={[{ label: "Wheel of Names", href: "/" }]} />
+      <PageHead content={content} />
       <div className="wn-page-body wn-contact-page">
         <div className="wn-contact">
           <form className="wn-form" data-shipsite-contact="" method="post" action="/api/_site/contact" onSubmit={onSubmit}>

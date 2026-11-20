@@ -1197,8 +1197,11 @@ const STORE_NAME = /^[A-Za-z0-9_-]{1,64}$/;
 const STORE_DOCUMENT_MAX_BYTES = 32 * 1024;
 const STORE_DOCUMENTS_PER_VISITOR = 200;
 const CONTACT_MAX_BYTES = 8 * 1024;
-const CONTACT_PER_VISITOR_HOURLY = 5;
-const CONTACT_PER_SITE_DAILY = 200;
+// A classroom, a school or an office shares one address, so the per-visitor
+// ceiling has to fit several people, not one: the timing and hidden-field
+// gates are what stop a script, not this counter.
+const CONTACT_PER_VISITOR_HOURLY = 20;
+const CONTACT_PER_SITE_DAILY = 500;
 
 async function withStoreTables(db, run) {
   try {
@@ -1286,10 +1289,10 @@ async function handleContactJson(request, env) {
   let body = null;
   try { body = JSON.parse(text); } catch { body = null; }
   if (!body || typeof body !== "object" || Array.isArray(body)) return json({ error: "invalid_json" }, 400);
-  // A form sent within two seconds of the page loading, or with the hidden
+  // A form sent within a second of the page loading, or with the hidden
   // "website" field filled, is a bot's. It is refused, never answered as
   // sent: the page tells a person the truth about their message.
-  if (Number.isFinite(Number(body.loadedAt)) && Date.now() - Number(body.loadedAt) < 2_000) return json({ error: "sent_too_fast" }, 400);
+  if (Number.isFinite(Number(body.loadedAt)) && Date.now() - Number(body.loadedAt) < 1_200) return json({ error: "sent_too_fast" }, 400);
   if (typeof body.website === "string" && body.website.trim()) return json({ error: "rejected" }, 400);
   const fields = {};
   for (const [key, value] of Object.entries(body)) {
@@ -1312,8 +1315,8 @@ async function handleContactJson(request, env) {
 
 // The contact form is a public endpoint and every message is a write in the
 // owner's own database (and a line in their Studio inbox), so a script
-// posting in a loop is held to a few messages per visitor an hour and a
-// ceiling per site a day. Counters only: a visitor is a hash of their
+// posting in a loop is held to a handful of messages per visitor an hour and
+// a ceiling per site a day. Counters only: a visitor is a hash of their
 // address bucket and the hour, and rows older than two days are dropped.
 // A preview is the owner's and QA's, so only the site's ceiling applies there.
 async function contactAllowed(request, env, now) {

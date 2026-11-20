@@ -18,7 +18,7 @@ export default function VsPickerwheelPage({ route, content, config }: PageProps)
   const differences = getSection(content, "differences");
   return (
     <PageFrame route={route} config={config}>
-      <PageHead content={content} crumbs={[{ label: "Wheel of Names", href: "/" }]} />
+      <PageHead content={content} />
       <div className="wn-page-body">
         {differences?.table ? (
           <section className="wn-section wn-vs" id="side-by-side" aria-labelledby="side-by-side-h">

@@ -15,7 +15,7 @@ import {
 export default function PickerWheelPage({ route, content, config }: PageProps) {
   return (
     <PageFrame route={route} config={config}>
-      <PageHead content={content} crumbs={[{ label: "Wheel of Names", href: "/" }]} />
+      <PageHead content={content} />
       <WeightedWheelTool />
       <div className="wn-page-body">
         <SectionList content={content} />

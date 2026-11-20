@@ -1,0 +1,3793 @@
+{
+  "title": "Wheel of Names — Free Random Name Picker Wheel",
+  "description": "Spin a wheel of names and read one winner on screen: paste a list, spin, remove the winner and spin again. Free, no sign-up, and the list stays in your browser.",
+  "brandName": "Wheel of Names",
+  "domain": "wheel-of-names.shipsite-preview.dev",
+  "language": "en",
+  "locales": [],
+  "recipeId": "batch-converter-workbench",
+  "analytics": null,
+  "analyticsTags": null,
+  "ads": null,
+  "routes": [
+  {
+    "path": "/",
+    "contentKey": "home",
+    "title": "Wheel of Names — Free Random Name Picker Wheel",
+    "description": "Paste your list, spin, and read one winner on screen. Free, no sign-up, and the list stays in your browser. Remove the winner and spin again.",
+    "index": true,
+    "canonical": "/",
+    "navLabel": "Home",
+    "role": "home",
+    "routeArchetype": "home_tool",
+    "indexPolicy": "index",
+    "routeCompositionRequired": true,
+    "compositionIdOrTemplateFamily": "route:/",
+    "coverageMode": "direct_screen",
+    "representativeScreenId": null,
+    "designIrHash": "f6b82352ab08b1566b1ad721de76990bbb34e46096ff5575cce6cdb760c371d8",
+    "requiredStates": [
+      "empty",
+      "selected_or_uploaded",
+      "processing",
+      "success",
+      "validation_error",
+      "runtime_error",
+      "reset"
+    ],
+    "requiredActions": [
+      "select_or_upload",
+      "preview_source",
+      "start_or_confirm_processing",
+      "preview_result",
+      "download",
+      "replace_or_reset"
+    ],
+    "copyContractRef": "copy:88d536275f211b29127e1b08e9d0fb86325b566e705e5101c465a37e5d73f812",
+    "verdict": "not_applicable",
+    "publicExposure": true
+  },
+  {
+    "path": "/picker-wheel/",
+    "contentKey": "picker-wheel",
+    "title": "Picker Wheel with Weights — See Each Name's Chance",
+    "description": "A picker wheel where every entry can carry a weight from 1 to 10. See each name's percent chance on the wheel before you spin, and the chance on the winner card.",
+    "index": true,
+    "canonical": "/picker-wheel/",
+    "navLabel": "Picker Wheel",
+    "role": "tool_variant",
+    "routeArchetype": "article_guide",
+    "indexPolicy": "index",
+    "routeCompositionRequired": true,
+    "compositionIdOrTemplateFamily": "route:/picker-wheel/",
+    "coverageMode": "inherited_template",
+    "representativeScreenId": null,
+    "designIrHash": "609f0da047cd6c16c281261b23d423f9c7125514e8c57f8f448a4ec64c9a1a18",
+    "requiredStates": [
+      "ready"
+    ],
+    "requiredActions": [
+      "navigate_context",
+      "follow_contextual_cta"
+    ],
+    "copyContractRef": "copy:9bbedddcf520a1453105de14c70ca6b496ec77a58b6081080a859de86d5847c6",
+    "verdict": "not_applicable",
+    "publicExposure": true
+  },
+  {
+    "path": "/raffle-wheel/",
+    "contentKey": "raffle-wheel",
+    "title": "Raffle Wheel — Draw Multiple Winners in Order",
+    "description": "Paste ticket numbers or names, draw several winners in order on a raffle wheel, and copy a results table with draw order and time. Free, no sign-up.",
+    "index": true,
+    "canonical": "/raffle-wheel/",
+    "navLabel": "Raffle Wheel",
+    "role": "tool_variant",
+    "routeArchetype": "article_guide",
+    "indexPolicy": "index",
+    "routeCompositionRequired": true,
+    "compositionIdOrTemplateFamily": "route:/raffle-wheel/",
+    "coverageMode": "inherited_template",
+    "representativeScreenId": null,
+    "designIrHash": "aa2bf2203fd408916e0603971da07367cc0f6646e8f70143ac39d75f085c2235",
+    "requiredStates": [
+      "ready"
+    ],
+    "requiredActions": [
+      "navigate_context",
+      "follow_contextual_cta"
+    ],
+    "copyContractRef": "copy:321fc36c4563f7c1387ce4b346d1e5887713327c73f93dbfd691e9cb367e0b47",
+    "verdict": "not_applicable",
+    "publicExposure": true
+  },
+  {
+    "path": "/fairness/",
+    "contentKey": "fairness",
+    "title": "Is Wheel of Names Random? How a Winner Is Drawn",
+    "description": "Yes. Wheel of Names draws the winner with your browser's cryptographic random source before the wheel moves, and you can check it with 10,000 draws.",
+    "index": true,
+    "canonical": "/fairness/",
+    "navLabel": "Fairness",
+    "role": "article",
+    "routeArchetype": "article_guide",
+    "indexPolicy": "index",
+    "routeCompositionRequired": true,
+    "compositionIdOrTemplateFamily": "route:/fairness/",
+    "coverageMode": "inherited_template",
+    "representativeScreenId": null,
+    "designIrHash": "47c3b7882f164c6ec8f2d3edfc7d7a0680a1e98c89c4bc0f4601c64d84dda2df",
+    "requiredStates": [
+      "ready"
+    ],
+    "requiredActions": [
+      "navigate_context",
+      "follow_contextual_cta"
+    ],
+    "copyContractRef": "copy:00802b2da2c068f923260cee25e359340c2ed5211f0ecfad991d6138cbde2cd8",
+    "verdict": "not_applicable",
+    "publicExposure": true
+  },
+  {
+    "path": "/pricing/",
+    "contentKey": "pricing",
+    "title": "Wheel of Names Pricing — Free Wheel, Plus and Pro Plans",
+    "description": "Wheel of Names pricing: the wheel is free with no sign-up. Plus is $6 a month, Pro $12 a month and the Event Pass $9 once, each with annual plans and cancel anytime.",
+    "index": true,
+    "canonical": "/pricing/",
+    "navLabel": "Pricing",
+    "role": "pricing",
+    "routeArchetype": "pricing",
+    "indexPolicy": "index",
+    "routeCompositionRequired": true,
+    "compositionIdOrTemplateFamily": "route:/pricing/",
+    "coverageMode": "direct_screen",
+    "representativeScreenId": null,
+    "designIrHash": "1f418c4c5216d361b1bc6a9ea62c889ea00222cb81be137d41ca728069fd8534",
+    "requiredStates": [
+      "plans_ready",
+      "checkout_unavailable_or_removed"
+    ],
+    "requiredActions": [
+      "inspect_plan_limits",
+      "select_plan_or_contact"
+    ],
+    "copyContractRef": "copy:e6049a181dd110ab2a77dd4e6f768a02e9a0532fee5701ca63f3a2503d7c8073",
+    "verdict": "not_applicable",
+    "publicExposure": true
+  },
+  {
+    "path": "/random-name-picker/",
+    "contentKey": "random-name-picker",
+    "title": "Random Name Picker — Free, No Sign-Up, One Winner | Wheel of Names",
+    "description": "Paste a list, spin the random name picker and get one winner with its chance shown. Free, no sign-up, and the list never leaves your browser.",
+    "index": true,
+    "canonical": "/random-name-picker/",
+    "navLabel": "Random Name Picker",
+    "role": "landing_variant",
+    "routeArchetype": "article_guide",
+    "indexPolicy": "index",
+    "routeCompositionRequired": true,
+    "compositionIdOrTemplateFamily": "route:/random-name-picker/",
+    "coverageMode": "inherited_template",
+    "representativeScreenId": null,
+    "designIrHash": "1674789ddcc95fd06f4165f10d64ac69b8475d00a68a0153d4fae2cd6a2e8ad7",
+    "requiredStates": [
+      "ready"
+    ],
+    "requiredActions": [
+      "navigate_context",
+      "follow_contextual_cta"
+    ],
+    "copyContractRef": "copy:bfa041f1476896aca96d1b5232b052e0d92a7071f99154acb43d92f6a0286bac",
+    "verdict": "not_applicable",
+    "publicExposure": true
+  },
+  {
+    "path": "/classroom-name-picker/",
+    "contentKey": "classroom-name-picker",
+    "title": "Classroom Name Picker — Free Cold Calling Wheel | Wheel of Names",
+    "description": "Spin a classroom name picker to call on a student at random, then take the name out so nobody is asked twice in a period. Free, no sign-up.",
+    "index": true,
+    "canonical": "/classroom-name-picker/",
+    "navLabel": "Classroom Name Picker",
+    "role": "landing_variant",
+    "routeArchetype": "article_guide",
+    "indexPolicy": "index",
+    "routeCompositionRequired": true,
+    "compositionIdOrTemplateFamily": "route:/classroom-name-picker/",
+    "coverageMode": "inherited_template",
+    "representativeScreenId": null,
+    "designIrHash": "a7f46305c3349bae6c7e7a7f4e4258b16b23b4beadfe1edc79b48dc8231cd688",
+    "requiredStates": [
+      "ready"
+    ],
+    "requiredActions": [
+      "navigate_context",
+      "follow_contextual_cta"
+    ],
+    "copyContractRef": "copy:6dd35fbe978fdbc77053a78e74cfd510f6b420caeccea6ddc844297279d14edb",
+    "verdict": "not_applicable",
+    "publicExposure": true
+  },
+  {
+    "path": "/vs/pickerwheel/",
+    "contentKey": "vs-pickerwheel",
+    "title": "Wheel of Names vs Picker Wheel: Free Limits Compared",
+    "description": "Wheel of Names vs Picker Wheel, compared on free limits, weights, multiple winners and price, so you can pick the right spinner for your list.",
+    "index": true,
+    "canonical": "/vs/pickerwheel/",
+    "navLabel": "vs Picker Wheel",
+    "role": "compare",
+    "routeArchetype": "article_guide",
+    "indexPolicy": "index",
+    "routeCompositionRequired": true,
+    "compositionIdOrTemplateFamily": "route:/vs/pickerwheel/",
+    "coverageMode": "inherited_template",
+    "representativeScreenId": null,
+    "designIrHash": "15f612a20ffbca203443a510b1c4d2e5a247895d9f0ae60a341c4e0a0c0d2942",
+    "requiredStates": [
+      "ready"
+    ],
+    "requiredActions": [
+      "navigate_context",
+      "follow_contextual_cta"
+    ],
+    "copyContractRef": "copy:9864deddec35049442cfb7d8a75f000b96bb28324d181609179bd88620a3c90d",
+    "verdict": "not_applicable",
+    "publicExposure": true
+  },
+  {
+    "path": "/wheel-spinner/",
+    "contentKey": "wheel-spinner",
+    "title": "Wheel Spinner — Spin a Free Name Wheel Online",
+    "description": "A free wheel spinner that runs in your browser: paste names, spin, and get one winner with its chance shown. No sign-up, nothing uploaded.",
+    "index": true,
+    "canonical": "/wheel-spinner/",
+    "navLabel": "Wheel Spinner",
+    "role": "landing_variant",
+    "routeArchetype": "article_guide",
+    "indexPolicy": "index",
+    "routeCompositionRequired": true,
+    "compositionIdOrTemplateFamily": "route:/wheel-spinner/",
+    "coverageMode": "inherited_template",
+    "representativeScreenId": null,
+    "designIrHash": "7ce8bf9ec79d69fefc7f5869d7c2be0cb9515cc51bcab5bbe3b28976e5ccdb1d",
+    "requiredStates": [
+      "ready"
+    ],
+    "requiredActions": [
+      "navigate_context",
+      "follow_contextual_cta"
+    ],
+    "copyContractRef": "copy:e2c3a0e8ac17e1fddc0ee61cd5dc51e30b6a3d03f1faf5ce17b007e557751a64",
+    "verdict": "not_applicable",
+    "publicExposure": true
+  },
+  {
+    "path": "/about/",
+    "contentKey": "about",
+    "title": "About Wheel of Names: How a Winner Is Drawn",
+    "description": "Who runs Wheel of Names, how the wheel picks a winner inside your browser, and what it leaves out on purpose.",
+    "index": true,
+    "canonical": "/about/",
+    "navLabel": "About Wheel of Names: How a Winner Is Drawn",
+    "routeArchetype": "article_guide",
+    "indexPolicy": "index",
+    "routeCompositionRequired": true,
+    "compositionIdOrTemplateFamily": "route:/about/",
+    "coverageMode": "inherited_template",
+    "representativeScreenId": null,
+    "designIrHash": "0a2f80afbdd5dfe8b9a71747a8204490b79037855121fcb37c5544a6139c8451",
+    "requiredStates": [
+      "ready"
+    ],
+    "requiredActions": [
+      "navigate_context",
+      "follow_contextual_cta"
+    ],
+    "copyContractRef": "copy:b37972d25298b47fc3117818e5da59c0cc46763ca15ee48c624858dbc74c93d1",
+    "verdict": "not_applicable",
+    "publicExposure": true
+  },
+  {
+    "path": "/contact/",
+    "contentKey": "contact",
+    "title": "Contact Wheel of Names",
+    "description": "Write to Wheel of Names about a result that looks wrong, a missing feature, a paid plan or a privacy request. Use the form on this page.",
+    "index": true,
+    "canonical": "/contact/",
+    "navLabel": "Contact Wheel of Names",
+    "routeArchetype": "article_guide",
+    "indexPolicy": "index",
+    "routeCompositionRequired": true,
+    "compositionIdOrTemplateFamily": "route:/contact/",
+    "coverageMode": "inherited_template",
+    "representativeScreenId": null,
+    "designIrHash": "a7d92008cbd59bfee2d8749204c014676e15ef6615451e5e14826fe024243b09",
+    "requiredStates": [
+      "ready"
+    ],
+    "requiredActions": [
+      "navigate_context",
+      "follow_contextual_cta"
+    ],
+    "copyContractRef": "copy:dcd5a4471566911867a1c8bf676f48a2ba0279b94d67f6274e3ee2549472e38a",
+    "verdict": "not_applicable",
+    "publicExposure": true
+  },
+  {
+    "path": "/privacy/",
+    "contentKey": "privacy",
+    "title": "Privacy Policy — Wheel of Names",
+    "description": "What Wheel of Names keeps, what never leaves your browser, how long draw records are held and how to ask for deletion.",
+    "index": false,
+    "canonical": "/privacy/",
+    "navLabel": "Privacy Policy — Wheel of Names",
+    "routeArchetype": "legal",
+    "indexPolicy": "noindex",
+    "routeCompositionRequired": true,
+    "compositionIdOrTemplateFamily": "route:/privacy/",
+    "coverageMode": "inherited_template",
+    "representativeScreenId": null,
+    "designIrHash": "b8fed50c209dbb93b8c83bc1dd62acee256db1b67e3eb0f13a79346a8448400c",
+    "requiredStates": [
+      "ready"
+    ],
+    "requiredActions": [
+      "navigate_document",
+      "return_to_product"
+    ],
+    "copyContractRef": "copy:249574c46ca282cf73c9d0e81faef8b8b53436a4d18ab930fbe28c38d7893c48",
+    "verdict": "not_applicable",
+    "publicExposure": true
+  },
+  {
+    "path": "/terms/",
+    "contentKey": "terms",
+    "title": "Terms of Use — Wheel of Names",
+    "description": "The terms for using Wheel of Names: what the free wheel offers, what a paid plan covers, fair use, ownership of your lists and independence.",
+    "index": false,
+    "canonical": "/terms/",
+    "navLabel": "Terms of Use — Wheel of Names",
+    "routeArchetype": "legal",
+    "indexPolicy": "noindex",
+    "routeCompositionRequired": true,
+    "compositionIdOrTemplateFamily": "route:/terms/",
+    "coverageMode": "inherited_template",
+    "representativeScreenId": null,
+    "designIrHash": "a77178c41fe85eb246ec064f25d476f2c922292d66bb677fcc4ccf528bdc8787",
+    "requiredStates": [
+      "ready"
+    ],
+    "requiredActions": [
+      "navigate_document",
+      "return_to_product"
+    ],
+    "copyContractRef": "copy:b598bcc11bd35602de25f77c429aee84f4ab038b30c333464249918e55c4786d",
+    "verdict": "not_applicable",
+    "publicExposure": true
+  },
+  {
+    "path": "/cookies/",
+    "contentKey": "cookies",
+    "title": "Cookie Policy — Wheel of Names",
+    "description": "Every cookie Wheel of Names sets, what each one does, how long it lasts and how to remove it or use the site without it.",
+    "index": false,
+    "canonical": "/cookies/",
+    "navLabel": "Cookie Policy — Wheel of Names",
+    "routeArchetype": "legal",
+    "indexPolicy": "noindex",
+    "routeCompositionRequired": true,
+    "compositionIdOrTemplateFamily": "route:/cookies/",
+    "coverageMode": "inherited_template",
+    "representativeScreenId": null,
+    "designIrHash": "4a73d3821fc685ce38f4faff2f9435d1abde1df2afc0fcbef57dfe756821d9fd",
+    "requiredStates": [
+      "ready"
+    ],
+    "requiredActions": [
+      "navigate_document",
+      "return_to_product"
+    ],
+    "copyContractRef": "copy:a3c39d167608f59af1b1c6ffda937f60ba8bed5cb95088e929298c2dc4081b35",
+    "verdict": "not_applicable",
+    "publicExposure": true
+  },
+  {
+    "path": "/refunds/",
+    "contentKey": "refunds",
+    "title": "Refund Policy — Wheel of Names",
+    "description": "When Wheel of Names refunds a paid plan, how to request one, what happens to the plan after a refund and where the request is sent.",
+    "index": false,
+    "canonical": "/refunds/",
+    "navLabel": "Refund Policy — Wheel of Names",
+    "routeArchetype": "legal",
+    "indexPolicy": "noindex",
+    "routeCompositionRequired": true,
+    "compositionIdOrTemplateFamily": "route:/refunds/",
+    "coverageMode": "inherited_template",
+    "representativeScreenId": null,
+    "designIrHash": "efedf92d2732a60938403168be2358ed0e04def226be8e3428d2e2749f8070ca",
+    "requiredStates": [
+      "ready"
+    ],
+    "requiredActions": [
+      "navigate_document",
+      "return_to_product"
+    ],
+    "copyContractRef": "copy:20c0d7ce9302e08074edb8f7b0cb35b424ba91483769e1a33cf3412032dc5aea",
+    "verdict": "not_applicable",
+    "publicExposure": true
+  }
+],
+  "nav": [
+  {
+    "label": "Wheel",
+    "href": "/"
+  },
+  {
+    "label": "Pricing",
+    "href": "/pricing/"
+  }
+],
+  "navGroups": [
+  {
+    "label": "Guides",
+    "items": [
+      {
+        "label": "Picker Wheel",
+        "href": "/picker-wheel/"
+      },
+      {
+        "label": "Raffle Wheel",
+        "href": "/raffle-wheel/"
+      },
+      {
+        "label": "Fairness",
+        "href": "/fairness/"
+      }
+    ]
+  }
+],
+  "navMore": [],
+  "navIcons": {
+  "/": {
+    "d": "M9 5.4 15.6 12 9 18.6 7.6 17.2 12.8 12 7.6 6.8Z",
+    "filled": true
+  },
+  "/pricing/": {
+    "d": "M12.2 3.4h8.4v8.4l-9 9L3.2 12.4Z",
+    "filled": true
+  },
+  "/picker-wheel/": {
+    "d": "M9 5.4 15.6 12 9 18.6 7.6 17.2 12.8 12 7.6 6.8Z",
+    "filled": true
+  },
+  "/raffle-wheel/": {
+    "d": "M9 5.4 15.6 12 9 18.6 7.6 17.2 12.8 12 7.6 6.8Z",
+    "filled": true
+  },
+  "/fairness/": {
+    "d": "M9 5.4 15.6 12 9 18.6 7.6 17.2 12.8 12 7.6 6.8Z",
+    "filled": true
+  }
+},
+  "sectionIcons": {
+  "What the wheel does": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "Remove the winner and go again": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "How to use it": {
+    "d": "M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2Z",
+    "filled": true
+  },
+  "Type or paste the names": {
+    "d": "M5.6 4.6h12.8V9h-2.4V7h-3v10h2v2.4H9V17h2V7H8v2H5.6Z",
+    "filled": true
+  },
+  "Take the name the wheel lands on": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Take the winner off": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "Make the list the same tomorrow": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "Show it to the room": {
+    "d": "M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2Z",
+    "filled": true
+  },
+  "How the winner is chosen": {
+    "d": "M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2Z",
+    "filled": true
+  },
+  "Equal chance on an equal list": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "A list with repeats": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "The animation is only a reveal": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "Check it yourself": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "What it does not do": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "No participant lists on a server": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "No app to install": {
+    "d": "M10.6 4h2.8v6.6h3.2L12 15.4 7.4 10.6h3.2ZM5 17.6h14V20H5Z",
+    "filled": true
+  },
+  "No editor for a very long roster": {
+    "d": "M10.6 5.4v2.2H7.2v9.2h9.2v-3.4h2.2V19H5V5.4ZM17.6 3.6l2.8 2.8L13 13.8h-2.8V11Z",
+    "filled": true
+  },
+  "What it leaves to you": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "What people spin it for": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "Classroom cold calling": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "Streams and team meetings": {
+    "d": "M12 11.4a3.4 3.4 0 1 0 0-6.8 3.4 3.4 0 0 0 0 6.8ZM5 19.6a7 7 0 0 1 14 0Z",
+    "filled": true
+  },
+  "Household choices": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "Groups that need extra entries": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "How weights change the wheel": {
+    "d": "M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2Z",
+    "filled": true
+  },
+  "Paste the entries": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "Set a weight from 1 to 10": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "Read the chance before spinning": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "Spin and read the result card": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "How to use the weighted wheel": {
+    "d": "M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2Z",
+    "filled": true
+  },
+  "Start from a list you already have": {
+    "d": "M12 3.8 14.5 9l5.5.8-4 3.9 1 5.5-5-2.6-5 2.6 1-5.5-4-3.9L9.5 9Z",
+    "filled": true
+  },
+  "Adjust one weight at a time": {
+    "d": "M10.6 5.4v2.2H7.2v9.2h9.2v-3.4h2.2V19H5V5.4ZM17.6 3.6l2.8 2.8L13 13.8h-2.8V11Z",
+    "filled": true
+  },
+  "Keep the screen readable": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Switch jobs with one link": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Choosing weights that mean something": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "Doubling a weight doubles the odds": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "Repeats and weights agree": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "A total you can check": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "What weights cannot do": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "Picker wheel limits": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "Weights stay whole numbers": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "No account for a weighted draw": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "Equal chance on the home wheel": {
+    "d": "M12 4 3.6 11h2.6v8h11.6v-8h2.6Z",
+    "filled": true
+  },
+  "No list of past winners": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "How the draw works": {
+    "d": "M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2Z",
+    "filled": true
+  },
+  "Draw them one at a time": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "Paste the ticket numbers or names": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "Say how many winners you need": {
+    "d": "M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2Z",
+    "filled": true
+  },
+  "Copy the results table": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "Why the order matters": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "One draw, several prizes": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "A printable record": {
+    "d": "M12 3.4c4 0 7.2 1.1 7.2 2.5S16 8.4 12 8.4 4.8 7.3 4.8 5.9 8 3.4 12 3.4ZM4.8 8.2c1.5 1 4.1 1.6 7.2 1.6s5.7-.6 7.2-1.6v3.6c0 1.4-3.2 2.5-7.2 2.5s-7.2-1.1-7.2-2.5Zm0 6c1.5 1 4.1 1.6 7.2 1.6s5.7-.6 7.2-1.6v3.9c0 1.4-3.2 2.5-7.2 2.5s-7.2-1.1-7.2-2.5Z",
+    "filled": true
+  },
+  "Who is in the pool": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "What each row records": {
+    "d": "M12 3.4c4 0 7.2 1.1 7.2 2.5S16 8.4 12 8.4 4.8 7.3 4.8 5.9 8 3.4 12 3.4ZM4.8 8.2c1.5 1 4.1 1.6 7.2 1.6s5.7-.6 7.2-1.6v3.6c0 1.4-3.2 2.5-7.2 2.5s-7.2-1.1-7.2-2.5Zm0 6c1.5 1 4.1 1.6 7.2 1.6s5.7-.6 7.2-1.6v3.9c0 1.4-3.2 2.5-7.2 2.5s-7.2-1.1-7.2-2.5Z",
+    "filled": true
+  },
+  "Name as pasted": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Draw order": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Time per draw": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "Copy as text": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "Where a raffle draw needs care": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "Keep the entry list fixed": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "Show the screen": {
+    "d": "M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2Z",
+    "filled": true
+  },
+  "Weighting is for a different job": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "The short answer": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "The draw happens first": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Position on the wheel is cosmetic": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "A spin can repeat a name": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "Weights are a stated lottery": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "How the winner is actually chosen": {
+    "d": "M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2Z",
+    "filled": true
+  },
+  "Read random bytes from the browser": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "Reject the values that would bias the draw": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "Map the surviving value to a slice": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "Animate to the slice already drawn": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "Weights resize the slices of the range": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Several winners are separate draws": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "How to check it yourself": {
+    "d": "M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2Z",
+    "filled": true
+  },
+  "Read the count against the expectation": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "Expect scatter, not a flat line": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "Look for shape, not size": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "Run it again after a change": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "Where fairness stops": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "Pseudo-random, not perfect": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "Your browser is the trust boundary": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Your list decides the odds": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "A draw is not a decision": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "Offline and on a big screen": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "Choose a plan": {
+    "d": "M12.2 3.4h8.4v8.4l-9 9L3.2 12.4Z",
+    "filled": true
+  },
+  "Free": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Plus — $6 a month": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "Pro — $12 a month": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "Event Pass — $9 once": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "What separates the plans": {
+    "d": "M12.2 3.4h8.4v8.4l-9 9L3.2 12.4Z",
+    "filled": true
+  },
+  "Secure checkout by card": {
+    "d": "M8 10V8a4 4 0 0 1 8 0v2h-2V8a2 2 0 0 0-4 0v2Zm-2.4.6h12.8V20H5.6Z",
+    "filled": true
+  },
+  "Billing questions": {
+    "d": "M12.2 3.4h8.4v8.4l-9 9L3.2 12.4Z",
+    "filled": true
+  },
+  "What this picker does": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "A picker wheel on your own screen": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "The chance in plain numbers": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "Your list stays in your browser": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "Four ways to pick a name": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "A single fair pick": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "Weighted draw": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "Several winners in order": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "Ten thousand draws, checked": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "Get your list in cleanly": {
+    "d": "M10.6 4h2.8v6.6h3.2L12 15.4 7.4 10.6h3.2ZM5 17.6h14V20H5Z",
+    "filled": true
+  },
+  "One entry per line": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "Drop titles and duplicates": {
+    "d": "M10.6 12.6V19h2.8v-6.4h3.2L12 7.2l-4.6 5.4ZM5 3.6h14V6H5Z",
+    "filled": true
+  },
+  "Keep full names where it matters": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Check the total before the spin": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "Where the free picker ends": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "Nothing is saved for you": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "One wheel at a time": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "No history to prove afterwards": {
+    "d": "M12 11.4a3.4 3.4 0 1 0 0-6.8 3.4 3.4 0 0 0 0 6.8ZM5 19.6a7 7 0 0 1 14 0Z",
+    "filled": true
+  },
+  "Needs to stay open": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "What the class picker does": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "At the start of the lesson": {
+    "d": "M12 3.8 14.5 9l5.5.8-4 3.9 1 5.5-5-2.6-5 2.6 1-5.5-4-3.9L9.5 9Z",
+    "filled": true
+  },
+  "When you need a second name": {
+    "d": "M7.2 4h2.4v2H14.4V4h2.4v2h2.6v4H4.6V6h2.6ZM4.6 11.6h14.8v7.8H4.6Z",
+    "filled": true
+  },
+  "When the answer needs a second student": {
+    "d": "M7.2 4h2.4v2H14.4V4h2.4v2h2.6v4H4.6V6h2.6ZM4.6 11.6h14.8v7.8H4.6Z",
+    "filled": true
+  },
+  "When a class is half present": {
+    "d": "M7.2 4h2.4v2H14.4V4h2.4v2h2.6v4H4.6V6h2.6ZM4.6 11.6h14.8v7.8H4.6Z",
+    "filled": true
+  },
+  "A no-repeat routine for one class": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "Paste in rows of names": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "Spin once and name the student": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "Remove the winner": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Note who answered, then reset": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "What no-repeat means here": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "A picked student is not punished": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "Volunteers still count": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Ten names, ten draws": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "Keep the results for the register": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "What the class picker will not do": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "No saved register": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "No attendance or grades": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "No account for the class": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Where the money divides": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Both handle a long list": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "Neither needs installing": {
+    "d": "M10.6 4h2.8v6.6h3.2L12 15.4 7.4 10.6h3.2ZM5 17.6h14V20H5Z",
+    "filled": true
+  },
+  "The differences that decide it": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "Storage versus draws": {
+    "d": "M4.8 10.6h3v8.8h-3ZM10.5 4.6h3v14.8h-3ZM16.2 13h3v6.4h-3Z",
+    "filled": true
+  },
+  "Reading the weights row": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "What free means on each side": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "Picker Wheel's free tier": {
+    "d": "M8 3h8v7H8zM3 13h8v8H3zM13 10h8v11h-8z",
+    "filled": true
+  },
+  "Wheel of Names free": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "Paying to remove ads": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "A room full of students": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "No sign-up first": {
+    "d": "M9.8 17.6 4.4 12.2l1.8-1.8 3.6 3.6 8-8 1.8 1.8Z",
+    "filled": true
+  },
+  "When to choose each one": {
+    "d": "M7.2 4h2.4v2H14.4V4h2.4v2h2.6v4H4.6V6h2.6ZM4.6 11.6h14.8v7.8H4.6Z",
+    "filled": true
+  },
+  "Choose Wheel of Names for": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "Pick Picker Wheel for": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "Lifting a result into a form": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Playing by rules a venue set": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "If both fit": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "What a wheel spinner does": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "Before the wheel turns": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "What you see at the end": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "Same tool, other jobs": {
+    "d": "M14.6 6.2a4 4 0 0 0-5 5L4 16.8 7.2 20l5.6-5.6a4 4 0 0 0 5-5l-2.6 2.6-2.4-2.4Z",
+    "filled": true
+  },
+  "Spin a name wheel in four steps": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "A worked example: club raffle": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "Paste your list": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "Check the slices": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "Spin": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Read the result": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "Where this wheel spinner stops": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "No images on slices": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "No saved wheel on the free tier": {
+    "d": "M8 3h8v7H8zM3 13h8v8H3zM13 10h8v11h-8z",
+    "filled": true
+  },
+  "It stays in the browser": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "Bring your own list": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "Who runs this site": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "How a result is made": {
+    "d": "M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2Z",
+    "filled": true
+  },
+  "It reads your list and weights": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "It runs in the browser": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "It returns a result": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "Where it runs, and what that limits": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "A current browser": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "A page that has loaded": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "A tab with room to work": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "No app install": {
+    "d": "M10.6 4h2.8v6.6h3.2L12 15.4 7.4 10.6h3.2ZM5 17.6h14V20H5Z",
+    "filled": true
+  },
+  "No sign-in to draw": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "No pictures": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "No check on who a name is": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "No entry handling": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "Plans, briefly": {
+    "d": "M12.2 3.4h8.4v8.4l-9 9L3.2 12.4Z",
+    "filled": true
+  },
+  "A result that looks wrong": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "The list and its weights": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "Outcome shown and expected": {
+    "d": "M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2Z",
+    "filled": true
+  },
+  "Your browser": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "A reply within two working days": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "A missing feature or a rough edge": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "A paid plan or a billing question": {
+    "d": "M12.2 3.4h8.4v8.4l-9 9L3.2 12.4Z",
+    "filled": true
+  },
+  "Privacy and deletion requests": {
+    "d": "M12 4l7 2.6v5.2c0 4.4-3 7.2-7 8.6-4-1.4-7-4.2-7-8.6V6.6Z",
+    "filled": true
+  },
+  "What this cannot help with": {
+    "d": "M3.6 6h16.8L12 13ZM3.6 8.4V18h16.8V8.4L12 15Z",
+    "filled": true
+  },
+  "Your lists stay in your browser": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "What is collected when you use the site": {
+    "d": "M7.2 4h2.4v2H14.4V4h2.4v2h2.6v4H4.6V6h2.6ZM4.6 11.6h14.8v7.8H4.6Z",
+    "filled": true
+  },
+  "Technical request data": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "A session cookie": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "Messages you send": {
+    "d": "M12 4l8 15H4z",
+    "filled": true
+  },
+  "Records kept for signed-in plans": {
+    "d": "M12.2 3.4h8.4v8.4l-9 9L3.2 12.4Z",
+    "filled": true
+  },
+  "Payments": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "Your choices and deletion": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Children": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "Using the wheel": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "Plans and payment": {
+    "d": "M12.2 3.4h8.4v8.4l-9 9L3.2 12.4Z",
+    "filled": true
+  },
+  "Fair use of allowances": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "Your content": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "Independence and trademarks": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "No guarantee": {
+    "d": "M9.8 17.6 4.4 12.2l1.8-1.8 3.6 3.6 8-8 1.8 1.8Z",
+    "filled": true
+  },
+  "Changes to these terms": {
+    "d": "M12 4l7 2.6v5.2c0 4.4-3 7.2-7 8.6-4-1.4-7-4.2-7-8.6V6.6Z",
+    "filled": true
+  },
+  "What a cookie does here": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "The cookies set": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "Sign-in cookie": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "Settings cookie": {
+    "d": "M11.4 6.2H4.4v2.4h7Zm2.4-1.8h2.4v6h-2.4Zm2.4 1.8h3.4v2.4h-3.4ZM4.4 15.4h3.4v2.4H4.4Zm5.8-1.8h2.4v6h-2.4Zm2.4 1.8h7v2.4h-7Z",
+    "filled": true
+  },
+  "Checkout cookie": {
+    "d": "M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z",
+    "filled": true
+  },
+  "No advertising cookies": {
+    "d": "M5 5h4v14H5zM11 5h4v14h-4zM17 5h2v14h-2z",
+    "filled": true
+  },
+  "Removing or blocking cookies": {
+    "d": "M8 10V8a4 4 0 0 1 8 0v2h-2V8a2 2 0 0 0-4 0v2Zm-2.4.6h12.8V20H5.6Z",
+    "filled": true
+  },
+  "When a plan is refunded": {
+    "d": "M12.2 3.4h8.4v8.4l-9 9L3.2 12.4Z",
+    "filled": true
+  },
+  "How to ask": {
+    "d": "M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2Z",
+    "filled": true
+  },
+  "Choose the billing subject": {
+    "d": "M12.2 3.4h8.4v8.4l-9 9L3.2 12.4Z",
+    "filled": true
+  },
+  "Add the charge details": {
+    "d": "M12 3l7 9-7 9-7-9z",
+    "filled": true
+  },
+  "Read the decision": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "After a refund": {
+    "d": "M5 5h14v6H11v8H5z",
+    "filled": true
+  },
+  "Free use": {
+    "d": "M5 5h14v14H5z",
+    "filled": true
+  },
+  "FAQ": {
+    "d": "M4.2 5h15.6v10.8h-7.2L8 19.6v-3.8H4.2Z",
+    "filled": true
+  }
+},
+  "design": {
+  "background": "#1a2039",
+  "surface": "#232c4b",
+  "text": "#eef1f8",
+  "accent": "#f9a3c0",
+  "font": "Albert Sans, system-ui, sans-serif"
+},
+  "visual": {
+  "layoutArchetype": "tool-workbench",
+  "navigationModel": "top-bar",
+  "heroComposition": "tool-canvas",
+  "sectionSequence": [
+    "stage-with-headline-and-tool",
+    "steps-beside-a-photograph",
+    "prose-on-how-the-winner-is-chosen",
+    "photograph-beside-the-use-cases",
+    "limits-beside-what-it-does",
+    "full-bleed-room",
+    "footer"
+  ],
+  "density": "comfortable",
+  "radiusFamily": "sharp",
+  "buttonGeometry": "cut-corner",
+  "surfaceTreatment": "flat",
+  "backgroundTexture": "plain",
+  "dataDisplay": "status-table",
+  "motion": "responsive",
+  "motionMotifs": [
+    "value-tick",
+    "line-reveal",
+    "stagger-reveal"
+  ],
+  "iconLanguage": "geometric",
+  "typeScale": 1.25,
+  "headingWeight": 700,
+  "headingCase": "none",
+  "contentMeasure": 68,
+  "maxWidth": 1240,
+  "colors": {
+    "background": "#1a2039",
+    "surface": "#232c4b",
+    "text": "#eef1f8",
+    "accent": "#f9a3c0",
+    "secondary": "#8e9cc4",
+    "gradient": {
+      "angle": 150,
+      "from": "#353049",
+      "to": "#5d4762"
+    },
+    "font": "Albert Sans, system-ui, sans-serif",
+    "headingFont": "Imbue, Georgia, serif"
+  },
+  "variantDefaults": {
+    "hero": "oversized-type",
+    "cards": "outlined",
+    "steps": "numbered-rows",
+    "gallery": "full-bleed",
+    "media": "editorial-figure"
+  },
+  "aestheticDirection": "jobbing-press",
+  "customDialect": {
+    "space": {
+      "related": 0.9,
+      "group": 1.1,
+      "section": 1.3
+    },
+    "displayFloorBoost": 1.1,
+    "textureOpacity": 0.06,
+    "motion": {
+      "duration": 0.9,
+      "distance": 1,
+      "ease": "cubic-bezier(0.22,0,0.2,1)"
+    }
+  },
+  "firstScreenBrief": "",
+  "brandVoice": {
+    "headline": "Every name gets the same slice.",
+    "lede": "Paste a list of names, one per line, and this wheel of names turns every line into an equal slice."
+  },
+  "signatureObject": "",
+  "subjectInventory": [],
+  "tasteDirection": "page-is-the-object",
+  "tastePalette": "navy-pink",
+  "tasteType": "imbue-albert"
+},
+  "composition": {
+  "root": {
+    "type": "shell",
+    "children": [
+      {
+        "type": "nav"
+      },
+      {
+        "type": "row",
+        "variant": "stage",
+        "children": [
+          {
+            "type": "group",
+            "span": 12,
+            "children": [
+              {
+                "type": "hero",
+                "variant": "oversized-type",
+                "emphasis": "lead",
+                "motion": "line-reveal"
+              },
+              {
+                "type": "tool",
+                "variant": "workbench",
+                "capability": "name-wheel"
+              },
+              {
+                "type": "toast",
+                "label": "Spin, copy and removal announcements"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "variant": "method",
+        "children": [
+          {
+            "type": "group",
+            "span": 7,
+            "children": [
+              {
+                "type": "steps",
+                "variant": "numbered-rows",
+                "source": "how-to-use"
+              }
+            ]
+          },
+          {
+            "type": "group",
+            "span": 5,
+            "children": [
+              {
+                "type": "media",
+                "variant": "editorial-figure",
+                "label": "A roster pasted into the box"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "variant": "odds",
+        "children": [
+          {
+            "type": "group",
+            "span": 12,
+            "children": [
+              {
+                "type": "prose",
+                "source": "fairness"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "variant": "uses",
+        "children": [
+          {
+            "type": "group",
+            "span": 5,
+            "children": [
+              {
+                "type": "media",
+                "variant": "editorial-figure",
+                "label": "One name per spin in a classroom"
+              }
+            ]
+          },
+          {
+            "type": "group",
+            "span": 7,
+            "children": [
+              {
+                "type": "prose",
+                "source": "use-cases"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "variant": "limits",
+        "children": [
+          {
+            "type": "group",
+            "span": 7,
+            "children": [
+              {
+                "type": "prose",
+                "source": "limits"
+              }
+            ]
+          },
+          {
+            "type": "group",
+            "span": 5,
+            "children": [
+              {
+                "type": "prose",
+                "source": "answer"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "gallery",
+        "variant": "full-bleed",
+        "label": "The room the draw is watched from"
+      },
+      {
+        "type": "footer"
+      }
+    ]
+  }
+},
+  "routeCompositions": {
+  "/picker-wheel/": {
+    "root": {
+      "type": "shell",
+      "children": [
+        {
+          "type": "nav"
+        },
+        {
+          "type": "row",
+          "variant": "variant-board",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "hero",
+                  "variant": "oversized-type",
+                  "emphasis": "lead"
+                },
+                {
+                  "type": "tool",
+                  "variant": "workbench",
+                  "capability": "weighted-picker-wheel"
+                },
+                {
+                  "type": "toast",
+                  "label": "Weight and draw announcements"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "weight-notes",
+          "children": [
+            {
+              "type": "group",
+              "span": 5,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "weights"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "span": 7,
+              "children": [
+                {
+                  "type": "steps",
+                  "variant": "numbered-rows",
+                  "source": "how-to-use",
+                  "motion": "stagger-reveal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "variant-limits",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "limits"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "footer"
+        }
+      ]
+    }
+  },
+  "/raffle-wheel/": {
+    "root": {
+      "type": "shell",
+      "children": [
+        {
+          "type": "nav",
+          "motion": "scroll-progress"
+        },
+        {
+          "type": "row",
+          "variant": "raffle-board",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "hero",
+                  "variant": "oversized-type",
+                  "emphasis": "lead"
+                },
+                {
+                  "type": "tool",
+                  "variant": "workbench",
+                  "capability": "raffle-draw"
+                },
+                {
+                  "type": "toast",
+                  "label": "Draw order and copy announcements"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "order",
+          "children": [
+            {
+              "type": "group",
+              "span": 7,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "multi-winner"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "span": 5,
+              "children": [
+                {
+                  "type": "media",
+                  "variant": "editorial-figure",
+                  "label": "Ticket stubs keeping their leading zeros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "records",
+          "children": [
+            {
+              "type": "group",
+              "span": 6,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "records"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "span": 6,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "limits"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "footer"
+        }
+      ]
+    }
+  },
+  "/fairness/": {
+    "root": {
+      "type": "shell",
+      "children": [
+        {
+          "type": "nav",
+          "motion": "scroll-progress"
+        },
+        {
+          "type": "row",
+          "variant": "read",
+          "children": [
+            {
+              "type": "group",
+              "span": 7,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "answer"
+                },
+                {
+                  "type": "prose",
+                  "source": "algorithm"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "span": 5,
+              "sticky": true,
+              "children": [
+                {
+                  "type": "tool",
+                  "variant": "instrument",
+                  "capability": "fairness-audit"
+                },
+                {
+                  "type": "toast",
+                  "label": "Test progress and result"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "verify",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "verify"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "read-limits",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "limits"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "footer"
+        }
+      ]
+    }
+  },
+  "/pricing/": {
+    "root": {
+      "type": "shell",
+      "children": [
+        {
+          "type": "nav"
+        },
+        {
+          "type": "row",
+          "variant": "plans",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "cards",
+                  "source": "plans",
+                  "label": "Free, Plus, Pro and the Event Pass",
+                  "motion": "stagger-reveal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "compare",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "table",
+                  "source": "comparison",
+                  "mobilePresentation": "cards"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "questions",
+          "children": [
+            {
+              "type": "group",
+              "span": 8,
+              "children": [
+                {
+                  "type": "faq",
+                  "source": "faq"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "footer"
+        }
+      ]
+    }
+  },
+  "/random-name-picker/": {
+    "root": {
+      "type": "shell",
+      "children": [
+        {
+          "type": "nav",
+          "motion": "scroll-progress"
+        },
+        {
+          "type": "row",
+          "variant": "landing",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "hero",
+                  "variant": "oversized-type",
+                  "emphasis": "lead"
+                },
+                {
+                  "type": "tool",
+                  "variant": "workbench",
+                  "capability": "name-wheel"
+                },
+                {
+                  "type": "toast",
+                  "label": "Spin announcements"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "two-answers",
+          "children": [
+            {
+              "type": "group",
+              "span": 6,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "methods"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "span": 6,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "paste"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "landing-limits",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "limits"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "footer"
+        }
+      ]
+    }
+  },
+  "/classroom-name-picker/": {
+    "root": {
+      "type": "shell",
+      "children": [
+        {
+          "type": "nav",
+          "motion": "scroll-progress"
+        },
+        {
+          "type": "row",
+          "variant": "landing",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "hero",
+                  "variant": "oversized-type",
+                  "emphasis": "lead"
+                },
+                {
+                  "type": "tool",
+                  "variant": "classroom",
+                  "capability": "name-wheel"
+                },
+                {
+                  "type": "toast",
+                  "label": "Spin announcements"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "routine",
+          "children": [
+            {
+              "type": "group",
+              "span": 7,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "routine"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "span": 5,
+              "children": [
+                {
+                  "type": "media",
+                  "variant": "editorial-figure",
+                  "label": "A class list kept for the lesson"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "no-repeat",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "no-repeat"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "landing-limits",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "limits"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "footer"
+        }
+      ]
+    }
+  },
+  "/wheel-spinner/": {
+    "root": {
+      "type": "shell",
+      "children": [
+        {
+          "type": "nav"
+        },
+        {
+          "type": "row",
+          "variant": "landing",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "hero",
+                  "variant": "oversized-type",
+                  "emphasis": "lead"
+                },
+                {
+                  "type": "tool",
+                  "variant": "workbench",
+                  "capability": "name-wheel"
+                },
+                {
+                  "type": "toast",
+                  "label": "Spin announcements"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "how-and-limits",
+          "children": [
+            {
+              "type": "group",
+              "span": 5,
+              "children": [
+                {
+                  "type": "steps",
+                  "variant": "numbered-rows",
+                  "source": "how-to-use",
+                  "motion": "stagger-reveal"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "span": 7,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "limits"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "footer"
+        }
+      ]
+    }
+  },
+  "/vs/pickerwheel/": {
+    "root": {
+      "type": "shell",
+      "children": [
+        {
+          "type": "nav",
+          "motion": "scroll-progress"
+        },
+        {
+          "type": "row",
+          "variant": "verdict",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "hero",
+                  "variant": "oversized-type",
+                  "source": "answer",
+                  "emphasis": "lead"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "criteria",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "table",
+                  "source": "differences",
+                  "mobilePresentation": "cards"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "detail",
+          "children": [
+            {
+              "type": "group",
+              "span": 6,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "free-tier"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "span": 6,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "when-to-choose"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "footer"
+        }
+      ]
+    }
+  },
+  "/about/": {
+    "root": {
+      "type": "shell",
+      "children": [
+        {
+          "type": "nav",
+          "motion": "scroll-progress"
+        },
+        {
+          "type": "row",
+          "variant": "intro",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "hero",
+                  "variant": "oversized-type",
+                  "source": "who-runs-it",
+                  "emphasis": "lead"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "method",
+          "children": [
+            {
+              "type": "group",
+              "span": 7,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "how-a-result-is-made"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "span": 5,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "browser-limits"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "scope",
+          "children": [
+            {
+              "type": "group",
+              "span": 5,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "what-it-does-not-do"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "span": 7,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "pricing-and-plans"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "footer"
+        }
+      ]
+    }
+  },
+  "/contact/": {
+    "root": {
+      "type": "shell",
+      "children": [
+        {
+          "type": "nav",
+          "motion": "scroll-progress"
+        },
+        {
+          "type": "row",
+          "variant": "reach",
+          "children": [
+            {
+              "type": "group",
+              "span": 7,
+              "children": [
+                {
+                  "type": "form",
+                  "capability": "contact-message",
+                  "children": [
+                    {
+                      "type": "input",
+                      "label": "Your email address",
+                      "name": "email",
+                      "required": true,
+                      "inputType": "email"
+                    },
+                    {
+                      "type": "textarea",
+                      "label": "What happened, and on which page",
+                      "name": "message",
+                      "required": true
+                    }
+                  ]
+                },
+                {
+                  "type": "alert",
+                  "variant": "info",
+                  "label": "Replies come from the person who runs the site, usually within two working days."
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "span": 5,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "a-result-that-looks-wrong"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "topics",
+          "children": [
+            {
+              "type": "group",
+              "span": 6,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "missing-feature"
+                },
+                {
+                  "type": "prose",
+                  "source": "plans-and-billing"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "span": 6,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "privacy-and-deletion"
+                },
+                {
+                  "type": "prose",
+                  "source": "what-this-cannot-help-with"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "footer"
+        }
+      ]
+    }
+  },
+  "/privacy/": {
+    "root": {
+      "type": "shell",
+      "children": [
+        {
+          "type": "nav",
+          "motion": "scroll-progress"
+        },
+        {
+          "type": "row",
+          "variant": "document",
+          "children": [
+            {
+              "type": "group",
+              "span": 8,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "lists-stay-in-the-browser"
+                },
+                {
+                  "type": "prose",
+                  "source": "what-is-collected"
+                },
+                {
+                  "type": "prose",
+                  "source": "signed-in-records"
+                },
+                {
+                  "type": "prose",
+                  "source": "payments"
+                },
+                {
+                  "type": "prose",
+                  "source": "your-choices"
+                },
+                {
+                  "type": "prose",
+                  "source": "children"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "footer"
+        }
+      ]
+    }
+  },
+  "/terms/": {
+    "root": {
+      "type": "shell",
+      "children": [
+        {
+          "type": "nav",
+          "motion": "scroll-progress"
+        },
+        {
+          "type": "row",
+          "variant": "document",
+          "children": [
+            {
+              "type": "group",
+              "span": 8,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "using-the-wheel"
+                },
+                {
+                  "type": "prose",
+                  "source": "plans-and-payment"
+                },
+                {
+                  "type": "prose",
+                  "source": "fair-use"
+                },
+                {
+                  "type": "prose",
+                  "source": "your-content"
+                },
+                {
+                  "type": "prose",
+                  "source": "independence"
+                },
+                {
+                  "type": "prose",
+                  "source": "no-guarantee"
+                },
+                {
+                  "type": "prose",
+                  "source": "changes"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "footer"
+        }
+      ]
+    }
+  },
+  "/cookies/": {
+    "root": {
+      "type": "shell",
+      "children": [
+        {
+          "type": "nav",
+          "motion": "scroll-progress"
+        },
+        {
+          "type": "row",
+          "variant": "document",
+          "children": [
+            {
+              "type": "group",
+              "span": 8,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "what-a-cookie-does-here"
+                },
+                {
+                  "type": "prose",
+                  "source": "the-cookies-set"
+                },
+                {
+                  "type": "prose",
+                  "source": "no-advertising-cookies"
+                },
+                {
+                  "type": "prose",
+                  "source": "removing-cookies"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "footer"
+        }
+      ]
+    }
+  },
+  "/refunds/": {
+    "root": {
+      "type": "shell",
+      "children": [
+        {
+          "type": "nav",
+          "motion": "scroll-progress"
+        },
+        {
+          "type": "row",
+          "variant": "document",
+          "children": [
+            {
+              "type": "group",
+              "span": 8,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "when-a-refund-is-given"
+                },
+                {
+                  "type": "prose",
+                  "source": "how-to-ask"
+                },
+                {
+                  "type": "prose",
+                  "source": "after-a-refund"
+                },
+                {
+                  "type": "prose",
+                  "source": "free-use"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "footer"
+        }
+      ]
+    }
+  },
+  "/": {
+    "root": {
+      "type": "shell",
+      "children": [
+        {
+          "type": "nav"
+        },
+        {
+          "type": "row",
+          "variant": "stage",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "hero",
+                  "variant": "oversized-type",
+                  "emphasis": "lead",
+                  "motion": "line-reveal"
+                },
+                {
+                  "type": "tool",
+                  "variant": "workbench",
+                  "capability": "name-wheel"
+                },
+                {
+                  "type": "toast",
+                  "label": "Spin, copy and removal announcements"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "method",
+          "children": [
+            {
+              "type": "group",
+              "span": 7,
+              "children": [
+                {
+                  "type": "steps",
+                  "variant": "numbered-rows",
+                  "source": "how-to-use"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "span": 5,
+              "children": [
+                {
+                  "type": "media",
+                  "variant": "editorial-figure",
+                  "label": "A roster pasted into the box"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "odds",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "fairness"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "uses",
+          "children": [
+            {
+              "type": "group",
+              "span": 5,
+              "children": [
+                {
+                  "type": "media",
+                  "variant": "editorial-figure",
+                  "label": "One name per spin in a classroom"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "span": 7,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "use-cases"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "variant": "limits",
+          "children": [
+            {
+              "type": "group",
+              "span": 7,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "limits"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "span": 5,
+              "children": [
+                {
+                  "type": "prose",
+                  "source": "answer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "gallery",
+          "variant": "full-bleed",
+          "label": "The room the draw is watched from"
+        },
+        {
+          "type": "footer"
+        }
+      ]
+    }
+  }
+},
+  "capabilities": [
+  {
+    "id": "contact-message",
+    "title": "Message check",
+    "summary": "Tidies the message a visitor writes on the contact page and confirms it is long enough to answer before the site's contact form sends it.",
+    "operation": "text-transform",
+    "params": {
+      "pipeline": [
+        "trim",
+        "collapse-whitespace"
+      ],
+      "sourceInput": "message"
+    },
+    "execution": "client",
+    "privacy": "in-browser",
+    "privacyNote": "The check runs in the browser; the message is only sent when the contact form is submitted.",
+    "inputs": [
+      {
+        "id": "email",
+        "kind": "text",
+        "label": "Your email address",
+        "required": true
+      },
+      {
+        "id": "message",
+        "kind": "text",
+        "label": "What happened, and on which page",
+        "required": true
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "text",
+        "label": "Your message, ready to send"
+      }
+    ],
+    "states": {
+      "idle": "Write the message and press Check.",
+      "working": "Checking the message.",
+      "success": "Message is ready; the contact form sends it from here.",
+      "error": "Add a sentence about what happened so the reply can be useful.",
+      "empty": "Nothing written yet."
+    },
+    "validation": [
+      {
+        "id": "too-short",
+        "rule": "at least 12 characters after trimming",
+        "message": "Add a sentence about what happened so the reply can be useful."
+      }
+    ],
+    "limits": {
+      "maxInputBytes": 8192,
+      "notes": "Text only; no attachments."
+    },
+    "telemetry": [
+      "contact-message-run"
+    ]
+  }
+],
+  "toolSpecs": [
+  {
+    "id": "name-wheel",
+    "title": "Wheel of Names spinner",
+    "jtbd": "Turns a pasted list into a canvas wheel of equal slices, draws one winner with crypto.getRandomValues and rejection sampling before any motion, spins 5-7 seconds to that slice, and shows the winner with its chance and the entries left.",
+    "inputs": [
+      {
+        "id": "names",
+        "kind": "text",
+        "label": "Names, one name per line",
+        "placeholder": "One name per line",
+        "required": true,
+        "multiline": true,
+        "typical": {
+          "kind": "text",
+          "profile": "a class roster or giveaway list of 3-40 names pasted one per line, usually copied out of a spreadsheet column"
+        }
+      }
+    ],
+    "output": {
+      "label": "One winner on a draw slip",
+      "description": "The tool panel [data-tool-output] wraps the input zone, the wheel and the slip. Inside it: a canvas wheel with one equal slice per line, an entries line reading 12 names (a repeated name is shown as A"
+    },
+    "acceptance": [
+      {
+        "id": "three-names-spin",
+        "given": {
+          "names": "Ada\nBo\nChen"
+        },
+        "expect": [],
+        "actions": [
+          {
+            "do": "click",
+            "target": "@primary"
+          },
+          {
+            "do": "wait-for",
+            "target": "[data-tool-output]",
+            "attr": "data-state",
+            "value": "winner",
+            "timeoutMs": 8000
+          },
+          {
+            "do": "assert-text",
+            "target": "[data-tool-output]",
+            "contains": "33.3%"
+          },
+          {
+            "do": "assert-text",
+            "target": "[data-tool-output]",
+            "contains": "1 in 3"
+          }
+        ]
+      },
+      {
+        "id": "remove-then-four-left",
+        "given": {
+          "names": "Ada\nBo\nChen\nDee\nEli"
+        },
+        "expect": [],
+        "actions": [
+          {
+            "do": "click",
+            "target": "@primary"
+          },
+          {
+            "do": "wait-for",
+            "target": "[data-tool-output]",
+            "attr": "data-state",
+            "value": "winner",
+            "timeoutMs": 8000
+          },
+          {
+            "do": "click",
+            "target": "Remove winner"
+          },
+          {
+            "do": "assert-text",
+            "target": "[data-tool-output]",
+            "contains": "4 names"
+          },
+          {
+            "do": "assert-text",
+            "target": "[data-tool-output]",
+            "contains": "25.0%"
+          }
+        ]
+      },
+      {
+        "id": "repeat-holds-two-slices",
+        "given": {
+          "names": "Ada\nBo\nAda"
+        },
+        "expect": [
+          {
+            "kind": "contains",
+            "value": "Ada x2"
+          },
+          {
+            "kind": "contains",
+            "value": "66.7%"
+          }
+        ]
+      },
+      {
+        "id": "needs-two-names",
+        "given": {
+          "names": ""
+        },
+        "expect": [
+          {
+            "kind": "contains",
+            "value": "Add at least two names to spin"
+          }
+        ],
+        "expectedState": "error"
+      }
+    ],
+    "execution": "client",
+    "privacy": "in-browser",
+    "privacyNote": "Names stay in this browser tab; no entry text is sent anywhere. The winner is drawn with crypto.getRandomValues and rejection sampling before the wheel moves."
+  },
+  {
+    "id": "weighted-picker-wheel",
+    "title": "Weighted picker wheel",
+    "jtbd": "Gives each pasted entry an integer weight from 1 to 10, shows each entry's percentage chance on the wheel, draws one winner in proportion to total weight with crypto.getRandomValues, and reports that chance on the result card.",
+    "inputs": [
+      {
+        "id": "entries",
+        "kind": "text",
+        "label": "Entries, one per line as name, weight",
+        "placeholder": "Ada, 1 Bo, 1",
+        "required": true,
+        "multiline": true,
+        "typical": {
+          "kind": "text",
+          "profile": "10-40 entries pasted one per line, each optionally followed by a weight from 1 to 10 (name, weight); untouched lines stay at weight 1"
+        }
+      }
+    ],
+    "output": {
+      "label": "Weighted wheel and one winner",
+      "description": "Inside [data-tool-output]: slices sized by weight, each slice label repeating its percentage, an odds list where every row [data-entry] carries a number field 1-10, one filled primary control under th"
+    },
+    "acceptance": [
+      {
+        "id": "five-three-one-one",
+        "given": {
+          "entries": "Ada, 5\nBo, 3\nChen, 1\nDee, 1"
+        },
+        "expect": [
+          {
+            "kind": "contains",
+            "value": "50.0%"
+          },
+          {
+            "kind": "contains",
+            "value": "30.0%"
+          }
+        ]
+      },
+      {
+        "id": "three-three-two-two",
+        "given": {
+          "entries": "Ada, 3\nBo, 3\nChen, 2\nDee, 2"
+        },
+        "expect": [
+          {
+            "kind": "contains",
+            "value": "30.0%"
+          },
+          {
+            "kind": "contains",
+            "value": "20.0%"
+          }
+        ]
+      },
+      {
+        "id": "unweighted-lines-start-at-one",
+        "given": {
+          "entries": "Ada\nBo"
+        },
+        "expect": [
+          {
+            "kind": "contains",
+            "value": "50.0%"
+          }
+        ]
+      },
+      {
+        "id": "card-reports-total-weight",
+        "given": {
+          "entries": "Ada, 5\nBo, 3\nChen, 1\nDee, 1"
+        },
+        "expect": [],
+        "actions": [
+          {
+            "do": "click",
+            "target": "@primary"
+          },
+          {
+            "do": "wait-for",
+            "target": "[data-tool-output]",
+            "attr": "data-state",
+            "value": "winner",
+            "timeoutMs": 8000
+          },
+          {
+            "do": "assert-text",
+            "target": "[data-winner]",
+            "contains": "of 10"
+          }
+        ]
+      },
+      {
+        "id": "weight-zero-rejected",
+        "given": {
+          "entries": "Ada, 0\nBo, 1"
+        },
+        "expect": [
+          {
+            "kind": "contains",
+            "value": "Weights are whole numbers from 1 to 10"
+          }
+        ],
+        "expectedState": "error"
+      }
+    ],
+    "execution": "client",
+    "privacy": "in-browser",
+    "privacyNote": "Entries, weights and the drawn result are handled on the device; the chance on the result card is worked out there too and nothing is sent anywhere."
+  },
+  {
+    "id": "raffle-draw",
+    "title": "Ordered raffle draw",
+    "jtbd": "Draws a requested number of distinct winners one at a time from the pasted list, records each name with its draw order and time in a results table that copies as text, and stops when the winners reach the list size.",
+    "inputs": [
+      {
+        "id": "entries",
+        "kind": "text",
+        "label": "Entries, one per line",
+        "placeholder": "004 017 026",
+        "required": true,
+        "multiline": true,
+        "typical": {
+          "kind": "text",
+          "profile": "30-2000 ticket numbers or names pasted one per line, leading zeros kept as typed"
+        }
+      },
+      {
+        "id": "winners",
+        "kind": "number",
+        "label": "Winners to draw",
+        "required": true
+      }
+    ],
+    "output": {
+      "label": "An ordered results table",
+      "description": "The results table [data-results] holds one row [data-draw-row] per winner with the draw order, the entry exactly as pasted and the local time it was drawn, plus a Copy as text action. Above it a figur"
+    },
+    "acceptance": [
+      {
+        "id": "three-winners-three-rows",
+        "given": {
+          "entries": "004\n017\n026\n041\n052",
+          "winners": "3"
+        },
+        "expect": [
+          {
+            "kind": "contains",
+            "value": "3 winners"
+          }
+        ],
+        "actions": [
+          {
+            "do": "click",
+            "target": "@primary"
+          },
+          {
+            "do": "wait-for",
+            "target": "[data-results]",
+            "attr": "data-state",
+            "value": "done",
+            "timeoutMs": 8000
+          },
+          {
+            "do": "assert-count",
+            "target": "[data-draw-row]",
+            "min": 3,
+            "max": 3
+          },
+          {
+            "do": "assert-text",
+            "target": "[data-draw-count]",
+            "contains": "3 winners"
+          },
+          {
+            "do": "assert-text",
+            "target": "[data-draw-summary]",
+            "contains": "3 of 5 entries drawn"
+          }
+        ],
+        "expectedState": "success"
+      },
+      {
+        "id": "two-winners-two-rows",
+        "given": {
+          "entries": "004\n017\n026\n041\n052",
+          "winners": "2"
+        },
+        "expect": [
+          {
+            "kind": "contains",
+            "value": "2 winners"
+          }
+        ],
+        "actions": [
+          {
+            "do": "click",
+            "target": "@primary"
+          },
+          {
+            "do": "wait-for",
+            "target": "[data-results]",
+            "attr": "data-state",
+            "value": "done",
+            "timeoutMs": 8000
+          },
+          {
+            "do": "assert-count",
+            "target": "[data-draw-row]",
+            "min": 2,
+            "max": 2
+          },
+          {
+            "do": "assert-text",
+            "target": "[data-draw-count]",
+            "contains": "2 winners"
+          }
+        ],
+        "expectedState": "success"
+      },
+      {
+        "id": "leading-zeros-kept",
+        "given": {
+          "entries": "0007\n0042\n0123",
+          "winners": "3"
+        },
+        "expect": [],
+        "actions": [
+          {
+            "do": "click",
+            "target": "@primary"
+          },
+          {
+            "do": "wait-for",
+            "target": "[data-results]",
+            "attr": "data-state",
+            "value": "done",
+            "timeoutMs": 8000
+          },
+          {
+            "do": "assert-text",
+            "target": "[data-results]",
+            "contains": "0007"
+          },
+          {
+            "do": "assert-text",
+            "target": "[data-results]",
+            "contains": "0123"
+          },
+          {
+            "do": "assert-count",
+            "target": "[data-draw-row]",
+            "min": 3,
+            "max": 3
+          }
+        ]
+      },
+      {
+        "id": "cannot-exceed-list-size",
+        "given": {
+          "entries": "004\n017\n026",
+          "winners": "5"
+        },
+        "expect": [
+          {
+            "kind": "contains",
+            "value": "cannot be longer than"
+          }
+        ],
+        "expectedState": "error"
+      }
+    ],
+    "execution": "client",
+    "privacy": "in-browser",
+    "privacyNote": "Ticket numbers and names stay in the browser; each winner is drawn with crypto.getRandomValues and rejection sampling and written into the local table only."
+  },
+  {
+    "id": "fairness-audit",
+    "title": "10,000-draw fairness check",
+    "jtbd": "Runs 10,000 draws on the current list inside the browser and reports each entry's observed count and share beside the expected 1-in-N share, with the largest deviation, without sending any entry text anywhere.",
+    "inputs": [
+      {
+        "id": "entries",
+        "kind": "text",
+        "label": "The list to test, one entry per line",
+        "placeholder": "Ada Bo Chen",
+        "required": true,
+        "multiline": true,
+        "typical": {
+          "kind": "text",
+          "profile": "the same 3-40 name list the visitor is drawing from on the wheel"
+        }
+      }
+    ],
+    "output": {
+      "label": "An observed-versus-expected table",
+      "description": "The audit table [data-audit] holds one row [data-audit-row] per entry with its observed count out of 10,000, its observed share and the expected 1-in-N share; a summary line [data-audit-summary] reads"
+    },
+    "acceptance": [
+      {
+        "id": "four-entries-quarter-each",
+        "given": {
+          "entries": "Ada\nBo\nChen\nDee"
+        },
+        "expect": [],
+        "actions": [
+          {
+            "do": "click",
+            "target": "@primary"
+          },
+          {
+            "do": "wait-for",
+            "target": "[data-audit]",
+            "attr": "data-state",
+            "value": "done",
+            "timeoutMs": 8000
+          },
+          {
+            "do": "assert-count",
+            "target": "[data-audit-row]",
+            "min": 4,
+            "max": 4
+          },
+          {
+            "do": "assert-text",
+            "target": "[data-audit-summary]",
+            "contains": "25.0%"
+          },
+          {
+            "do": "assert-text",
+            "target": "[data-audit-summary]",
+            "contains": "10,000"
+          }
+        ]
+      },
+      {
+        "id": "ten-entries-expect-one-thousand",
+        "given": {
+          "entries": "Ada\nBo\nChen\nDee\nEli\nFay\nGus\nHal\nIvy\nJo"
+        },
+        "expect": [],
+        "actions": [
+          {
+            "do": "click",
+            "target": "@primary"
+          },
+          {
+            "do": "wait-for",
+            "target": "[data-audit]",
+            "attr": "data-state",
+            "value": "done",
+            "timeoutMs": 8000
+          },
+          {
+            "do": "assert-count",
+            "target": "[data-audit-row]",
+            "min": 10,
+            "max": 10
+          },
+          {
+            "do": "assert-text",
+            "target": "[data-audit-summary]",
+            "contains": "1,000"
+          }
+        ]
+      },
+      {
+        "id": "empty-list-nothing-to-test",
+        "given": {
+          "entries": ""
+        },
+        "expect": [
+          {
+            "kind": "contains",
+            "value": "Paste the list you want to test"
+          }
+        ],
+        "expectedState": "error"
+      }
+    ],
+    "execution": "client",
+    "privacy": "in-browser",
+    "privacyNote": "The 10,000 draws run in the page on the pasted list; no entry text leaves the device and nothing is uploaded to produce the table."
+  }
+],
+  "runtimeRequirements": {"requiresCapability":true,"requiredCapabilityOperations":[],"toolPromises":["Turns a pasted list into a canvas wheel of equal slices, draws one winner with crypto.getRandomValues and rejection sampling before any motion, spins 5-7 seconds to that slice, and shows the winner with its chance and the entries left.","Gives each pasted entry an integer weight from 1 to 10, shows each entry's percentage chance on the wheel, draws one winner in proportion to total weight with crypto.getRandomValues, and reports that chance on the result card.","Draws a requested number of distinct winners one at a time from the pasted list, records each name with its draw order and time in a results table that copies as text, and stops when the winners reach the list size.","Runs 10,000 draws on the current list inside the browser and reports each entry's observed count and share beside the expected 1-in-N share, with the largest deviation, without sending any entry text anywhere."],"requiresAuth":true,"requiresBilling":true},
+  "runtimePrivacy": {"analytics":"aggregate","requiresConsent":false},
+  "demandSelectionHash": "b82eaa6473bcb464bfaa594ec5cedc2db21599a6f66f9348e9619e1c5013f50b",
+  "assetPlan": [
+  {
+    "path": "/images/hall-draw.png",
+    "subject": "A school hall before assembly, rows of chairs facing the one lit projector screen",
+    "purpose": "",
+    "alt": "Rows of chairs in a school hall facing a lit projector screen before an assembly",
+    "source": "https://images.pexels.com/photos/33986514/pexels-photo-33986514.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "sourcePage": "https://www.pexels.com/photo/modern-empty-classroom-with-blue-accents-33986514/",
+    "license": "pexels-license",
+    "attribution": "rf43f via Pexels",
+    "kind": "decorative",
+    "role": "hero-subject",
+    "route": "/",
+    "sectionId": null,
+    "recordKey": null,
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null,
+    "treatment": "backdrop",
+    "caption": "A school hall before assembly: whatever is on that screen is read from the back row."
+  },
+  {
+    "path": "/images/list-pasted.png",
+    "subject": "Two hands typing a list of names on a laptop keyboard, seen close",
+    "purpose": "",
+    "alt": "Two hands typing on a laptop keyboard at a desk",
+    "source": "https://images.pexels.com/photos/1181644/pexels-photo-1181644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "sourcePage": "https://www.pexels.com/photo/grayscale-photography-of-a-woman-working-in-front-of-laptop-1181644/",
+    "license": "pexels-license",
+    "attribution": "Christina Morillo via Pexels",
+    "kind": "decorative",
+    "role": "section-media",
+    "route": "/",
+    "sectionId": "how-to-use",
+    "recordKey": null,
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null,
+    "treatment": "framed",
+    "caption": "One name per line, typed or pasted in: the wheel draws from whatever is in the box."
+  },
+  {
+    "path": "/images/class-call.png",
+    "subject": "A teacher at the front of a classroom with a dozen hands raised",
+    "purpose": "",
+    "alt": "A teacher at the front of a classroom facing a dozen raised hands",
+    "source": "https://images.pexels.com/photos/5212342/pexels-photo-5212342.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "sourcePage": "https://www.pexels.com/photo/teacher-teaching-his-students-5212342/",
+    "license": "pexels-license",
+    "attribution": "Max Fischer via Pexels",
+    "kind": "decorative",
+    "role": "section-media",
+    "route": "/",
+    "sectionId": "use-cases",
+    "recordKey": null,
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null,
+    "treatment": "masked",
+    "shape": "arch",
+    "caption": "A dozen hands up in one room: the wheel settles one of them, and that name leaves the list."
+  },
+  {
+    "path": "/images/room-after.png",
+    "subject": "A school fair prize table with wrapped prizes and a queue of families",
+    "purpose": "",
+    "alt": "A prize table with wrapped prizes and families queuing at a school fair",
+    "source": "https://images.pexels.com/photos/33020526/pexels-photo-33020526.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "sourcePage": "https://www.pexels.com/photo/colorful-carnival-game-stall-with-prizes-33020526/",
+    "license": "pexels-license",
+    "attribution": "Talha Resitoglu via Pexels",
+    "kind": "decorative",
+    "role": "gallery-media",
+    "route": "/",
+    "sectionId": null,
+    "recordKey": null,
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null,
+    "treatment": "wall",
+    "caption": "A prize table at a school fair: the draw is watched, so the result has to be readable at a distance."
+  },
+  {
+    "path": "/images/tickets-drawn.png",
+    "subject": "Torn ticket stubs with printed numbers held in one hand",
+    "purpose": "",
+    "alt": "Torn raffle ticket stubs with printed numbers held in one hand",
+    "source": "https://images.pexels.com/photos/27639885/pexels-photo-27639885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "sourcePage": "https://www.pexels.com/photo/a-person-holding-a-ticket-with-numbers-on-it-27639885/",
+    "license": "pexels-license",
+    "attribution": "Jonathan Cooper via Pexels",
+    "kind": "decorative",
+    "role": "section-media",
+    "route": "/raffle-wheel/",
+    "sectionId": "records",
+    "recordKey": null,
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null,
+    "treatment": "collage",
+    "caption": "Ticket stubs keep their numbers with the leading zeros, which is why 0007 and 7 are not the same entry."
+  },
+  {
+    "path": "/images/class-roster-phone.png",
+    "subject": "A teacher holding a phone with a class list open, classroom behind them",
+    "purpose": "",
+    "alt": "A teacher holding a phone with a class list open in a classroom",
+    "source": "https://images.pexels.com/photos/5306474/pexels-photo-5306474.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "sourcePage": "https://www.pexels.com/photo/a-teacher-and-students-taking-a-selfie-together-5306474/",
+    "license": "pexels-license",
+    "attribution": "Antoni Shkraba via Pexels",
+    "kind": "decorative",
+    "role": "section-media",
+    "route": "/classroom-name-picker/",
+    "sectionId": "routine",
+    "recordKey": null,
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null,
+    "treatment": "framed",
+    "caption": "The list stays on the device it was pasted on, so the same class opens ready next lesson."
+  },
+  {
+    "path": "/images/entities/spins-per-month.svg",
+    "subject": "Spins per month",
+    "purpose": "",
+    "alt": "Spins per month",
+    "source": "ai-generated-original",
+    "sourcePage": null,
+    "license": "ai-generated-original",
+    "attribution": "",
+    "kind": "decorative",
+    "role": "entity-icon",
+    "route": null,
+    "sectionId": null,
+    "recordKey": "spins-per-month",
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null
+  },
+  {
+    "path": "/images/entities/named-wheels.svg",
+    "subject": "Named wheels saved",
+    "purpose": "",
+    "alt": "Named wheels saved",
+    "source": "ai-generated-original",
+    "sourcePage": null,
+    "license": "ai-generated-original",
+    "attribution": "",
+    "kind": "decorative",
+    "role": "entity-icon",
+    "route": null,
+    "sectionId": null,
+    "recordKey": "named-wheels",
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null
+  },
+  {
+    "path": "/images/entities/draw-records.svg",
+    "subject": "Draw records kept",
+    "purpose": "",
+    "alt": "Draw records kept",
+    "source": "ai-generated-original",
+    "sourcePage": null,
+    "license": "ai-generated-original",
+    "attribution": "",
+    "kind": "decorative",
+    "role": "entity-icon",
+    "route": null,
+    "sectionId": null,
+    "recordKey": "draw-records",
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null
+  },
+  {
+    "path": "/images/entities/devices.svg",
+    "subject": "Devices synced",
+    "purpose": "",
+    "alt": "Devices synced",
+    "source": "ai-generated-original",
+    "sourcePage": null,
+    "license": "ai-generated-original",
+    "attribution": "",
+    "kind": "decorative",
+    "role": "entity-icon",
+    "route": null,
+    "sectionId": null,
+    "recordKey": "devices",
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null
+  },
+  {
+    "path": "/images/entities/billing.svg",
+    "subject": "Billing",
+    "purpose": "",
+    "alt": "Billing",
+    "source": "ai-generated-original",
+    "sourcePage": null,
+    "license": "ai-generated-original",
+    "attribution": "",
+    "kind": "decorative",
+    "role": "entity-icon",
+    "route": null,
+    "sectionId": null,
+    "recordKey": "billing",
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null
+  },
+  {
+    "path": "/images/entities/core-features.svg",
+    "subject": "Weights, ordered raffle draws, fairness test",
+    "purpose": "",
+    "alt": "Weights, ordered raffle draws, fairness test",
+    "source": "ai-generated-original",
+    "sourcePage": null,
+    "license": "ai-generated-original",
+    "attribution": "",
+    "kind": "decorative",
+    "role": "entity-icon",
+    "route": null,
+    "sectionId": null,
+    "recordKey": "core-features",
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null
+  },
+  {
+    "path": "/images/entities/class-stage-start.svg",
+    "subject": "Start of a 30-student class",
+    "purpose": "",
+    "alt": "Start of a 30-student class",
+    "source": "ai-generated-original",
+    "sourcePage": null,
+    "license": "ai-generated-original",
+    "attribution": "",
+    "kind": "decorative",
+    "role": "entity-icon",
+    "route": null,
+    "sectionId": null,
+    "recordKey": "class-stage-start",
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null
+  },
+  {
+    "path": "/images/entities/class-stage-twentyfive.svg",
+    "subject": "After 25 answers",
+    "purpose": "",
+    "alt": "After 25 answers",
+    "source": "ai-generated-original",
+    "sourcePage": null,
+    "license": "ai-generated-original",
+    "attribution": "",
+    "kind": "decorative",
+    "role": "entity-icon",
+    "route": null,
+    "sectionId": null,
+    "recordKey": "class-stage-twentyfive",
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null
+  },
+  {
+    "path": "/images/entities/class-stage-end.svg",
+    "subject": "After 30 answers",
+    "purpose": "",
+    "alt": "After 30 answers",
+    "source": "ai-generated-original",
+    "sourcePage": null,
+    "license": "ai-generated-original",
+    "attribution": "",
+    "kind": "decorative",
+    "role": "entity-icon",
+    "route": null,
+    "sectionId": null,
+    "recordKey": "class-stage-end",
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null
+  },
+  {
+    "path": "/images/entities/pw-free-tier.svg",
+    "subject": "Opening price",
+    "purpose": "",
+    "alt": "Opening price",
+    "source": "ai-generated-original",
+    "sourcePage": null,
+    "license": "ai-generated-original",
+    "attribution": "",
+    "kind": "decorative",
+    "role": "entity-icon",
+    "route": null,
+    "sectionId": null,
+    "recordKey": "pw-free-tier",
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null
+  },
+  {
+    "path": "/images/entities/pw-weighted.svg",
+    "subject": "Weighted entries",
+    "purpose": "",
+    "alt": "Weighted entries",
+    "source": "ai-generated-original",
+    "sourcePage": null,
+    "license": "ai-generated-original",
+    "attribution": "",
+    "kind": "decorative",
+    "role": "entity-icon",
+    "route": null,
+    "sectionId": null,
+    "recordKey": "pw-weighted",
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null
+  },
+  {
+    "path": "/images/entities/pw-results.svg",
+    "subject": "Several winners",
+    "purpose": "",
+    "alt": "Several winners",
+    "source": "ai-generated-original",
+    "sourcePage": null,
+    "license": "ai-generated-original",
+    "attribution": "",
+    "kind": "decorative",
+    "role": "entity-icon",
+    "route": null,
+    "sectionId": null,
+    "recordKey": "pw-results",
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null
+  },
+  {
+    "path": "/images/entities/won-audit.svg",
+    "subject": "Checking the randomness",
+    "purpose": "",
+    "alt": "Checking the randomness",
+    "source": "ai-generated-original",
+    "sourcePage": null,
+    "license": "ai-generated-original",
+    "attribution": "",
+    "kind": "decorative",
+    "role": "entity-icon",
+    "route": null,
+    "sectionId": null,
+    "recordKey": "won-audit",
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null
+  },
+  {
+    "path": "/images/entities/pw-storage.svg",
+    "subject": "Free storage",
+    "purpose": "",
+    "alt": "Free storage",
+    "source": "ai-generated-original",
+    "sourcePage": null,
+    "license": "ai-generated-original",
+    "attribution": "",
+    "kind": "decorative",
+    "role": "entity-icon",
+    "route": null,
+    "sectionId": null,
+    "recordKey": "pw-storage",
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null
+  },
+  {
+    "path": "/images/entities/pw-price.svg",
+    "subject": "Cheapest paid entry",
+    "purpose": "",
+    "alt": "Cheapest paid entry",
+    "source": "ai-generated-original",
+    "sourcePage": null,
+    "license": "ai-generated-original",
+    "attribution": "",
+    "kind": "decorative",
+    "role": "entity-icon",
+    "route": null,
+    "sectionId": null,
+    "recordKey": "pw-price",
+    "generatedSvg": null,
+    "generationPrompt": null,
+    "fallbackQuery": null
+  }
+],
+  "recipeCss": ":root{--wn-stage:#1A2039;--wn-panel:#232C4B;--wn-slip:#F9A3C0;--wn-meta:#8E9CC4;--wn-gutter:clamp(20px,4.2vw,64px);--wn-notch:14px}.hero h1{text-wrap:balance;max-width:22ch}.tool-panel{display:grid;grid-template-columns:minmax(240px,320px) minmax(300px,1fr) minmax(260px,340px);gap:clamp(16px,2vw,28px);align-items:stretch}.draw-slip{background:var(--wn-slip);color:var(--wn-stage);clip-path:polygon(0 0,100% 0,100% calc(100% - var(--wn-notch)),calc(100% - var(--wn-notch)) 100%,0 100%)}.draw-slip .winner-name{font-family:'Imbue',Georgia,serif;font-size:clamp(38px,3.4vw,54px);line-height:1.02;letter-spacing:-.01em}.odds-figure{font-variant-numeric:tabular-nums;font-feature-settings:'tnum' 1}.slice-legend li{display:flex;justify-content:space-between;gap:12px;font-variant-numeric:tabular-nums}@media (max-width:900px){.tool-panel{grid-template-columns:1fr}.draw-slip .winner-name{font-size:clamp(34px,9vw,44px)}.spin-bar{position:sticky;bottom:12px;z-index:20}}@media (prefers-reduced-motion:reduce){.draw-slip,.slice,.bar{transition:none!important;animation:none!important}}",
+  "qualityContractVersion": "site-factory-v2.1@2.1.0",
+  "runtimeCapabilityTruth": {
+  "executableCapabilityIds": [
+    "contact-message",
+    "name-wheel",
+    "weighted-picker-wheel",
+    "raffle-draw",
+    "fairness-audit"
+  ],
+  "authE2E": true,
+  "billingE2E": false,
+  "backendMode": "WORKER_REQUIRED"
+},
+  "fontLinks": ["https://fonts.googleapis.com/css2?family=Imbue:wght@400&family=Albert+Sans:wght@400;500&display=swap"],
+  "motionRuntimeScript": "(function () {\n  \"use strict\";\n  if (window.__shipsiteMotion) return;\n  window.__shipsiteMotion = true;\n  var reduced = window.matchMedia && window.matchMedia(\"(prefers-reduced-motion: reduce)\").matches;\n  // Authored CSS keys its own resting state on .revealed\n  // ([data-motion=\"scroll-reveal\"]:not(.revealed) { opacity: 0 }), but the\n  // class only came from the no-view() fallback, so in Chrome Key Finder's\n  // example answer card stayed transparent on the first screen forever\n  // (2026-11-10). Every scroll-reveal element now gets .revealed as it is\n  // seen, in every browser, and at once under reduced motion or without an\n  // observer.\n  function revealAll() {\n    var nodes = document.querySelectorAll('[data-motion=\"scroll-reveal\"]');\n    for (var i = 0; i < nodes.length; i++) nodes[i].classList.add(\"revealed\");\n  }\n  if (reduced || !(\"IntersectionObserver\" in window)) {\n    revealAll();\n    window.addEventListener(\"load\", revealAll);\n    return;\n  }\n\n  var timelineSupported = false;\n  try {\n    timelineSupported = window.CSS && CSS.supports && CSS.supports(\"animation-timeline: view()\");\n  } catch (e) { timelineSupported = false; }\n\n  var revealed = new IntersectionObserver(function (entries) {\n    for (var i = 0; i < entries.length; i++) {\n      if (!entries[i].isIntersecting) continue;\n      entries[i].target.classList.add(\"revealed\");\n      revealed.unobserve(entries[i].target);\n    }\n  }, { rootMargin: \"0px 0px -8% 0px\", threshold: 0.08 });\n\n  // Seen at threshold 0, so a card taller than the screen or one only partly\n  // in the first view still counts.\n  var seen = new IntersectionObserver(function (entries) {\n    for (var i = 0; i < entries.length; i++) {\n      if (!entries[i].isIntersecting) continue;\n      entries[i].target.classList.add(\"revealed\");\n      seen.unobserve(entries[i].target);\n    }\n  }, { threshold: 0 });\n  function armSeen(scope) {\n    var nodes = (scope || document).querySelectorAll('[data-motion=\"scroll-reveal\"]:not(.revealed)');\n    for (var i = 0; i < nodes.length; i++) seen.observe(nodes[i]);\n  }\n\n  var revealEngaged = false;\n  function armFallback(scope) {\n    if (timelineSupported) return;\n    var nodes = (scope || document).querySelectorAll('[data-motion=\"scroll-reveal\"]:not(.revealed):not(.motion-armed)');\n    for (var i = 0; i < nodes.length; i++) {\n      var node = nodes[i];\n      var box = node.getBoundingClientRect();\n      if (box.top < window.innerHeight * 0.92 && box.bottom > 0) {\n        node.classList.add(\"revealed\");\n        continue;\n      }\n      node.classList.add(\"motion-armed\");\n      revealed.observe(node);\n    }\n  }\n  function engageReveals() {\n    if (revealEngaged) return;\n    if ((window.scrollY || window.pageYOffset || 0) <= 0) return;\n    revealEngaged = true;\n    document.documentElement.classList.add(\"motion-scrolled\");\n    armFallback(document);\n  }\n  function armReveals(scope) {\n    if (!revealEngaged) return;\n    armFallback(scope);\n  }\n  window.addEventListener(\"scroll\", engageReveals, { passive: true });\n  engageReveals();\n\n  function armStagger(scope) {\n    var nodes = (scope || document).querySelectorAll('[data-motion=\"stagger-reveal\"]:not(.stagger-armed)');\n    for (var i = 0; i < nodes.length; i++) {\n      var node = nodes[i];\n      var box = node.getBoundingClientRect();\n      if (box.top < window.innerHeight * 0.9) continue;\n      node.classList.add(\"stagger-armed\");\n      revealed.observe(node);\n    }\n  }\n\n  function rollCount(node) {\n    if (node.__counted) return;\n    node.__counted = true;\n    var targets = node.classList.contains(\"status-count\")\n      ? [node]\n      : node.querySelectorAll(\".status-count\");\n    for (var i = 0; i < targets.length; i++) {\n      var el = targets[i];\n      var final = parseFloat(String(el.textContent).replace(/[^0-9.]/g, \"\"));\n      if (!isFinite(final) || final <= 0) continue;\n      var start = null;\n      function step(ts) {\n        if (start === null) start = ts;\n        var t = Math.min((ts - start) / 900, 1);\n        el.textContent = String(Math.round(final * (1 - Math.pow(1 - t, 3))));\n        if (t < 1) requestAnimationFrame(step);\n      }\n      requestAnimationFrame(step);\n    }\n  }\n\n  var counted = new IntersectionObserver(function (entries) {\n    for (var i = 0; i < entries.length; i++) {\n      if (entries[i].isIntersecting) { rollCount(entries[i].target); counted.unobserve(entries[i].target); }\n    }\n  }, { threshold: 0.4 });\n\n  function armCounts(scope) {\n    var nodes = (scope || document).querySelectorAll('[data-motion=\"count-up\"]');\n    for (var i = 0; i < nodes.length; i++) counted.observe(nodes[i]);\n  }\n\n  // tilt-glare: pointer position → CSS variables. Fine pointers only; the\n  // CSS springs the card back when .tilting drops on leave.\n  var finePointer = window.matchMedia && window.matchMedia(\"(pointer: fine)\").matches;\n  function armTilts(scope) {\n    if (!finePointer) return;\n    var nodes = (scope || document).querySelectorAll('[data-motion=\"tilt-glare\"]');\n    for (var i = 0; i < nodes.length; i++) {\n      var node = nodes[i];\n      if (node.__tilt) continue;\n      node.__tilt = true;\n      node.addEventListener(\"pointermove\", function (event) {\n        var el = event.currentTarget;\n        var box = el.getBoundingClientRect();\n        var x = (event.clientX - box.left) / Math.max(box.width, 1);\n        var y = (event.clientY - box.top) / Math.max(box.height, 1);\n        el.style.setProperty(\"--tilt-x\", ((x - 0.5) * 12).toFixed(2) + \"deg\");\n        el.style.setProperty(\"--tilt-y\", ((0.5 - y) * 12).toFixed(2) + \"deg\");\n        el.style.setProperty(\"--glare-x\", Math.round(x * 100) + \"%\");\n        el.style.setProperty(\"--glare-y\", Math.round(y * 100) + \"%\");\n        el.classList.add(\"tilting\");\n      });\n      node.addEventListener(\"pointerleave\", function (event) {\n        var el = event.currentTarget;\n        el.classList.remove(\"tilting\");\n        el.style.setProperty(\"--tilt-x\", \"0deg\");\n        el.style.setProperty(\"--tilt-y\", \"0deg\");\n      });\n    }\n  }\n\n  // value-tick: the text is already the new value; replay the roll class.\n  function armTicks(scope) {\n    if (!(\"MutationObserver\" in window)) return;\n    var nodes = (scope || document).querySelectorAll('[data-motion=\"value-tick\"]');\n    for (var i = 0; i < nodes.length; i++) {\n      var node = nodes[i];\n      if (node.__tick) continue;\n      node.__tick = true;\n      new MutationObserver(function (records) {\n        var el = records[0].target.nodeType === 1 ? records[0].target : records[0].target.parentElement;\n        while (el && el.getAttribute && el.getAttribute(\"data-motion\") !== \"value-tick\") el = el.parentElement;\n        if (!el) return;\n        el.classList.remove(\"ticked\");\n        void el.offsetWidth;\n        el.classList.add(\"ticked\");\n      }).observe(node, { childList: true, characterData: true, subtree: true });\n    }\n  }\n\n  // Every tool's answer settles in when it changes, whether or not the\n  // authored page set value-tick on it: a silent swap reads as nothing\n  // happened. The Web Animations API touches no attribute or text node React\n  // renders, so React keeps owning the output.\n  var settled = \"MutationObserver\" in window ? new MutationObserver(function (records) {\n    var seen = [];\n    for (var i = 0; i < records.length; i++) {\n      var node = records[i].target.nodeType === 1 ? records[i].target : records[i].target.parentElement;\n      var out = node && node.closest ? node.closest(\"[data-tool-output]\") : null;\n      if (!out || seen.indexOf(out) >= 0 || !out.animate) continue;\n      seen.push(out);\n      if (out.querySelector('[data-motion=\"value-tick\"]') || out.getAttribute(\"data-motion\") === \"value-tick\") continue;\n      out.animate([{ opacity: 0.35, transform: \"translateY(4px)\" }, { opacity: 1, transform: \"none\" }], { duration: 240, easing: \"cubic-bezier(0.23, 1, 0.32, 1)\" });\n    }\n  }) : null;\n  function armOutputs(scope) {\n    if (!settled) return;\n    var nodes = (scope || document).querySelectorAll(\"[data-tool-output]\");\n    for (var i = 0; i < nodes.length; i++) {\n      if (nodes[i].__settle) continue;\n      nodes[i].__settle = true;\n      settled.observe(nodes[i], { childList: true, characterData: true, subtree: true });\n    }\n  }\n\n  // line-reveal / draw-on: arm only what is below the first screen, so the\n  // first frame never hides; draw-on measures each stroke for its dash.\n  // Own observer at threshold 0: an armed heading is clipped to a 1% sliver,\n  // and a ratio threshold never fires on a clipped target (the heading stayed\n  // hidden in the first browser check).\n  var drawn = new IntersectionObserver(function (entries) {\n    for (var i = 0; i < entries.length; i++) {\n      if (!entries[i].isIntersecting) continue;\n      entries[i].target.classList.add(\"revealed\");\n      drawn.unobserve(entries[i].target);\n    }\n  }, { rootMargin: \"0px 0px -8% 0px\", threshold: 0 });\n  function armDrawn(scope) {\n    var nodes = (scope || document).querySelectorAll('[data-motion=\"line-reveal\"]:not(.motion-armed), [data-motion=\"draw-on\"]:not(.motion-armed)');\n    for (var i = 0; i < nodes.length; i++) {\n      var node = nodes[i];\n      if (node.getBoundingClientRect().top < window.innerHeight * 0.9) continue;\n      if (node.getAttribute(\"data-motion\") === \"draw-on\") {\n        var strokes = node.querySelectorAll(\"path, line, polyline, polygon, rect, circle, ellipse\");\n        for (var j = 0; j < strokes.length; j++) {\n          var length = 0;\n          try { length = strokes[j].getTotalLength ? strokes[j].getTotalLength() : 0; } catch (e) { length = 0; }\n          if (length > 0) strokes[j].style.setProperty(\"--draw-len\", String(Math.ceil(length)));\n        }\n      }\n      node.classList.add(\"motion-armed\");\n      drawn.observe(node);\n    }\n  }\n\n  // flip-list: when a sorted or filtered list reorders, every surviving item\n  // glides from where it was to where it is (GSAP Flip's First-Last-Invert-\n  // Play, without the library). React moves the same keyed nodes, so the\n  // runtime keeps each child's offset inside its container and, the moment a\n  // mutation lands, animates the difference with Web Animations — no attribute\n  // or text write, so React keeps owning the list. New items fade in.\n  var flipPositions = typeof WeakMap === \"function\" ? new WeakMap() : null;\n  function measureFlip(list) {\n    var base = list.getBoundingClientRect();\n    for (var i = 0; i < list.children.length; i++) {\n      var box = list.children[i].getBoundingClientRect();\n      flipPositions.set(list.children[i], { x: box.left - base.left, y: box.top - base.top });\n    }\n  }\n  function playFlip(list) {\n    var base = list.getBoundingClientRect();\n    for (var i = 0; i < list.children.length; i++) {\n      var child = list.children[i];\n      if (!child.animate) continue;\n      var box = child.getBoundingClientRect();\n      var before = flipPositions.get(child);\n      if (!before) {\n        child.animate([{ opacity: 0, transform: \"scale(0.97)\" }, { opacity: 1, transform: \"none\" }], { duration: 260, easing: \"cubic-bezier(0.23, 1, 0.32, 1)\" });\n        continue;\n      }\n      var dx = before.x - (box.left - base.left);\n      var dy = before.y - (box.top - base.top);\n      if (Math.abs(dx) < 1 && Math.abs(dy) < 1) continue;\n      child.animate([{ transform: \"translate(\" + dx + \"px, \" + dy + \"px)\" }, { transform: \"none\" }], { duration: 360, easing: \"cubic-bezier(0.23, 1, 0.32, 1)\" });\n    }\n    measureFlip(list);\n  }\n  function armFlips(scope) {\n    if (!flipPositions || !(\"MutationObserver\" in window)) return;\n    var nodes = (scope || document).querySelectorAll('[data-motion=\"flip-list\"]');\n    for (var i = 0; i < nodes.length; i++) {\n      var list = nodes[i];\n      if (list.__flip) continue;\n      list.__flip = true;\n      measureFlip(list);\n      new MutationObserver(function (records) { playFlip(records[0].target); }).observe(list, { childList: true });\n    }\n  }\n  var flipResize = null;\n  window.addEventListener(\"resize\", function () {\n    clearTimeout(flipResize);\n    flipResize = setTimeout(function () {\n      var lists = document.querySelectorAll('[data-motion=\"flip-list\"]');\n      for (var i = 0; i < lists.length; i++) if (lists[i].__flip) measureFlip(lists[i]);\n    }, 150);\n  });\n\n  // step-track: scroll storytelling without pinning. The step crossing the\n  // middle of the screen is marked active and the track beside the list fills\n  // to it (ScrollTrigger scrub's feel). No step is ever dimmed: every step\n  // stays at full contrast, the active one only gains an accent rule.\n  function armSteps(scope) {\n    var nodes = (scope || document).querySelectorAll('[data-motion=\"step-track\"]:not(.steps-armed)');\n    for (var i = 0; i < nodes.length; i++) {\n      var track = nodes[i];\n      track.classList.add(\"steps-armed\");\n      var steps = track.querySelectorAll(\":scope > li, :scope > [data-step]\");\n      if (!steps.length) continue;\n      (function (track, steps) {\n        var watcher = new IntersectionObserver(function (entries) {\n          for (var k = 0; k < entries.length; k++) {\n            if (!entries[k].isIntersecting) continue;\n            var index = Array.prototype.indexOf.call(steps, entries[k].target);\n            for (var s = 0; s < steps.length; s++) steps[s].classList.toggle(\"step-active\", s === index);\n            track.style.setProperty(\"--step-progress\", String((index + 1) / steps.length));\n          }\n        }, { rootMargin: \"-45% 0px -45% 0px\", threshold: 0 });\n        for (var s = 0; s < steps.length; s++) watcher.observe(steps[s]);\n      })(track, steps);\n    }\n  }\n\n  function arm(scope) { armSeen(scope); armReveals(scope); armStagger(scope); armCounts(scope); armTilts(scope); armTicks(scope); armOutputs(scope); armDrawn(scope); armFlips(scope); armSteps(scope); }\n  arm(document);\n\n  // Preview/runtime surfaces that swap DOM after load (tool shells, accordions)\n  // get one late pass instead of a MutationObserver tax on every page.\n  window.addEventListener(\"load\", function () { arm(document); });\n})();",
+  "ogImage": null,
+  "brandLogo": "/brand/logo.svg",
+  "atmosphereBackground": "/images/atmosphere.svg",
+  "sectionTexture": null,
+  "footerGroups": [
+  {
+    "title": "Spinners",
+    "links": [
+      {
+        "label": "Picker Wheel",
+        "href": "/picker-wheel/"
+      },
+      {
+        "label": "Raffle Wheel",
+        "href": "/raffle-wheel/"
+      },
+      {
+        "label": "Random Name Picker",
+        "href": "/random-name-picker/"
+      },
+      {
+        "label": "Classroom Name Picker",
+        "href": "/classroom-name-picker/"
+      },
+      {
+        "label": "Wheel Spinner",
+        "href": "/wheel-spinner/"
+      }
+    ]
+  },
+  {
+    "title": "The wheel",
+    "links": [
+      {
+        "label": "Wheel",
+        "href": "/"
+      },
+      {
+        "label": "Fairness",
+        "href": "/fairness/"
+      },
+      {
+        "label": "vs Picker Wheel",
+        "href": "/vs/pickerwheel/"
+      },
+      {
+        "label": "Pricing",
+        "href": "/pricing/"
+      },
+      {
+        "label": "About",
+        "href": "/about/"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact/"
+      }
+    ]
+  },
+  {
+    "title": "Legal",
+    "links": [
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy/"
+      },
+      {
+        "label": "Terms of Use",
+        "href": "/terms/"
+      },
+      {
+        "label": "Cookie Policy",
+        "href": "/cookies/"
+      },
+      {
+        "label": "Refund Policy",
+        "href": "/refunds/"
+      }
+    ]
+  }
+],
+  "footerNote": "Wheel of Names is an independent site, not affiliated with wheelofnames.com, Picker Wheel or any other spinner. Every draw runs in your browser, so nothing you paste is uploaded.",
+  "attribution": false
+}

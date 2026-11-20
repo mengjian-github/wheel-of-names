@@ -1,0 +1,244 @@
+{
+  "title": "Wheel of Names Pricing — Free Wheel, Plus and Pro Plans",
+  "description": "Wheel of Names pricing: the wheel is free with no sign-up. Plus is $6 a month, Pro $12 a month and the Event Pass $9 once, each with annual plans and cancel anytime.",
+  "h1": "Wheel of Names pricing: free, Plus and Pro",
+  "heroText": "The wheel draws names free for anyone who opens it, with no sign-up. Plus and Pro are for people who run the same wheels week after week and want their saved wheels, draw records and devices kept together; the Event Pass covers a single event. Prices are on the plan cards, the caps that separate them are in the comparison table, and the wheel itself draws identically on all of them.",
+  "ctas": [
+    {
+      "label": "Use the free wheel",
+      "href": "/",
+      "primary": true
+    },
+    {
+      "label": "Take the Event Pass",
+      "href": "/pricing/",
+      "primary": false,
+      "action": "checkout",
+      "product": "event_pass",
+      "provider": "stripe"
+    }
+  ],
+  "sections": [
+    {
+      "id": "plans",
+      "title": "Choose a plan",
+      "body": "Three paid plans alongside the free wheel, each priced on its card. The comparison table below sets out what separates them.",
+      "items": [
+        {
+          "title": "Free",
+          "body": "$0, no sign-up and no card. Full wheel, weights from 1 to 10, ordered raffle draws and the 10,000-draw fairness test. Spins run on an anonymous daily allowance; signing in adds a free monthly allowance."
+        },
+        {
+          "title": "Plus — $6 a month",
+          "body": "Most popular, for teachers and weekly hosts: one list reused across a term, a few devices, and a record of who was drawn. $60 a year on annual billing, the saving shown beside the toggle."
+        },
+        {
+          "title": "Pro — $12 a month",
+          "body": "For daily streamers and busy organizers running several lists a day, where the draw records are the point. $120 a year on annual billing."
+        },
+        {
+          "title": "Event Pass — $9 once",
+          "body": "One payment for 30 days, for a single raffle, quiz night or school event. Nothing renews when the 30 days end, and there is no second charge unless you buy again."
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "title": "What separates the plans",
+      "body": "One row per cap that changes with the plan. The [picker wheel](/picker-wheel/) and [raffle wheel](/raffle-wheel/) features run the same on every tier.",
+      "items": [
+        {
+          "title": "Secure checkout by card",
+          "body": "Payments are handled by a payment processor; the card details never touch this site. Cancel anytime."
+        }
+      ],
+      "table": {
+        "caption": "Plan comparison",
+        "columns": [
+          "Free",
+          "Plus",
+          "Pro",
+          "Event Pass"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "Spins per month",
+              "Anonymous daily allowance, then free monthly with sign-in",
+              "15,000",
+              "50,000"
+            ],
+            "status": "working",
+            "recordKey": "spins-per-month",
+            "evidenceRefs": [
+              "ev_146"
+            ],
+            "observedAt": "2026-11-20T12:41:53.120Z",
+            "sourceUrl": "https://pickerwheel.com/plan/"
+          },
+          {
+            "cells": [
+              "Named wheels saved",
+              "Not kept",
+              "25",
+              "100"
+            ],
+            "status": "working",
+            "recordKey": "named-wheels",
+            "evidenceRefs": [
+              "ev_146"
+            ],
+            "observedAt": "2026-11-20T12:41:53.120Z",
+            "sourceUrl": "https://pickerwheel.com/plan/"
+          },
+          {
+            "cells": [
+              "Draw records kept",
+              "Not kept",
+              "2,000",
+              "20,000"
+            ],
+            "status": "working",
+            "recordKey": "draw-records",
+            "evidenceRefs": [
+              "ev_146"
+            ],
+            "observedAt": "2026-11-20T12:41:53.120Z",
+            "sourceUrl": "https://pickerwheel.com/plan/"
+          },
+          {
+            "cells": [
+              "Devices synced",
+              "1",
+              "3",
+              "10"
+            ],
+            "status": "working",
+            "recordKey": "devices",
+            "evidenceRefs": [
+              "ev_146"
+            ],
+            "observedAt": "2026-11-20T12:41:53.120Z",
+            "sourceUrl": "https://pickerwheel.com/plan/"
+          },
+          {
+            "cells": [
+              "Billing",
+              "Never charged",
+              "Charged once, does not renew",
+              "Charged once, does not renew"
+            ],
+            "status": "working",
+            "recordKey": "billing",
+            "evidenceRefs": [
+              "ev_146"
+            ],
+            "observedAt": "2026-11-20T12:41:53.120Z",
+            "sourceUrl": "https://pickerwheel.com/plan/"
+          },
+          {
+            "cells": [
+              "Weights, ordered raffle draws, fairness test",
+              "Included",
+              "Included",
+              "Included"
+            ],
+            "status": "working",
+            "recordKey": "core-features",
+            "evidenceRefs": [
+              "ev_146"
+            ],
+            "observedAt": "2026-11-20T12:41:53.120Z",
+            "sourceUrl": "https://pickerwheel.com/plan/"
+          }
+        ],
+        "lastCheckedAt": "2026-11-20"
+      }
+    },
+    {
+      "id": "faq",
+      "title": "Billing questions",
+      "body": "How the plans are charged, how to stop one and how refunds work."
+    }
+  ],
+  "faq": [
+    {
+      "question": "How am I billed?",
+      "answer": "Plus and Pro are subscriptions: the monthly price is charged each month, or the annual price once a year, until you cancel. The Event Pass is charged once and does not renew. A receipt for every charge goes to the address on the payment."
+    },
+    {
+      "question": "How do I cancel?",
+      "answer": "Cancel from your account and the plan stays usable until the end of the period you paid for. After that the account drops back to the free wheel, and the free monthly allowance still applies."
+    },
+    {
+      "question": "What happens to my saved wheels and records if I downgrade?",
+      "answer": "They stay readable for 30 days after the paid period ends, so you can copy anything out. Anything over the free limits is not kept after that, so export the lists you need first."
+    },
+    {
+      "question": "Can I switch from monthly to annual?",
+      "answer": "Yes, and the annual price is the one on each plan card's yearly view. The switch takes effect at your next renewal rather than mid-period, so you get the full year you pay for."
+    },
+    {
+      "question": "What is the refund policy?",
+      "answer": "Refunds follow the site's refund policy, linked in the footer. If a charge looks wrong or you were billed after cancelling, write through the [contact page](/contact/) with the date and amount and it will be checked against the payment record."
+    },
+    {
+      "question": "Do I need an account at all?",
+      "answer": "Only for a paid plan and for the free monthly allowance. Open [the wheel](/), paste a list and spin without an account. The [fairness page](/fairness/) explains what happens on each spin and how to test it."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How am I billed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Plus and Pro are subscriptions: the monthly price is charged each month, or the annual price once a year, until you cancel. The Event Pass is charged once and does not renew. A receipt for every charge goes to the address on the payment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I cancel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cancel from your account and the plan stays usable until the end of the period you paid for. After that the account drops back to the free wheel, and the free monthly allowance still applies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens to my saved wheels and records if I downgrade?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "They stay readable for 30 days after the paid period ends, so you can copy anything out. Anything over the free limits is not kept after that, so export the lists you need first."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I switch from monthly to annual?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, and the annual price is the one on each plan card's yearly view. The switch takes effect at your next renewal rather than mid-period, so you get the full year you pay for."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the refund policy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Refunds follow the site's refund policy, linked in the footer. If a charge looks wrong or you were billed after cancelling, write through the contact page with the date and amount and it will be checked against the payment record."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need an account at all?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only for a paid plan and for the free monthly allowance. Open the wheel, paste a list and spin without an account. The fairness page explains what happens on each spin and how to test it."
+        }
+      }
+    ]
+  }
+}

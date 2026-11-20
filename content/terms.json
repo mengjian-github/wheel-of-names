@@ -1,0 +1,80 @@
+{
+  "title": "Terms of Use — Wheel of Names",
+  "description": "The terms for using Wheel of Names: what the free wheel offers, what a paid plan covers, fair use, ownership of your lists and independence.",
+  "h1": "Terms of Use",
+  "heroText": "These terms cover using the wheel on this site, the plans sold alongside it and the rules both sides follow. Opening the site means you accept them.",
+  "ctas": [
+    {
+      "label": "Read the pricing and plans",
+      "href": "/pricing/",
+      "primary": true
+    },
+    {
+      "label": "Ask a question through the form",
+      "href": "/contact/",
+      "primary": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "using-the-wheel",
+      "title": "Using the wheel",
+      "body": "You may use the free wheel for personal and classroom draws and for giveaways at no cost. The free use is described on the home page, and the [pricing page](/pricing/) states what the paid plans add."
+    },
+    {
+      "id": "plans-and-payment",
+      "title": "Plans and payment",
+      "body": "A paid plan, its term and its price are stated on the pricing page at the moment you buy, and a one-time pass ends when its period ends. Billing runs through the payment processor named on checkout. Charges renew automatically unless a plan is cancelled before the next renewal date, and refunds follow the [refund policy](/refunds/)."
+    },
+    {
+      "id": "fair-use",
+      "title": "Fair use of allowances",
+      "body": "The allowances a plan states exist so the service stays available to everyone, and breaking them is the one thing that can end access. Scripted spins that bypass a limit, copying the service to run as another product, and unlawful material in a list or a message all count."
+    },
+    {
+      "id": "your-content",
+      "title": "Your content",
+      "body": "Lists you paste stay yours. Entry text never leaves your browser, and saved wheels belong to you: delete them from the account at any time, or ask through the contact form."
+    },
+    {
+      "id": "independence",
+      "title": "Independence and trademarks",
+      "body": "Wheel of Names is an independent site and is not affiliated with, endorsed by or sponsored by any other wheel site, classroom platform or brand that may be named on its pages. Those names are used only to describe what they are."
+    },
+    {
+      "id": "no-guarantee",
+      "title": "No guarantee",
+      "body": "The site is provided as it is. A draw is random, so a name you did not want can still come up; how the result is used, and the rules of any raffle or giveaway it settles, are the host's. Keep a copy of any list you need for records."
+    },
+    {
+      "id": "changes",
+      "title": "Changes to these terms",
+      "body": "These terms may change as the product changes. The version on this page applies from the date it is posted, and a paid plan keeps the terms it was bought under until it renews."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Can I use Wheel of Names in a livestream or a school lesson?",
+      "answer": "Yes. Running the wheel on screen for a classroom, a stream or an event is ordinary use of the free wheel. Do not present it as your own product or strip its branding from a screenshot of the result."
+    },
+    {
+      "question": "What happens to my list if I close the page?",
+      "answer": "A list pasted into the wheel lives in that browser tab, so closing or reloading the page clears it. Saving a named wheel needs a signed-in plan; the allowances for saved wheels are listed on the pricing page, and a saved wheel reloads on any device your plan syncs."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Terms of Use — Wheel of Names",
+        "url": "https://site.example/terms/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Wheel of Names",
+          "url": "https://site.example/"
+        }
+      }
+    ]
+  }
+}

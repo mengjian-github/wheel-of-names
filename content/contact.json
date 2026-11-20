@@ -1,0 +1,79 @@
+{
+  "title": "Contact Wheel of Names",
+  "description": "Write to Wheel of Names about a result that looks wrong, a missing feature, a paid plan or a privacy request. Use the form on this page.",
+  "h1": "Contact Wheel of Names",
+  "heroText": "One person reads every message sent through the form on this page. Tell us what happened and what you expected, and the reply comes to the same form thread.",
+  "ctas": [
+    {
+      "label": "Send a message through the form",
+      "href": "/contact/",
+      "primary": true
+    },
+    {
+      "label": "Check the fairness page first",
+      "href": "/fairness/",
+      "primary": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "a-result-that-looks-wrong",
+      "title": "A result that looks wrong",
+      "body": "If a spin, a weight or a [fairness test](/fairness/) gives something you did not expect, the message can be acted on faster when it carries the exact case.",
+      "steps": [
+        {
+          "title": "The list and its weights",
+          "body": "Paste the entries in the order you used them and note any weight you changed."
+        },
+        {
+          "title": "Outcome shown and expected",
+          "body": "Name the winner or winners shown and the outcome you would have expected instead. A screenshot of the result card helps when the numbers are unusual."
+        },
+        {
+          "title": "Your browser",
+          "body": "The browser and version, such as Chrome 131 on Windows. The draw runs on your device, so the browser is often the clue."
+        },
+        {
+          "title": "A reply within two working days",
+          "body": "Reports about a result are read first, and the answer arrives in the same form thread."
+        }
+      ]
+    },
+    {
+      "id": "missing-feature",
+      "title": "A missing feature or a rough edge",
+      "body": "Say what you were trying to do and where the wheel stopped you. If the feature already exists on another page, the reply names the page; if it does not, it goes on the list of ideas, and no date is promised."
+    },
+    {
+      "id": "plans-and-billing",
+      "title": "A paid plan or a billing question",
+      "body": "Write through the form with the plan name, the date you paid and what you need: a change of plan, a receipt, a cancellation or a refund. The [pricing page](/pricing/) lists what each plan includes and the [refund page](/refunds/) states the refund terms, so the reply can point to the exact clause that covers your case."
+    },
+    {
+      "id": "privacy-and-deletion",
+      "title": "Privacy and deletion requests",
+      "body": "Ask for your saved wheels and draw records to be deleted, or ask what the site holds about you. Say whether you spin without signing in or under an account, so the right records are found. What is collected and for how long is set out on the [privacy page](/privacy/)."
+    },
+    {
+      "id": "what-this-cannot-help-with",
+      "title": "What this cannot help with",
+      "body": "Wheel of Names does not run other sites. Problems on another wheel site, a classroom platform or a school's login page belong with that service. The wheel also does not verify that a raffle was run properly or rule on who was entitled to enter one, so disputes about a draw's result are for the event's host to settle."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "name": "Contact Wheel of Names",
+        "url": "https://site.example/contact/",
+        "description": "Write to Wheel of Names about a result that looks wrong, a missing feature, a paid plan or a privacy request.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Wheel of Names",
+          "url": "https://site.example/"
+        }
+      }
+    ]
+  }
+}

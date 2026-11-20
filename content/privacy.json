@@ -1,0 +1,93 @@
+{
+  "title": "Privacy Policy — Wheel of Names",
+  "description": "What Wheel of Names keeps, what never leaves your browser, how long draw records are held and how to ask for deletion.",
+  "h1": "Privacy Policy",
+  "heroText": "This page explains what Wheel of Names collects when you open the wheel, spin it, save a list or pay for a plan, and how to remove it.",
+  "ctas": [
+    {
+      "label": "Read what the wheel keeps on your device",
+      "href": "/#limits",
+      "primary": true
+    },
+    {
+      "label": "Ask for your data to be deleted",
+      "href": "/contact/",
+      "primary": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "lists-stay-in-the-browser",
+      "title": "Your lists stay in your browser",
+      "body": "Entry text is drawn on inside the browser tab and is never uploaded, so what you paste is not stored on this site's servers. The spin history a page shows is held in the tab's memory and disappears when you close or reload it."
+    },
+    {
+      "id": "what-is-collected",
+      "title": "What is collected when you use the site",
+      "body": "This is the full list for a visitor who has not signed in.",
+      "items": [
+        {
+          "title": "Technical request data",
+          "body": "The page request carries an IP address, browser type and the page asked for, which a web server needs to answer it. These logs are kept only as long as troubleshooting requires."
+        },
+        {
+          "title": "A session cookie",
+          "body": "A cookie keeps a signed-in session working, so you do not sign in on every page. It is not used to build an advertising profile."
+        },
+        {
+          "title": "Messages you send",
+          "body": "The contact form stores your message and the reply so the thread can be read later. Include only what the request needs."
+        }
+      ]
+    },
+    {
+      "id": "signed-in-records",
+      "title": "Records kept for signed-in plans",
+      "body": "When you sign in and save wheels or draw records, those records are stored to the allowances your plan names. The [pricing page](/pricing/) lists the number of saved wheels and draw records for each plan, and those are the values that apply to storage as well."
+    },
+    {
+      "id": "payments",
+      "title": "Payments",
+      "body": "Card details are entered on the payment processor's own checkout page and are never seen or stored by Wheel of Names."
+    },
+    {
+      "id": "your-choices",
+      "title": "Your choices and deletion",
+      "body": "You can ask for your saved wheels, draw records and account to be deleted at any time by writing through the [contact page](/contact/); a deletion request removes stored records, not the technical logs that expire on their own. You can also block or clear cookies in the browser, though that ends a signed-in session."
+    },
+    {
+      "id": "children",
+      "title": "Children",
+      "body": "The wheel is used in classrooms, but accounts and payments with Wheel of Names are opened by an adult. The site does not knowingly collect personal details from a child through a form."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Are my pasted names uploaded?",
+      "answer": "No. The wheel reads the list inside your browser tab and draws the winner there with crypto.getRandomValues. Entry text is never sent to this site's servers, which is also why the tool keeps working offline once the page has loaded. Only saved wheels and draw records on a paid plan are stored."
+    },
+    {
+      "question": "How do I get my account deleted?",
+      "answer": "Sign in and send a message through the form on the contact page asking for the account to be deleted. Say whether you want the saved wheels and draw records deleted as well. The request is handled from that message thread, and the reply confirms what was removed."
+    },
+    {
+      "question": "Does this page change?",
+      "answer": "The policy is updated when the site starts keeping new kinds of information, and the change is described on this page before it takes effect. Ongoing use after a change means the new copy applies."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Privacy Policy — Wheel of Names",
+        "url": "https://site.example/privacy/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Wheel of Names",
+          "url": "https://site.example/"
+        }
+      }
+    ]
+  }
+}

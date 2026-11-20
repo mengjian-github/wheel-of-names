@@ -1,0 +1,178 @@
+{
+  "/images/class-call.png": {
+    "width": 1880,
+    "height": 1253,
+    "variants": [
+      {
+        "src": "/images/derived/class-call.w480.avif",
+        "width": 480,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/class-call.w960.avif",
+        "width": 960,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/class-call.w1440.avif",
+        "width": 1440,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/class-call.w480.webp",
+        "width": 480,
+        "format": "webp"
+      },
+      {
+        "src": "/images/derived/class-call.w960.webp",
+        "width": 960,
+        "format": "webp"
+      },
+      {
+        "src": "/images/derived/class-call.w1440.webp",
+        "width": 1440,
+        "format": "webp"
+      }
+    ]
+  },
+  "/images/class-roster-phone.png": {
+    "width": 867,
+    "height": 1300,
+    "variants": [
+      {
+        "src": "/images/derived/class-roster-phone.w480.avif",
+        "width": 480,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/class-roster-phone.w480.webp",
+        "width": 480,
+        "format": "webp"
+      }
+    ]
+  },
+  "/images/hall-draw.png": {
+    "width": 1880,
+    "height": 1058,
+    "variants": [
+      {
+        "src": "/images/derived/hall-draw.w480.avif",
+        "width": 480,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/hall-draw.w960.avif",
+        "width": 960,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/hall-draw.w1440.avif",
+        "width": 1440,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/hall-draw.w480.webp",
+        "width": 480,
+        "format": "webp"
+      },
+      {
+        "src": "/images/derived/hall-draw.w960.webp",
+        "width": 960,
+        "format": "webp"
+      },
+      {
+        "src": "/images/derived/hall-draw.w1440.webp",
+        "width": 1440,
+        "format": "webp"
+      }
+    ]
+  },
+  "/images/list-pasted.png": {
+    "width": 1880,
+    "height": 1255,
+    "variants": [
+      {
+        "src": "/images/derived/list-pasted.w480.avif",
+        "width": 480,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/list-pasted.w960.avif",
+        "width": 960,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/list-pasted.w1440.avif",
+        "width": 1440,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/list-pasted.w480.webp",
+        "width": 480,
+        "format": "webp"
+      },
+      {
+        "src": "/images/derived/list-pasted.w960.webp",
+        "width": 960,
+        "format": "webp"
+      },
+      {
+        "src": "/images/derived/list-pasted.w1440.webp",
+        "width": 1440,
+        "format": "webp"
+      }
+    ]
+  },
+  "/images/room-after.png": {
+    "width": 867,
+    "height": 1300,
+    "variants": [
+      {
+        "src": "/images/derived/room-after.w480.avif",
+        "width": 480,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/room-after.w480.webp",
+        "width": 480,
+        "format": "webp"
+      }
+    ]
+  },
+  "/images/tickets-drawn.png": {
+    "width": 1880,
+    "height": 1253,
+    "variants": [
+      {
+        "src": "/images/derived/tickets-drawn.w480.avif",
+        "width": 480,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/tickets-drawn.w960.avif",
+        "width": 960,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/tickets-drawn.w1440.avif",
+        "width": 1440,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/tickets-drawn.w480.webp",
+        "width": 480,
+        "format": "webp"
+      },
+      {
+        "src": "/images/derived/tickets-drawn.w960.webp",
+        "width": 960,
+        "format": "webp"
+      },
+      {
+        "src": "/images/derived/tickets-drawn.w1440.webp",
+        "width": 1440,
+        "format": "webp"
+      }
+    ]
+  }
+}

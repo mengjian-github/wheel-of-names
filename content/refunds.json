@@ -1,0 +1,79 @@
+{
+  "title": "Refund Policy — Wheel of Names",
+  "description": "When Wheel of Names refunds a paid plan, how to request one, what happens to the plan after a refund and where the request is sent.",
+  "h1": "Refund Policy",
+  "heroText": "This page states when a charge for a plan is refunded, how to ask for one and what changes once it is approved. The free wheel needs no refund.",
+  "ctas": [
+    {
+      "label": "Request a refund through the form",
+      "href": "/contact/",
+      "primary": true
+    },
+    {
+      "label": "See the plans and prices",
+      "href": "/pricing/",
+      "primary": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "when-a-refund-is-given",
+      "title": "When a plan is refunded",
+      "body": "A request made within 14 days of a charge is refunded in full. After 14 days, a refund is not automatic. Write anyway if something went wrong on the site's side and the case is looked at individually."
+    },
+    {
+      "id": "how-to-ask",
+      "title": "How to ask",
+      "body": "Send the request through the form on the [contact page](/contact/) with the plan name, the date of the charge and, if you have it, the checkout receipt reference. The plan's price and term are listed on the [pricing page](/pricing/).",
+      "steps": [
+        {
+          "title": "Choose the billing subject",
+          "body": "Pick the billing option in the form so the message lands with the charge it concerns."
+        },
+        {
+          "title": "Add the charge details",
+          "body": "Plan name, date and receipt reference are enough to match the payment to the right account."
+        },
+        {
+          "title": "Read the decision",
+          "body": "The decision comes back in the same message thread, and an approved refund returns to the original payment method."
+        }
+      ]
+    },
+    {
+      "id": "after-a-refund",
+      "title": "After a refund",
+      "body": "A refunded plan ends. Saved wheels and draw records beyond the free use stop loading, so export or note what you need before the request is approved. A one-time pass stops at the end of the refunded period rather than at its planned end date."
+    },
+    {
+      "id": "free-use",
+      "title": "Free use",
+      "body": "Nothing on the free wheel is charged, so there is nothing to refund. If a charge appears on your statement for an account you do not recognise, send the details through the form and it is investigated before anything else is done."
+    }
+  ],
+  "faq": [
+    {
+      "question": "How long does a refund take to arrive?",
+      "answer": "An approved refund is sent to the payment processor within two working days of the decision. How quickly it shows on a statement depends on the card issuer, which usually posts it within five to ten business days. The processor's own receipt is the record to quote if it does not appear."
+    },
+    {
+      "question": "What if I bought a yearly plan by mistake?",
+      "answer": "Send the request within 14 days of the charge and the yearly plan is refunded in full, the same as a monthly plan. Ask through the contact form with the plan name and charge date so the plan can be matched to the payment."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Refund Policy — Wheel of Names",
+        "url": "https://site.example/refunds/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Wheel of Names",
+          "url": "https://site.example/"
+        }
+      }
+    ]
+  }
+}

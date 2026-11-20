@@ -1,0 +1,28 @@
+{
+  "available": [
+    "/images/class-call.png",
+    "/images/class-roster-phone.png",
+    "/images/hall-draw.png",
+    "/images/list-pasted.png",
+    "/images/room-after.png",
+    "/images/tickets-drawn.png",
+    "/images/vision-manifest.json",
+    "/images/atmosphere.svg",
+    "/images/entities/spins-per-month.svg",
+    "/images/entities/named-wheels.svg",
+    "/images/entities/draw-records.svg",
+    "/images/entities/devices.svg",
+    "/images/entities/billing.svg",
+    "/images/entities/core-features.svg",
+    "/images/entities/class-stage-start.svg",
+    "/images/entities/class-stage-twentyfive.svg",
+    "/images/entities/class-stage-end.svg",
+    "/images/entities/pw-free-tier.svg",
+    "/images/entities/pw-weighted.svg",
+    "/images/entities/pw-results.svg",
+    "/images/entities/won-audit.svg",
+    "/images/entities/pw-storage.svg",
+    "/images/entities/pw-price.svg"
+  ],
+  "missing": []
+}

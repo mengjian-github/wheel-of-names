@@ -1,0 +1,181 @@
+{
+  "title": "Random Name Picker — Free, No Sign-Up, One Winner | Wheel of Names",
+  "description": "Paste a list, spin the random name picker and get one winner with its chance shown. Free, no sign-up, and the list never leaves your browser.",
+  "h1": "Random Name Picker: paste a list, get one name",
+  "heroText": "Paste a list of names, spin, and the random name picker returns one winner with its chance of winning, for example 6.7% on a list of 15. The draw is made from your own browser's secure random numbers before the wheel starts turning, and no account is needed. It suits a team standup, a raffle, a chore rota or picking who takes notes next.",
+  "ctas": [
+    {
+      "label": "Spin my list",
+      "href": "/random-name-picker/",
+      "primary": true
+    },
+    {
+      "label": "See how the winner is drawn",
+      "href": "/fairness/",
+      "primary": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "answer",
+      "title": "What this picker does",
+      "body": "It turns a pasted list into a wheel of equal slices and returns one name, with that name's chance of winning shown on the result card.",
+      "items": [
+        {
+          "title": "A picker wheel on your own screen",
+          "body": "The names sit on a wheel of equal slices, so the picker wheel is drawn from the list you made rather than from a stock set of names. On a projector the wheel opens full screen and reads from the back of a room."
+        },
+        {
+          "title": "The chance in plain numbers",
+          "body": "A list of 15 gives every name a 6.7% chance. On 4 names it is 25% each. The result card states the winner's figure rather than leaving you to work it out."
+        },
+        {
+          "title": "Your list stays in your browser",
+          "body": "Names are drawn with the browser's own secure random numbers on the page, so the list is never uploaded to a server and the picker works without an account."
+        }
+      ]
+    },
+    {
+      "id": "methods",
+      "title": "Four ways to pick a name",
+      "body": "Pick the method that fits how many names you need and whether the same person may come up twice.",
+      "items": [
+        {
+          "title": "A single fair pick",
+          "body": "Equal slices, one draw. This is the default every time the list changes, so nothing needs setting before a first spin."
+        },
+        {
+          "title": "Weighted draw",
+          "body": "Give an entry a whole-number weight from 1 to 10 and its slice grows with it. A weight of 2 is twice as likely as a weight of 1, and each entry's percentage chance is printed on its slice. The [picker wheel with weights](/picker-wheel/) has the full method."
+        },
+        {
+          "title": "Several winners in order",
+          "body": "Ask for a set number of distinct winners and the site draws them one at a time, recording each name with its draw order and time in a results table you can copy as text. The [raffle wheel](/raffle-wheel/) covers prizes, second places and reserves."
+        },
+        {
+          "title": "Ten thousand draws, checked",
+          "body": "The fairness check runs 10,000 draws on your current list inside the browser and lists each entry's observed count and share beside the expected 1-in-N share, with the largest deviation. Run it when someone in the room doubts the result."
+        }
+      ]
+    },
+    {
+      "id": "paste",
+      "title": "Get your list in cleanly",
+      "body": "Most wrong picks come from the list, not the wheel, so a minute spent pasting saves a re-spin in front of an audience.",
+      "items": [
+        {
+          "title": "One entry per line",
+          "body": "Names copied out of a spreadsheet arrive with one name per cell and pasted into rows. Paste straight from a column, then delete empty rows."
+        },
+        {
+          "title": "Drop titles and duplicates",
+          "body": "Cut a \"Name\" heading, notes and anyone who has left. A duplicate row is a second slice, so it doubles that person's chance of being drawn."
+        },
+        {
+          "title": "Keep full names where it matters",
+          "body": "Two Kims in one class are fine, but add a surname initial if the projector only shows the winner. On a shared screen a first name alone can be ambiguous."
+        },
+        {
+          "title": "Check the total before the spin",
+          "body": "The percentages add up to 100%. If a name you expected is missing, the paste is the first place to look rather than the result."
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "title": "Where the free picker ends",
+      "body": "The picking itself has no sign-up and no per-spin charge; the limits sit in saving work and serving large groups.",
+      "items": [
+        {
+          "title": "Nothing is saved for you",
+          "body": "Your list lives in the open tab, not in an account. If you need a named wheel kept for a register or a party, that is what the [pricing page](/pricing/) covers."
+        },
+        {
+          "title": "One wheel at a time",
+          "body": "The picker keeps one list. Running two rota folders side by side means two tabs or two turns."
+        },
+        {
+          "title": "No history to prove afterwards",
+          "body": "The result card shows the winner and its chance and nothing older. For a drawn raffle where the order has to be provable later, keep the copied results table."
+        },
+        {
+          "title": "Needs to stay open",
+          "body": "A closed tab takes the list with it. Teachers who need a roster kept for a register read the [classroom name picker](/classroom-name-picker/) first."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is the random name picker actually random?",
+      "answer": "Yes. The winner is drawn with crypto.getRandomValues, the browser's secure random source, before any motion starts. Rejection sampling keeps every slice exactly equally likely, so no name is favoured by rounding. The wheel then spins to the name already drawn, which is why the slowdown never changes who wins."
+    },
+    {
+      "question": "Do I need an account or a download?",
+      "answer": "No. The picker runs on the page with no sign-up, no install and no per-spin fee, so a first spin costs nothing. Plans cover saved wheels and longer draw records, which the [pricing page](/pricing/) sets out."
+    },
+    {
+      "question": "Can I get two winners, like first and second place?",
+      "answer": "Yes. Ask for two names and the site draws them without repeating one, noting the order in a results table you can copy. Ten names give ten distinct winners, after which the draw stops because the list is used up."
+    },
+    {
+      "question": "Can the same person win twice in a row?",
+      "answer": "Yes, and that is normal. Each spin is an independent draw, so the person who won last time has the same chance next time. If a person should not come up again, take their row out of the list before spinning. The [fairness page](/fairness/) explains why repeats happen."
+    },
+    {
+      "question": "What happens when I give one name a weight?",
+      "answer": "That name's slice takes a larger share of the wheel, so it comes up more often than the equal-slice names beside it, and the chance figure printed on the slice is the exact figure used in the draw. A weight of 3 against four weight-1 names gives a 3-in-7 chance, about 42.9%."
+    },
+    {
+      "question": "Why did the wheel give someone the same result three times in a row?",
+      "answer": "That is what an unweighted draw looks like. Ten names and five spins is enough for at least one repeat in most sessions, so a double winner says nothing about the wheel. The fairness check runs 10,000 draws on your list and shows each name's count beside its expected share when you need the numbers to settle it."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Random Name Picker — Free, No Sign-Up, One Winner",
+    "description": "Paste a list, spin the random name picker and get one winner with its chance shown. Free, no sign-up, and the list stays in the browser.",
+    "author": {
+      "@type": "Organization",
+      "name": "Wheel of Names"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Wheel of Names"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://site.example/random-name-picker/"
+    },
+    "mainEntity": {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the random name picker actually random?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The winner is drawn with crypto.getRandomValues, the browser's secure random source, before any motion starts, and rejection sampling keeps every slice equally likely."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need an account or a download?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The picker runs in the browser with no sign-up and no install; paid plans only add saved wheels and records."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the same person win twice in a row?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Each spin is an independent draw, so the last winner has the same chance next time; remove a row to stop a name coming up again."
+          }
+        }
+      ]
+    }
+  }
+}

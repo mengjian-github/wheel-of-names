@@ -1,0 +1,144 @@
+{
+  "contract": "shipsite.backend-manifest.v1",
+  "backendMode": "WORKER_REQUIRED",
+  "projectId": "prj_f45e7fee-046",
+  "authEnabled": true,
+  "authMethods": [
+    "google"
+  ],
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/pay/checkout",
+      "auth": false,
+      "table": null,
+      "action": null,
+      "implementation": "handler"
+    },
+    {
+      "method": "GET",
+      "path": "/api/pay/return",
+      "auth": false,
+      "table": null,
+      "action": null,
+      "implementation": "handler"
+    },
+    {
+      "method": "POST",
+      "path": "/api/pay/webhook",
+      "auth": false,
+      "table": null,
+      "action": null,
+      "implementation": "handler"
+    },
+    {
+      "method": "GET",
+      "path": "/api/pay/portal",
+      "auth": true,
+      "table": null,
+      "action": null,
+      "implementation": "handler"
+    }
+  ],
+  "stores": [
+    {
+      "type": "d1",
+      "name": "shipsite-accounts-prj_f45e7fee-046",
+      "binding": "DB",
+      "runtime": true,
+      "tables": []
+    },
+    {
+      "type": "d1",
+      "name": "shipsite-pay-prj_f45e7fee-046",
+      "binding": "DB",
+      "runtime": true,
+      "tables": []
+    }
+  ],
+  "requiredSecrets": [
+    "GOOGLE_CLIENT_ID",
+    "GOOGLE_CLIENT_SECRET"
+  ],
+  "migration": "db/schema.sql",
+  "payments": {
+    "currency": "USD",
+    "plans": [
+      {
+        "id": "plus",
+        "name": "Plus",
+        "priceUsd": 6,
+        "billingPeriod": "month",
+        "mostPopular": true
+      },
+      {
+        "id": "plus-annual",
+        "name": "Plus",
+        "priceUsd": 60,
+        "billingPeriod": "year",
+        "annualOf": "plus"
+      },
+      {
+        "id": "pro",
+        "name": "Pro",
+        "priceUsd": 12,
+        "billingPeriod": "month"
+      },
+      {
+        "id": "pro-annual",
+        "name": "Pro",
+        "priceUsd": 120,
+        "billingPeriod": "year",
+        "annualOf": "pro"
+      },
+      {
+        "id": "event-pass",
+        "name": "Event Pass",
+        "priceUsd": 9,
+        "billingPeriod": "none",
+        "passDays": 30
+      }
+    ],
+    "provider": "Stripe",
+    "secretNames": [
+      "PAYMENT_SECRET_KEY",
+      "PAYMENT_TEST_SECRET_KEY"
+    ],
+    "handlerRoutes": [
+      {
+        "method": "GET",
+        "path": "/api/pay/checkout"
+      },
+      {
+        "method": "GET",
+        "path": "/api/pay/return"
+      },
+      {
+        "method": "POST",
+        "path": "/api/pay/webhook"
+      },
+      {
+        "method": "GET",
+        "path": "/api/pay/portal"
+      }
+    ],
+    "runtimeRoutes": [
+      {
+        "method": "GET",
+        "path": "/api/pay/plan"
+      },
+      {
+        "method": "GET",
+        "path": "/api/pay/status"
+      }
+    ],
+    "webhookPath": "/api/pay/webhook",
+    "tables": [
+      "shipsite_pay_events",
+      "shipsite_pay_orders",
+      "shipsite_entitlements",
+      "shipsite_pay_state"
+    ],
+    "source": "pricing_contract"
+  }
+}

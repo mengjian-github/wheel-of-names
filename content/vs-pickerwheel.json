@@ -1,0 +1,290 @@
+{
+  "title": "Wheel of Names vs Picker Wheel: Free Limits Compared",
+  "description": "Wheel of Names vs Picker Wheel, compared on free limits, weights, multiple winners and price, so you can pick the right spinner for your list.",
+  "h1": "Wheel of Names vs Picker Wheel",
+  "heroText": "Both tools turn a list into a spinning wheel and pick one entry at random, and both are free to open in a browser without an account. This page lays the two side by side on the things that change a decision: what the free version allows, whether you can weight entries, whether you can draw several winners in order, and where the paid plans start.",
+  "ctas": [
+    {
+      "label": "Spin a list on Wheel of Names",
+      "href": "/",
+      "primary": true
+    },
+    {
+      "label": "See the free tier and plans",
+      "href": "/pricing/",
+      "primary": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "answer",
+      "title": "The short answer",
+      "body": "Pick Wheel of Names when you want a free drawer that never asks you to sign up, weights each entry, draws several distinct winners in order, and lets you check the randomness yourself. Pick Picker Wheel when your job is a decision wheel with many modes, image wheels, team pickers and comment pickers among them, and its file storage limits on the free tier fit your use.",
+      "items": [
+        {
+          "title": "Where the money divides",
+          "body": "Picker Wheel charges for storage and inquiry quotas. The paid tiers here are built around draws instead, and the [pricing page](/pricing/) carries the full list."
+        },
+        {
+          "title": "Both handle a long list",
+          "body": "A class register of thirty names pastes straight from a spreadsheet column in either tool, and neither charges for the first spin on a list that size."
+        },
+        {
+          "title": "Neither needs installing",
+          "body": "Both open in a browser tab, so a school laptop with no admin rights can run the draw without anything downloaded."
+        }
+      ]
+    },
+    {
+      "id": "differences",
+      "title": "The differences that decide it",
+      "body": "Six rows decide most choices between the two, and some of them sit behind a free tier. Every Picker Wheel figure here comes from its page, read on 20 Nov 2026.",
+      "items": [
+        {
+          "title": "Storage versus draws",
+          "body": "Picker Wheel's paid line is mostly saved files, images and AI inquiries. Wheel of Names most often gets paid for a heavy spin month, or for one event at a time."
+        },
+        {
+          "title": "Reading the weights row",
+          "body": "A weight makes one entry win more often than another on purpose. On Wheel of Names the slices grow with the weight and print the resulting percentage, so a 2 next to a 1 shows as roughly 67% against 33%."
+        }
+      ],
+      "table": {
+        "caption": "Wheel of Names and Picker Wheel, as each tool's own pages describe them",
+        "columns": [
+          "Row",
+          "Wheel of Names",
+          "Picker Wheel"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "Opening price",
+              "Free, no account for the basic spin",
+              "Free Subscriber tier, no account needed"
+            ],
+            "status": "working",
+            "recordKey": "pw-free-tier",
+            "evidenceRefs": [
+              "ev_146"
+            ],
+            "observedAt": "2026-11-20T12:45:49.908Z",
+            "sourceUrl": "https://pickerwheel.com/plan/"
+          },
+          {
+            "cells": [
+              "Weighted entries",
+              "Integer weight 1–10 per entry, chance shown on each slice",
+              "Plan page lists no weighted mode in its feature set"
+            ],
+            "status": "working",
+            "recordKey": "pw-weighted",
+            "evidenceRefs": [
+              "ev_146"
+            ],
+            "observedAt": "2026-11-20T12:45:49.908Z",
+            "sourceUrl": "https://pickerwheel.com/plan/"
+          },
+          {
+            "cells": [
+              "Several winners",
+              "Requested count drawn one at a time, each with order and time, copied as text",
+              "Results collected per file, with limits by plan"
+            ],
+            "status": "working",
+            "recordKey": "pw-results",
+            "evidenceRefs": [
+              "ev_146"
+            ],
+            "observedAt": "2026-11-20T12:45:49.908Z",
+            "sourceUrl": "https://pickerwheel.com/plan/"
+          },
+          {
+            "cells": [
+              "Checking the randomness",
+              "10,000 draws run on your own list, counts against expected share",
+              "No draw-count check is described in the plan page's feature list"
+            ],
+            "status": "working",
+            "recordKey": "won-audit",
+            "evidenceRefs": [
+              "ev_206",
+              "ev_146"
+            ],
+            "observedAt": "2026-11-20T13:22:02.849Z",
+            "sourceUrl": "https://pickerwheel.com/plan/"
+          },
+          {
+            "cells": [
+              "Free storage",
+              "Free tier lands on the tool; Plus adds 25 named wheels, Pro 100",
+              "15 saved files on the free Subscriber tier, 40 on the cheapest paid plan"
+            ],
+            "status": "working",
+            "recordKey": "pw-storage",
+            "evidenceRefs": [
+              "ev_146"
+            ],
+            "observedAt": "2026-11-20T12:45:49.908Z",
+            "sourceUrl": "https://pickerwheel.com/plan/"
+          },
+          {
+            "cells": [
+              "Cheapest paid entry",
+              "Plus at $6 a month, Event Pass $9 once for 30 days",
+              "Personalized at $5 a month, billed $60 a year"
+            ],
+            "status": "working",
+            "recordKey": "pw-price",
+            "evidenceRefs": [
+              "ev_146"
+            ],
+            "observedAt": "2026-11-20T12:45:49.908Z",
+            "sourceUrl": "https://pickerwheel.com/plan/"
+          }
+        ],
+        "lastCheckedAt": "2026-11-20"
+      }
+    },
+    {
+      "id": "free-tier",
+      "title": "What free means on each side",
+      "body": "Free is the first thing people compare, and the two tools mean different things by it. Neither asks for a card to open the wheel.",
+      "items": [
+        {
+          "title": "Picker Wheel's free tier",
+          "body": "Caps saved files at 15, standard images at 40, AI inquiries at 3 a day and participant results at 10. Paid plans raise those numbers, add HD images and remove ads."
+        },
+        {
+          "title": "Wheel of Names free",
+          "body": "The wheel, the weights, the multi-winner run and the 10,000-draw check all run without payment or sign-up. Signing in is what unlocks the monthly quota, and [Plus](/pricing/) raises it to 15,000 spins a month, 25 named wheels, 2,000 draw records and 3 synced devices for $6 a month."
+        },
+        {
+          "title": "Paying to remove ads",
+          "body": "Every Picker Wheel paid tier advertises ad-free use, and its Professional and Business tiers also remove ads from shared files. Wheel of Names has no ad line to pay away; the paid tier adds quota, not quiet."
+        },
+        {
+          "title": "A room full of students",
+          "body": "A class of 30 cold-called six times a lesson uses 180 draws in a week of teaching. That sits inside the free tier here, and Picker Wheel's free tier does not meter spins at all."
+        },
+        {
+          "title": "No sign-up first",
+          "body": "You can paste the classroom list, the raffle entries or the giveaway entrants and spin before deciding whether to register. That order is the same on both sites, so the first spin costs nothing either way."
+        }
+      ]
+    },
+    {
+      "id": "when-to-choose",
+      "title": "When to choose each one",
+      "body": "Choose by the job in front of you rather than by feature counts.",
+      "items": [
+        {
+          "title": "Choose Wheel of Names for",
+          "body": "A weighted draw where each entry's chance should be visible; a raffle or giveaway that needs a list of winners in the order they were drawn; a class cold call that should be provably random. Run a test first on the [raffle wheel](/raffle-wheel/) or the [classroom picker](/classroom-name-picker/)."
+        },
+        {
+          "title": "Pick Picker Wheel for",
+          "body": "Image wheels, team grouping, Instagram comment draws and embedded wheels, where its many modes and saved files are the point."
+        },
+        {
+          "title": "Lifting a result into a form",
+          "body": "The result table copies as plain text, so the drawn order drops into a spreadsheet, a message or a printed sign-off sheet without retyping."
+        },
+        {
+          "title": "Playing by rules a venue set",
+          "body": "When a giveaway result has to be shown to someone afterwards, a numbered list with times is easier to hand over than a single name on a screen."
+        },
+        {
+          "title": "If both fit",
+          "body": "Start with the one that needs no account, spin your real list once, and keep the result. Only move to a paid plan when a saved file or a specific mode is what stands between you and the draw."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Wheel of Names free like Picker Wheel?",
+      "answer": "Neither tool needs an account for a first spin. The difference is where each one draws the line: Picker Wheel counts saved files and daily inquiries against its free tier, while Wheel of Names counts spins and records once you sign in."
+    },
+    {
+      "question": "Which one lets me draw more than one winner?",
+      "answer": "Wheel of Names draws a number of distinct winners you ask for, one at a time, and records each name with its draw order and time in a table you can copy as text. Picker Wheel collects participant results per saved file."
+    },
+    {
+      "question": "Can I weight some names so they win more often?",
+      "answer": "Yes, on Wheel of Names: each pasted entry takes an integer weight from 1 to 10 and the slice prints the resulting chance. Picker Wheel's plan page lists no weighted mode among its features, so check its own help before counting on one."
+    },
+    {
+      "question": "Which is cheaper if I only need one event?",
+      "answer": "A one-off event can stay on the free tier on either site. Wheel of Names also sells an Event Pass for $9 once that lasts 30 days, which suits a single raffle better than a monthly plan. Picker Wheel sells monthly and yearly plans only."
+    },
+    {
+      "question": "Does either tool keep my list on a server?",
+      "answer": "On Wheel of Names the draw runs on your device, so the list you pasted is not uploaded to run a spin. Picker Wheel saves wheels to files on its side, which is why its plans are counted in file storage."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Wheel of Names vs Picker Wheel",
+        "description": "Wheel of Names vs Picker Wheel, compared on free limits, weights, multiple winners and price.",
+        "author": {
+          "@type": "Organization",
+          "name": "Wheel of Names"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Wheel of Names"
+        },
+        "mainEntityOfPage": "https://site.example/vs/pickerwheel/"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Wheel of Names free like Picker Wheel?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Neither tool needs an account for a first spin. The difference is where each one draws the line: Picker Wheel counts saved files and daily inquiries against its free tier, while Wheel of Names counts spins and records once you sign in."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which one lets me draw more than one winner?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wheel of Names draws a number of distinct winners you ask for, one at a time, and records each name with its draw order and time in a table you can copy as text. Picker Wheel collects participant results per saved file."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I weight some names so they win more often?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, on Wheel of Names: each pasted entry takes an integer weight from 1 to 10 and the slice prints the resulting chance. Picker Wheel's plan page lists no weighted mode among its features, so check its own help before counting on one."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which is cheaper if I only need one event?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A one-off event can stay on the free tier on either site. Wheel of Names also sells an Event Pass for $9 once that lasts 30 days, which suits a single raffle better than a monthly plan. Picker Wheel sells monthly and yearly plans only."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does either tool keep my list on a server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "On Wheel of Names the draw runs on your device, so the list you pasted is not uploaded to run a spin. Picker Wheel saves wheels to files on its side, which is why its plans are counted in file storage."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

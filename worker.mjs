@@ -74,8 +74,8 @@ const CONFIG = {
     "oauth2.googleapis.com"
   ],
   "secretNames": [
-    "GOOGLE_CLIENT_ID",
-    "GOOGLE_CLIENT_SECRET",
+    "SHIPSITE_SIGN_IN_BROKER",
+    "SHIPSITE_SIGN_IN_BROKER_KEY",
     "STRIPE_SECRET_KEY",
     "STRIPE_WEBHOOK_SECRET",
     "PAYPAL_CLIENT_ID",

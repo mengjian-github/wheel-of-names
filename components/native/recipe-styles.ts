@@ -707,4 +707,71 @@ body[data-atmosphere="true"]::before{display:none}
 .wn-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.55;background:var(--wn-panel-2);border-radius:8px;padding:12px 14px;overflow-x:auto;white-space:pre-wrap;word-break:break-word;color:var(--wn-soft);margin:0}
 .wn-devtools-body ol li{font-size:14.5px;line-height:1.5}
 
+
+/* ---------- rev10: the whole loop on one screen, one drawer, phone order ---------- */
+.wn-stage{position:relative}
+.wn-more{grid-area:options;margin:10px 0 0;background:var(--wn-panel-2);border:1px solid rgba(238,241,248,.10);border-radius:10px;padding:0 12px}
+.wn-more>summary{padding:10px 2px;font-size:14px;font-weight:600;cursor:pointer;color:var(--wn-ink)}
+.wn-more .wn-options-body{padding:2px 0 12px}
+.wn-more .wn-draws{padding:0 0 12px;margin:0;background:none}
+.wn-more .wn-embed-box{margin:0 0 12px}
+.wn-stage-tool{position:absolute;top:6px;right:6px;z-index:3;appearance:none;background:rgba(26,32,57,.72);border:1px solid rgba(238,241,248,.20);color:var(--wn-soft);font:inherit;font-size:12px;letter-spacing:.02em;padding:5px 9px;border-radius:6px;cursor:pointer}
+.wn-stage-tool:hover{color:var(--wn-ink);border-color:rgba(249,163,192,.6)}
+.wn-stage-tool[aria-pressed="true"]{background:var(--wn-pink);color:#231a24;border-color:var(--wn-pink)}
+@media (min-width:961px){
+  .wn-bench{grid-template-columns:minmax(0,1.08fr) minmax(250px,320px) minmax(230px,300px);grid-template-areas:"editor stage slip" "editor action slip" "options options options";gap:12px 18px}
+  .wn-wheel-wrap{max-width:300px}
+  .wn-slip-name{font-size:clamp(40px,3.4vw,54px);line-height:1.02}
+  .wn-intro h1,.wn-page-head h1{font-size:clamp(30px,3vw,42px);line-height:1.06;max-width:26ch}
+  .wn-intro p,.wn-page-head .wn-lede{font-size:15px;line-height:1.45;margin-top:6px}
+  .wn-page-head,.wn-intro{margin:0 0 10px;padding-bottom:0}
+}
+@media (max-width:960px){
+  .wn-bench{grid-template-columns:minmax(0,1fr);grid-template-areas:"editor" "action" "slip" "stage" "options";gap:10px}
+  .wn-wheel-wrap{max-width:250px}
+  .wn-slip-name{font-size:clamp(34px,10vw,44px)}
+  .wn-slip-actions{gap:6px}
+}
+.wn-tool.is-projector .wn-bench{grid-template-columns:minmax(0,1fr) minmax(300px,420px);grid-template-areas:"stage slip" "action slip" "editor editor" "options options";gap:14px 22px}
+.wn-tool.is-projector .wn-wheel-wrap{max-width:min(56vh,470px)}
+.wn-tool.is-projector .wn-slip{min-height:0}
+.wn-tool.is-projector .wn-slip-name{font-size:clamp(44px,4.6vw,76px);line-height:1.02}
+.wn-tool.is-projector .wn-slot-line{opacity:.5}
+
+/* freshness + per-row source links */
+.wn-updated-row{margin:26px 0 6px}
+.wn-updated{font-size:var(--fs-xs);color:var(--wn-meta);margin:0}
+.wn-row-source{display:inline-block;margin-left:8px;font-size:11px;font-weight:500;letter-spacing:.02em;color:var(--wn-meta);text-decoration:none;border-bottom:1px dotted currentColor;white-space:nowrap}
+.wn-row-source:hover{color:var(--wn-accent)}
+
+/* ---------- rev11: phone order on the weighted bench, one wheel-options drawer ---------- */
+.wn-wheel-options{grid-area:options;margin:0}
+.wn-wheel-options>summary{padding:10px 2px;font-size:14px;font-weight:600;cursor:pointer;color:var(--wn-ink)}
+@media (max-width:960px){
+  .wn-bench-weighted{display:flex;flex-direction:column;gap:10px}
+  .wn-bench-weighted .wn-wheel-col,
+  .wn-bench-weighted .wn-stage,
+  .wn-bench-weighted .wn-slip-col{display:contents}
+  .wn-bench-weighted .wn-editor-col{order:1}
+  .wn-bench-weighted .wn-progress-line{order:2}
+  .wn-bench-weighted .wn-spin-btn{order:3;width:100%}
+  .wn-bench-weighted .wn-slip{order:4}
+  .wn-bench-weighted .wn-wheel-wrap{order:5;margin:0 auto}
+  .wn-bench-weighted .wn-empty-wheel{order:6}
+}
+
+/* ---------- rev12: comparison page, the deciding table on the first screen ---------- */
+.wn-vs-top.has-table{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:30px;align-items:start}
+.wn-vs-top .wn-section{margin:0}
+.wn-vs-top .wn-section h2{font-size:20px;margin:0 0 8px}
+.wn-vs-top .wn-section p{font-size:14.5px;line-height:1.45}
+.wn-vs-top .wn-table th,.wn-vs-top .wn-table td{padding:4px 9px;font-size:13px;line-height:1.25}
+.wn-vs-top .wn-section h2{font-size:18px;margin:0 0 6px}
+.wn-vs-top .wn-section p{margin:0 0 6px}
+.wn-vs-top .wn-section ul,.wn-vs-top .wn-section ol{margin:0}
+.wn-vs-top .wn-table td{vertical-align:top}
+@media (max-width:960px){
+  .wn-vs-top.has-table{display:block}
+  .wn-vs-top .wn-section{margin-top:18px}
+}
 `;

@@ -27,6 +27,7 @@ export default function ContactPage({ route, content, config }: PageProps) {
         body: JSON.stringify({
           name: String(data.get("name") ?? ""),
           email: String(data.get("email") ?? ""),
+          subject: String(data.get("subject") ?? ""),
           message: String(data.get("message") ?? ""),
         }),
       });
@@ -66,6 +67,17 @@ export default function ContactPage({ route, content, config }: PageProps) {
               <input name="email" type="email" autoComplete="email" required maxLength={320} />
             </label>
             <label>
+              Subject
+              <select name="subject" defaultValue="A paid plan or a billing question">
+                {content.sections.map((section) => (
+                  <option key={section.id} value={section.title}>
+                    {section.title}
+                  </option>
+                ))}
+                <option value="Something else">Something else</option>
+              </select>
+            </label>
+            <label>
               Message
               <textarea name="message" rows={6} required maxLength={4000} placeholder="What happened, what you were doing, and what you expected." />
             </label>
@@ -89,9 +101,6 @@ export default function ContactPage({ route, content, config }: PageProps) {
         </div>
         <SectionList content={content} />
         <FaqList content={content} title="Before you write" />
-        {content.sections[0]?.body ? (
-          <p className="wn-note">{richText(content.sections[0].body, "contact-note")}</p>
-        ) : null}
       </div>
     </PageFrame>
   );

@@ -15,9 +15,11 @@ import {
   toSlices,
   type Slice,
 } from "@/lib/wheel";
+import { useStoredList } from "@/lib/persist";
 
 const SAMPLE = ["Ava Chen", "Noah Bello", "Mia Torres", "Liam Okafor", "Zoe Park", "Ethan Rossi", "Ines Duarte", "Kai Mensah"];
 const STORE = "won.options.v1";
+const LIST_STORE = "won.list.v1";
 
 type Options = { duration: 4 | 6 | 8; sound: boolean; volume: number; palette: string; projector: boolean };
 
@@ -159,7 +161,7 @@ function rawFromEntries(entries: Entry[]): string {
 }
 
 export default function NameWheelTool({ embedded = false }: { embedded?: boolean }) {
-  const [raw, setRaw] = useState("");
+  const [raw, setRaw] = useStoredList(LIST_STORE);
   const [options, setOptions] = useState<Options>(DEFAULT_OPTIONS);
   const [spinning, setSpinning] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -604,6 +606,87 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
   const chanceEach = slices.length ? 1 / slices.length : 0;
   const dupes = entries.filter((e) => e.count > 1);
 
+  // Projector: the wheel and the drawn name fill the screen for a room, and the
+  // browser's own full screen is asked for from the same click.
+  const toggleProjector = () => {
+    const on = !options.projector;
+    setOption("projector", on);
+    try {
+      if (on) {
+        if (!document.fullscreenElement) void document.documentElement.requestFullscreen?.();
+      } else if (document.fullscreenElement) {
+        void document.exitFullscreen?.();
+      }
+    } catch {
+      /* a browser can refuse full screen; the larger type still applies */
+    }
+  };
+
+  // Everything that is not the core job sits in one drawer: spin length, sound,
+  // palette, the draw record, export, import and the embed code.
+  const settings = (
+    <div className="wn-options-body">
+      <div className="wn-opt" role="group" aria-label="Spin length">
+        <span className="wn-opt-label" aria-hidden="true">Spin length</span>
+        <div className="wn-seg">
+          {([4, 6, 8] as const).map((seconds) => (
+            <label key={seconds}>
+              <input
+                type="radio"
+                name="wn-duration"
+                value={seconds}
+                checked={options.duration === seconds}
+                onChange={() => setOption("duration", seconds)}
+              />
+              <span>{seconds} s</span>
+            </label>
+          ))}
+        </div>
+      </div>
+      <div className="wn-opt">
+        <span className="wn-opt-label">Sound</span>
+        <label className="wn-switch">
+          <input type="checkbox" checked={options.sound} onChange={(event) => setOption("sound", event.target.checked)} />
+          <span className="track" aria-hidden="true" />
+          <span className="wn-plain">{options.sound ? "On" : "Off"}</span>
+        </label>
+      </div>
+      <div className="wn-opt">
+        <label className="wn-opt-label" htmlFor="wn-volume">Volume</label>
+        <div className="wn-range">
+          <input
+            id="wn-volume"
+            type="range"
+            min={0}
+            max={100}
+            step={5}
+            value={options.volume}
+            onChange={(event) => setOption("volume", Number(event.target.value))}
+          />
+          <output htmlFor="wn-volume">{options.volume}</output>
+        </div>
+      </div>
+      <div className="wn-opt wn-opt-block" role="radiogroup" aria-label="Palette">
+        <span className="wn-opt-label" aria-hidden="true">Palette</span>
+        <div className="wn-swatches">
+          {PALETTES.map((item) => (
+            <label className="wn-swatch" key={item.id} title={item.name}>
+              <input
+                type="radio"
+                name="wn-palette"
+                value={item.id}
+                checked={options.palette === item.id}
+                onChange={() => setOption("palette", item.id)}
+                aria-label={item.name}
+              />
+              <span style={{ background: `conic-gradient(${item.fills[0]} 0 25%, ${item.fills[1]} 25% 50%, ${item.fills[2]} 50% 75%, ${item.fills[3]} 75% 100%)` }} />
+            </label>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className={`wn-tool${options.projector ? " is-projector" : ""}`} data-capability="name-wheel" data-operation="spin" data-state={state}>
       <div className="wn-bench" data-tool-output data-state={state}>
@@ -624,6 +707,7 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
             value={raw}
             onChange={(event) => setRaw(event.target.value)}
             spellCheck={false}
+            aria-label="Names, one per line"
             aria-describedby="wn-list-hint"
           />
           <p className="wn-hint" id="wn-list-hint">
@@ -758,8 +842,12 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
               ) : null}
             </div>
           </div>
-          <details className="wn-more">
-            <summary>Results &amp; sharing <span className="wn-badge" data-draw-count>{draws.length}</span></summary>
+        </div>
+
+        {/* ---------- one drawer: everything the core job does not need ---------- */}
+        <details className="wn-more" ref={optionsRef}>
+          <summary>More options <span className="wn-badge" data-draw-count>{draws.length}</span></summary>
+          {settings}
           <section className="wn-draws" aria-labelledby="wn-draws-title">
             <div className="wn-draws-head">
               <h2 id="wn-draws-title">
@@ -814,6 +902,13 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
               <button type="button" className="wn-btn wn-btn-ghost wn-btn-sm" onClick={downloadJson}>
                 Save .json
               </button>
+              <button
+                type="button"
+                className="wn-btn wn-btn-ghost wn-btn-sm"
+                onClick={() => { setRaw(""); setDraws([]); clearResult(); setUndoRaw(null); }}
+              >
+                Clear the list
+              </button>
               <button type="button" className="wn-btn wn-btn-ghost wn-btn-sm" onClick={() => fileRef.current?.click()}>
                 Import
               </button>
@@ -839,12 +934,20 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
               <textarea className="wn-embed" readOnly rows={3} aria-label="Embed code" value={embedCode} />
             </details>
           </section>
-          </details>
-        </div>
+        </details>
 
         {/* ---------- wheel ---------- */}
         <div className="wn-wheel-col">
           <div className={`wn-stage${result ? " is-answered" : ""}`}>
+            <button
+              type="button"
+              className="wn-stage-tool"
+              data-projector
+              aria-pressed={options.projector}
+              onClick={toggleProjector}
+            >
+              {options.projector ? "Exit projector" : "Projector"}
+            </button>
             <div className="wn-wheel-wrap">
               <div className="wn-pointer" aria-hidden="true" />
               <canvas ref={canvasRef} className="wn-wheel-canvas" aria-hidden="true" width={400} height={400} />
@@ -861,78 +964,6 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
           </div>
         </div>
 
-        {/* ---------- settings, inside the panel beside the wheel ---------- */}
-        <details className="wn-options" ref={optionsRef}>
-          <summary>Wheel options</summary>
-          <div className="wn-options-body">
-            <div className="wn-opt" role="group" aria-label="Spin length">
-              <span className="wn-opt-label" aria-hidden="true">Spin length</span>
-              <div className="wn-seg">
-                {([4, 6, 8] as const).map((seconds) => (
-                  <label key={seconds}>
-                    <input
-                      type="radio"
-                      name="wn-duration"
-                      value={seconds}
-                      checked={options.duration === seconds}
-                      onChange={() => setOption("duration", seconds)}
-                    />
-                    <span>{seconds} s</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-            <div className="wn-opt">
-              <span className="wn-opt-label">Sound</span>
-              <label className="wn-switch">
-                <input type="checkbox" checked={options.sound} onChange={(event) => setOption("sound", event.target.checked)} />
-                <span className="track" aria-hidden="true" />
-                <span className="wn-plain">{options.sound ? "On" : "Off"}</span>
-              </label>
-            </div>
-            <div className="wn-opt">
-              <label className="wn-opt-label" htmlFor="wn-volume">Volume</label>
-              <div className="wn-range">
-                <input
-                  id="wn-volume"
-                  type="range"
-                  min={0}
-                  max={100}
-                  step={5}
-                  value={options.volume}
-                  onChange={(event) => setOption("volume", Number(event.target.value))}
-                />
-                <output htmlFor="wn-volume">{options.volume}</output>
-              </div>
-            </div>
-            <div className="wn-opt wn-opt-block" role="radiogroup" aria-label="Palette">
-              <span className="wn-opt-label" aria-hidden="true">Palette</span>
-              <div className="wn-swatches">
-                {PALETTES.map((item) => (
-                  <label className="wn-swatch" key={item.id} title={item.name}>
-                    <input
-                      type="radio"
-                      name="wn-palette"
-                      value={item.id}
-                      checked={options.palette === item.id}
-                      onChange={() => setOption("palette", item.id)}
-                      aria-label={item.name}
-                    />
-                    <span style={{ background: `conic-gradient(${item.fills[0]} 0 25%, ${item.fills[1]} 25% 50%, ${item.fills[2]} 50% 75%, ${item.fills[3]} 75% 100%)` }} />
-                  </label>
-                ))}
-              </div>
-            </div>
-            <div className="wn-opt">
-              <span className="wn-opt-label">Projector</span>
-              <label className="wn-switch">
-                <input type="checkbox" checked={options.projector} onChange={(event) => setOption("projector", event.target.checked)} />
-                <span className="track" aria-hidden="true" />
-                <span className="wn-plain">{options.projector ? "On" : "Off"}</span>
-              </label>
-            </div>
-          </div>
-        </details>
       </div>
 
       <div className={`wn-toast${toast ? " is-on" : ""}`} role="status" aria-live="polite">

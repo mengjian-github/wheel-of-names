@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { PALETTES, fitLabel, parseNames, pct, randomInt, timeNow } from "@/lib/wheel";
+import { useStoredList } from "@/lib/persist";
 import { DEFAULT_PALETTE } from "@/lib/wheel";
 
 type Winner = { order: number; name: string; odds: number; when: string };
@@ -60,7 +61,7 @@ function drawRaffleWheel(canvas: HTMLCanvasElement, names: string[], highlighted
 }
 
 export default function RaffleTool() {
-  const [text, setText] = useState("");
+  const [text, setText] = useStoredList("won.raffle.v1");
   const [winnersWanted, setWinnersWanted] = useState(1);
   const [winners, setWinners] = useState<Winner[]>([]);
   const [drawing, setDrawing] = useState(false);
@@ -246,7 +247,7 @@ export default function RaffleTool() {
                       data-draw-row
                       style={{
                         display: "grid",
-                        gridTemplateColumns: "28px minmax(0,1fr) 56px",
+                        gridTemplateColumns: "28px minmax(0,1fr) 62px 56px",
                         alignItems: "center",
                         gap: 8,
                         padding: "8px 6px",
@@ -256,6 +257,7 @@ export default function RaffleTool() {
                     >
                       <span style={{ fontSize: 12.5, color: "#93a0c6", fontVariantNumeric: "tabular-nums" }}>{winner.order}</span>
                       <span style={{ fontWeight: 600, overflowWrap: "anywhere" }}>{winner.name}</span>
+                      <span data-draw-time style={{ fontSize: 12.5, color: "#93a0c6", fontVariantNumeric: "tabular-nums" }}>{winner.when}</span>
                       <button
                         type="button"
                         className="wn-btn wn-btn-ghost wn-btn-sm"

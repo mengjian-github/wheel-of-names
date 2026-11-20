@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { DEFAULT_PALETTE, PALETTES, WEIGHT_ERROR, parseWeighted, pct, randomWeighted, timeNow } from "@/lib/wheel";
+import { useStoredList } from "@/lib/persist";
 
 type Row = { name: string; weight: number };
 
@@ -74,7 +75,7 @@ function drawWeightedWheel(canvas: HTMLCanvasElement, rows: Row[], fills: string
 }
 
 export default function WeightedWheelTool() {
-  const [text, setText] = useState("");
+  const [text, setText] = useStoredList("won.weighted.v1");
   const [rows, setRows] = useState<Row[]>([]);
   const [error, setError] = useState("");
   const [spinning, setSpinning] = useState(false);
@@ -258,6 +259,7 @@ export default function WeightedWheelTool() {
             className="wn-input"
             data-tool-input="entries"
             placeholder="One entry per line, weight 1–10"
+            aria-label="Entries, one per line"
             value={text}
             onChange={(event) => syncFromText(event.target.value)}
             spellCheck={false}
@@ -400,7 +402,9 @@ export default function WeightedWheelTool() {
       <section className="wn-draws" aria-labelledby="wn-odds-title">
         <div className="wn-draws-head">
           <h2 id="wn-odds-title">Chance for each entry</h2>
-          <fieldset className="wn-fieldset" style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <details className="wn-more wn-wheel-options" style={{ margin: "0 0 8px", padding: "0 10px" }}>
+            <summary>Wheel options</summary>
+          <fieldset className="wn-fieldset" style={{ display: "flex", alignItems: "center", gap: 10, paddingTop: 8 }}>
             <legend className="wn-label" style={{ marginBottom: 0 }}>Palette</legend>
             <div className="wn-swatches">
               {PALETTES.map((item) => (
@@ -418,6 +422,7 @@ export default function WeightedWheelTool() {
               ))}
             </div>
           </fieldset>
+          </details>
         </div>
         {rows.length ? (
           <ul className="wn-odds-list" style={{ listStyle: "none", margin: "12px 0 0", padding: 0, display: "grid", gap: 6 }}>

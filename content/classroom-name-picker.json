@@ -1,0 +1,234 @@
+{
+  "title": "Classroom Name Picker — Free Cold Calling Wheel | Wheel of Names",
+  "description": "Spin a classroom name picker to call on a student at random, then take the name out so nobody is asked twice in a period. Free, no sign-up.",
+  "h1": "Classroom Name Picker: call on someone new",
+  "heroText": "Paste your class list, spin the classroom name picker, and one student is called on at random with their chance of being chosen shown, such as 4% in a class of 25. Take that name out after the answer and the next spin draws from the remaining students, so nobody is asked twice in the same period.",
+  "ctas": [
+    {
+      "label": "Open my class list",
+      "href": "/classroom-name-picker/",
+      "primary": true
+    },
+    {
+      "label": "See the no-repeat routine",
+      "href": "/classroom-name-picker/#no-repeat",
+      "primary": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "answer",
+      "title": "What the class picker does",
+      "body": "It turns a pasted class list into a wheel and draws one student, with the chance shown on the result card. Every draw is independent on a list that has not changed, so removing a winner is what keeps a period repeat-free.",
+      "items": [
+        {
+          "title": "At the start of the lesson",
+          "body": "Paste the register once and spin. The classroom's first student is called while the register closes and the room settles, so the question is not \"who wants to answer\"."
+        },
+        {
+          "title": "When you need a second name",
+          "body": "Take the winner out and spin again. The next draw comes from the students who have not answered, not from the whole class."
+        },
+        {
+          "title": "When the answer needs a second student",
+          "body": "Spin again for a partner, read-aloud partner or a second opinion. Two draws from a list thinned by the first winner give two different students."
+        },
+        {
+          "title": "When a class is half present",
+          "body": "Cut absent students from the list before the first spin. A name wheel counts every row, present or not, so a name left on it can be drawn even when the person is not in the room."
+        }
+      ]
+    },
+    {
+      "id": "routine",
+      "title": "A no-repeat routine for one class",
+      "body": "The routine is the picker plus the decision to remove each winner, and it takes one spin to set the habit.",
+      "items": [
+        {
+          "title": "Paste in rows of names",
+          "body": "Copy the classroom list from the register and paste one name per line. Empty rows and a heading are cut before the first spin, because a stray blank slice wastes a turn in front of a class."
+        },
+        {
+          "title": "Spin once and name the student",
+          "body": "The result card shows the name and the chance, which you can read out when a class wants proof. The wheel spends five to seven seconds turning, the time it takes a class to settle."
+        },
+        {
+          "title": "Remove the winner",
+          "body": "Delete that row once the student has answered, whether the answer was right or not. This one habit is what stops the same hand going up three times in a lesson."
+        },
+        {
+          "title": "Note who answered, then reset",
+          "body": "Jot the name where the register lives, then paste the full list again at the start of the next period. For a list that comes back every day, a saved named wheel keeps the roster for you; the [pricing page](/pricing/) shows which plans save one."
+        }
+      ]
+    },
+    {
+      "id": "no-repeat",
+      "title": "What no-repeat means here",
+      "body": "Within one lesson, removing each winner leaves every student who has not answered at an even share of what is left. Across lessons, nothing carries over on the free picker.",
+      "items": [
+        {
+          "title": "A picked student is not punished",
+          "body": "Calling on a student has a cost if that student feels singled out for a hard question. Say at the start that every name will come up once, so a wrong slot feels like a turn rather than a trap."
+        },
+        {
+          "title": "Volunteers still count",
+          "body": "Retire the wheel for a lesson when a class is mid-discussion and everyone is contributing. The picker is for a silent room, not for overriding hands that are already up."
+        },
+        {
+          "title": "Ten names, ten draws",
+          "body": "If you ask for a set of winners, the site draws that many distinct names in order and stops when the list runs out, so the number must not exceed the class size."
+        },
+        {
+          "title": "Keep the results for the register",
+          "body": "Ask for several winners at once and the results table records each name with its order and time, then copies as text. That paste is the record of which students answered."
+        }
+      ],
+      "table": {
+        "caption": "A class left at each step of the period",
+        "columns": [
+          "Stage of the lesson",
+          "Students left",
+          "Chance for each student",
+          "What to do"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "Start of a 30-student class",
+              "30",
+              "One in thirty before the first spin",
+              "Spin for the first answer"
+            ],
+            "status": "working",
+            "recordKey": "class-stage-start",
+            "evidenceRefs": [
+              "ev_206"
+            ],
+            "observedAt": "2026-11-20",
+            "sourceUrl": "https://wheelofnames.com/faq"
+          },
+          {
+            "cells": [
+              "After 25 answers",
+              "5",
+              "One in five among the students left",
+              "Keep the names that are left"
+            ],
+            "status": "working",
+            "recordKey": "class-stage-twentyfive",
+            "evidenceRefs": [
+              "ev_206"
+            ],
+            "observedAt": "2026-11-20",
+            "sourceUrl": "https://wheelofnames.com/faq"
+          },
+          {
+            "cells": [
+              "After 30 answers",
+              "0",
+              "The list is used up and the next draw stops",
+              "Paste a fresh list for tomorrow"
+            ],
+            "status": "working",
+            "recordKey": "class-stage-end",
+            "evidenceRefs": [
+              "ev_206"
+            ],
+            "observedAt": "2026-11-20",
+            "sourceUrl": "https://wheelofnames.com/faq"
+          }
+        ],
+        "lastCheckedAt": "2026-11-20"
+      }
+    },
+    {
+      "id": "limits",
+      "title": "What the class picker will not do",
+      "body": "Free and no sign-up, but a browser tab is the whole product, which leaves three gaps a school should know about.",
+      "items": [
+        {
+          "title": "No saved register",
+          "body": "The free picker holds the last list in the open tab. Come back on the same lesson's device after the tab is closed and the roster is gone; keeping a named wheel is a paid feature on the [pricing page](/pricing/)."
+        },
+        {
+          "title": "No attendance or grades",
+          "body": "The picker draws names and records the order. It does not mark absences, record answers or store marks, so a register still lives in your school system."
+        },
+        {
+          "title": "No account for the class",
+          "body": "Students do not log in, and there is no teacher dashboard. One teacher sees one list and one run of draws, and a colleague starting a pick gets an empty wheel."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Will the same student be called on twice?",
+      "answer": "Only if the name stays on the wheel. Remove each winner and the next spin draws from the remaining class, so a class of 28 hears 28 different names before anyone repeats. Leave the list untouched and repeats are normal, because each spin is independent."
+    },
+    {
+      "question": "Can students see it is fair?",
+      "answer": "Yes, in two ways. The result card prints the winner's chance, and the fairness check runs 10,000 draws on the class list inside the browser and reports each name's observed count and share beside the expected 1-in-N share. Neither sends a name anywhere."
+    },
+    {
+      "question": "Does it work on a school Chromebook or smartboard?",
+      "answer": "It opens in a current browser, including Chrome and ChromeOS, and the wheel can be shown full screen for a projector. A school network that blocks the site is handled by the school, not by the picker; the list still works on a phone hotspot if one is allowed."
+    },
+    {
+      "question": "Is my class list stored or uploaded?",
+      "answer": "No. The names stay on the device and the draw happens in the page, so nothing is sent to a server and deleting the tab clears the list. Saving a class roster between days needs a named wheel on a plan; the pricing route lists what each plan saves."
+    },
+    {
+      "question": "Can I use it for group work and not just questions?",
+      "answer": "Yes, for parts of it. Ask for several winners at once and the drawn order gives spoken turns or pairings without repeats, and that order copies as text. Splitting a class into equal teams is outside the picker, which picks names rather than builds groups."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Classroom Name Picker: call on someone new",
+    "description": "Spin a classroom name picker to call on a student at random, then take the name out so nobody is asked twice in a period.",
+    "author": {
+      "@type": "Organization",
+      "name": "Wheel of Names"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Wheel of Names"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://site.example/classroom-name-picker/"
+    },
+    "mainEntity": {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Will the same student be called on twice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only if the name stays on the wheel. Remove each winner and the next spin draws from the remaining class; leave the list untouched and repeats are normal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can students see it is fair?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The result card prints the chance, and the fairness check runs 10,000 draws on the class list in the browser and reports each name's count beside the expected share."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my class list stored or uploaded?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The names stay on the device and the draw happens in the page; saving a roster between days needs a named wheel on a plan."
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "title": "About Wheel of Names: How a Winner Is Drawn",
+  "description": "Who runs Wheel of Names, how the wheel picks a winner inside your browser, and what it leaves out on purpose.",
+  "h1": "About Wheel of Names",
+  "heroText": "Wheel of Names turns a pasted list into a spinning wheel that picks one name with crypto.getRandomValues. It is for teachers calling on a student, hosts running a giveaway, and anyone who wants a fair draw instead of a decision made by hand.",
+  "ctas": [
+    {
+      "label": "Open the wheel and paste a list",
+      "href": "/",
+      "primary": true
+    },
+    {
+      "label": "See how the draw stays random",
+      "href": "/fairness/",
+      "primary": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "who-runs-it",
+      "title": "Who runs this site",
+      "body": "Wheel of Names is an independent site run by its owner. There is no company behind it, no staff list and no invented founder story: one person builds the wheel, writes the pages and reads every message sent through the contact form. It is not affiliated with any other wheel site, classroom platform or brand named on these pages."
+    },
+    {
+      "id": "how-a-result-is-made",
+      "title": "How a result is made",
+      "body": "The whole draw happens on your own device, inside the browser tab you have open.",
+      "steps": [
+        {
+          "title": "It reads your list and weights",
+          "body": "The text you paste and the weight you set for each entry, from 1 to 10."
+        },
+        {
+          "title": "It runs in the browser",
+          "body": "No entry text is sent to a server, so the tool keeps working offline once the page has loaded."
+        },
+        {
+          "title": "It returns a result",
+          "body": "One winner drawn with crypto.getRandomValues, its chance of winning, and how many entries are left. A [raffle draw](/raffle-wheel/) returns several winners in order, and a [fairness test](/fairness/) reports each entry's observed count against its expected share."
+        }
+      ]
+    },
+    {
+      "id": "browser-limits",
+      "title": "Where it runs, and what that limits",
+      "body": "The browser is what keeps lists private, and it also sets the tool's edges.",
+      "steps": [
+        {
+          "title": "A current browser",
+          "body": "Chrome, Edge, Firefox or Safari in a recent version. Very old browsers may lack the random source the draw relies on."
+        },
+        {
+          "title": "A page that has loaded",
+          "body": "Spin on a page you have already opened. A hard refresh starts again with an empty list."
+        },
+        {
+          "title": "A tab with room to work",
+          "body": "A few thousand entries and a 10,000-draw test both stay light. A tab already holding dozens of heavy pages may run slowly."
+        },
+        {
+          "title": "No app install",
+          "body": "Offline use means the loaded page keeps spinning without a connection. There is nothing to download first."
+        }
+      ]
+    },
+    {
+      "id": "what-it-does-not-do",
+      "title": "What it does not do",
+      "body": "Some features are absent by choice, not by accident.",
+      "steps": [
+        {
+          "title": "No sign-in to draw",
+          "body": "A paid plan exists for saved wheels and longer records, not to unlock the basic draw."
+        },
+        {
+          "title": "No pictures",
+          "body": "Entries are text and a weight; avatars and file imports are not accepted."
+        },
+        {
+          "title": "No check on who a name is",
+          "body": "The wheel picks from the list it is given and does not confirm that a name belongs to a real person."
+        },
+        {
+          "title": "No entry handling",
+          "body": "It draws winners. Selling tickets, collecting entries and confirming prizes are for the host to do outside the wheel."
+        }
+      ]
+    },
+    {
+      "id": "pricing-and-plans",
+      "title": "Plans, briefly",
+      "body": "Free use covers spinning with the features the home page lists, and the [pricing page](/pricing/) states what the paid plans add. The numbers stay on that page so this one does not repeat them."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "name": "About Wheel of Names",
+        "url": "https://site.example/about/",
+        "description": "Who runs Wheel of Names, how the wheel picks a winner inside your browser, and what it leaves out on purpose.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Wheel of Names",
+          "url": "https://site.example/"
+        }
+      }
+    ]
+  }
+}

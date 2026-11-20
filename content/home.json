@@ -1,0 +1,227 @@
+{
+  "title": "Wheel of Names — Free Random Name Picker Wheel",
+  "description": "Paste your list, spin, and read one winner on screen. Free, no sign-up, and the list stays in your browser. Remove the winner and spin again.",
+  "h1": "Wheel of Names: paste a list, spin, get one winner",
+  "heroText": "Paste a list of names, one per line, and this wheel of names turns every line into an equal slice. One name is drawn with the browser's own random number source before a single frame moves, the wheel spins about six seconds and stops on it, and the winner card shows the name, its chance and how many entries are left. Nothing you paste is uploaded anywhere, and no sign-up stands between you and the first spin.",
+  "ctas": [
+    {
+      "label": "Spin my list",
+      "href": "/",
+      "primary": true
+    },
+    {
+      "label": "Add weights to the wheel",
+      "href": "/picker-wheel/",
+      "primary": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "answer",
+      "title": "What the wheel does",
+      "body": "A wheel of names is a random name picker that shows the draw as a spinning wheel, so everyone in the room sees the same result at the same moment. Paste a list, press Spin, read the winner, take the winner off, spin again.",
+      "steps": [
+        {
+          "title": "Remove the winner and go again",
+          "body": "Remove winner takes the name off the list, so nobody is picked twice in one round. Keep spinning until the list is empty, and add names whenever the group changes."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "title": "How to use it",
+      "body": "The first spin takes seconds: the list you paste is the only thing the wheel needs. What follows is the small handful of habits that keep a session clean.",
+      "steps": [
+        {
+          "title": "Type or paste the names",
+          "body": "Type or paste a list into the box, one name per line. A roster copied out of a spreadsheet pastes cleanly, and a comma-separated list can be split before you paste."
+        },
+        {
+          "title": "Take the name the wheel lands on",
+          "body": "A spin runs about six seconds and settles on the winner. The wheel stops by itself, so there is no button to press twice and no tap that decides where it lands."
+        },
+        {
+          "title": "Take the winner off",
+          "body": "Remove winner deletes that entry, and the wheel redraws with 19 slices instead of 20. The percentage on the next winner card is the new chance."
+        },
+        {
+          "title": "Make the list the same tomorrow",
+          "body": "The list is saved in the browser on this device, so a class list opens ready the next day. Paste a new list over it whenever the group changes."
+        },
+        {
+          "title": "Show it to the room",
+          "body": "Full screen fills a projector or a TV from across the room, and Esc returns to the page. For several winners in a row, the [raffle wheel](/raffle-wheel/) numbers each draw and records its time."
+        }
+      ]
+    },
+    {
+      "id": "fairness",
+      "title": "How the winner is chosen",
+      "body": "The slice under the pointer is not what decides the winner: the winner is drawn before the wheel moves. The draw uses crypto.getRandomValues, the browser's own random number source, and any number that would favour one slice is thrown away and drawn again.",
+      "items": [
+        {
+          "title": "Equal chance on an equal list",
+          "body": "With 20 names and no weights, each name has a 5 percent chance on every spin, first and last alike."
+        },
+        {
+          "title": "A list with repeats",
+          "body": "Paste the same name twice and it holds two slices, which doubles its chance. That is how a weighted draw can be done without a weight field."
+        },
+        {
+          "title": "The animation is only a reveal",
+          "body": "The wheel has already landed by the time it starts to turn. How hard you click, where the pointer starts or how long the list is does not change the draw."
+        },
+        {
+          "title": "Check it yourself",
+          "body": "The [fairness page](/fairness/) runs 10,000 draws on your list in the browser and shows each entry's observed count beside the expected 1-in-N share, so you can see the spread rather than take a promise."
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "title": "What it does not do",
+      "body": "The tool is built for drawing names on screen, and a few jobs sit outside that. None of them shapes who wins.",
+      "items": [
+        {
+          "title": "No participant lists on a server",
+          "body": "Names never go to a server, so the tool cannot collect entries from other people through a form or a link. Everyone's names are pasted in by the person holding the wheel. A numbered draw record and cross-device sync are the paid additions, and [the plans](/pricing/) list them."
+        },
+        {
+          "title": "No app to install",
+          "body": "It runs in a current desktop or mobile browser. A device that blocks browser storage cannot keep the list between visits."
+        },
+        {
+          "title": "No editor for a very long roster",
+          "body": "A pasted list can be replaced or cleared, but pasted names are not searched or sorted in place. Building a big roster is faster in a spreadsheet and then pasted here."
+        },
+        {
+          "title": "What it leaves to you",
+          "body": "Deciding who belongs on the list and whether a draw settles the question are your calls, not the wheel's."
+        }
+      ]
+    },
+    {
+      "id": "use-cases",
+      "title": "What people spin it for",
+      "body": "The same handful of jobs shows up again and again, and each one needs the winner to be visible to whoever is in the room.",
+      "items": [
+        {
+          "title": "Classroom cold calling",
+          "body": "A teacher keeps a class list and calls on one student per spin. Remove winner keeps names from repeating in a lesson; the [classroom name picker](/classroom-name-picker/) page walks that routine through."
+        },
+        {
+          "title": "Streams and team meetings",
+          "body": "A streamer picks a viewer from chat, or a team picks who presents first. Full screen shows the result to an audience."
+        },
+        {
+          "title": "Household choices",
+          "body": "Chores, whose turn it is, which film to watch. Any list works, and the list is remembered on the device."
+        },
+        {
+          "title": "Groups that need extra entries",
+          "body": "A quieter student, an entrant who bought two tickets or a volunteer who took on last week's job can carry a weight above the rest instead of being pasted twice."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Do I need an account to spin?",
+      "answer": "No. Paste the list and press Spin on the first screen. An account is only offered when you ask for sync across devices or for a record of past draws."
+    },
+    {
+      "question": "Is it really random?",
+      "answer": "The name is drawn with crypto.getRandomValues before the wheel moves, with any biased number discarded and redrawn. The spinner has no say in the result: it starts the draw and then shows it, so clicking fast or slow changes nothing."
+    },
+    {
+      "question": "Can I pick more than one winner?",
+      "answer": "Not on this wheel, which draws one winner per spin. Two routes do it: remove the winner and spin again, or open the raffle wheel, which draws the number of distinct winners you ask for."
+    },
+    {
+      "question": "Does it work with many names?",
+      "answer": "A few hundred entries still spin. Slice labels shrink and may be dropped on a very long list, but the winner card always shows the full name, its chance and the count left."
+    },
+    {
+      "question": "Where is my list stored?",
+      "answer": "Your list and settings sit in this browser on this device. They are not sent to a server, so clearing site data in the browser removes them, and another device starts with an empty list until you paste it there."
+    },
+    {
+      "question": "Can two people be picked at once?",
+      "answer": "No. One wheel draws one winner per spin. For a set of winners, remove each and spin again, or ask the raffle wheel for several distinct winners in one run."
+    },
+    {
+      "question": "Do I need to buy a plan to use it for class?",
+      "answer": "No. A class list on one device is the free use: spin as often as the lesson needs, go full screen on the projector and remove names as they are drawn. The plans are for carrying named lists between devices and for keeping a record."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Wheel of Names",
+    "url": "https://site.example/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any modern web browser",
+    "description": "A free wheel of names that turns a pasted list into a spinning wheel, draws one winner with crypto.getRandomValues before the wheel moves, and lets you remove the winner and spin again.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Paste a list, one name per line",
+      "Equal slices, one winner drawn before the wheel moves",
+      "Remove the winner and spin again",
+      "Full-screen view for a projector",
+      "List kept in the browser"
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Wheel of Names"
+    },
+    "mainEntity": {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need an account to spin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Paste the list and press Spin on the first screen. An account is only offered when you ask for sync across devices or for a record of past draws."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it really random?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The name is drawn with crypto.getRandomValues before the wheel moves, with any biased number discarded and redrawn. The spinner has no say in the result: it starts the draw and then shows it, so clicking fast or slow changes nothing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I pick more than one winner?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Remove the winner and spin again for a second, or use the raffle wheel, which draws a number of distinct winners you choose, one at a time, and lists each with its draw order and time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is my list stored?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your list and settings sit in this browser on this device. They are not sent to a server, so clearing site data in the browser removes them, and another device starts with an empty list until you paste it there."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to buy a plan to use it for class?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. A class list on one device is the free use: spin as often as the lesson needs, go full screen on the projector and remove names as they are drawn. The plans are for carrying named lists between devices and for keeping a record."
+          }
+        }
+      ]
+    }
+  }
+}

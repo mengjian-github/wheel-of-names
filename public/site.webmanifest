@@ -1,0 +1,16 @@
+{
+  "name": "Wheel of Names",
+  "short_name": "Wheel of Names",
+  "description": "Spin a wheel of names and read one winner on screen: paste a list, spin, remove the winner and spin again. Free, no sign-up, and the list stays in your browser.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#1a2039",
+  "theme_color": "#1a2039",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "title": "Wheel Spinner — Spin a Free Name Wheel Online",
+  "description": "A free wheel spinner that runs in your browser: paste names, spin, and get one winner with its chance shown. No sign-up, nothing uploaded.",
+  "h1": "Wheel Spinner: spin a list and get one winner",
+  "heroText": "A wheel spinner turns a list of names into a spinning wheel and stops on one at random. This one runs in your browser: paste your names, spin, and the wheel lands on a single winner. The draw is made before the wheel moves, with the browser's secure random numbers, so the spin only shows a pick that was already fair. No sign-up, and your names are not uploaded.",
+  "ctas": [
+    {
+      "label": "Spin my wheel",
+      "href": "/",
+      "primary": true
+    },
+    {
+      "label": "See how the winner is drawn",
+      "href": "/fairness/",
+      "primary": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "answer",
+      "title": "What a wheel spinner does",
+      "body": "The wheel is a fair way to pick from a list without anyone deciding. You paste the entries, they become equal slices, and one slice is chosen at random when you spin.",
+      "items": [
+        {
+          "title": "Before the wheel turns",
+          "body": "The winner is drawn first, using crypto.getRandomValues and rejection sampling, so an even spin cannot hide an uneven chance. The animation then settles on that slice."
+        },
+        {
+          "title": "What you see at the end",
+          "body": "A result card with the winner, that entry's chance in the draw and how many entries are left. A wheel of six names gives each one a 1-in-6 chance, shown as about 16.7%."
+        },
+        {
+          "title": "Same tool, other jobs",
+          "body": "Weighted entries, several winners in order and a randomness check are the [picker wheel](/picker-wheel/), the [raffle wheel](/raffle-wheel/) and the fairness page. This page is the plain spin."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "title": "Spin a name wheel in four steps",
+      "body": "A first spin takes about as long as typing your list.",
+      "items": [
+        {
+          "title": "A worked example: club raffle",
+          "body": "Forty entrants go into the box, one per line. Each slice carries 2.5%, and the card reports that chance beside the winner's name. Call the name out once the wheel stops, then remove it so the second prize cannot repeat the first."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Paste your list",
+          "body": "One name per line in the text box. A class register, a team rota or the entrants in a giveaway all work as a pasted column."
+        },
+        {
+          "title": "Check the slices",
+          "body": "Every name gets its own slice with its percentage chance printed on it, so a duplicated line is easy to spot before you spin."
+        },
+        {
+          "title": "Spin",
+          "body": "Press the spin button. The wheel turns five to seven seconds, then slows onto the slice already drawn."
+        },
+        {
+          "title": "Read the result",
+          "body": "The card names the winner. Spin again, or [remove the winner](/picker-wheel/) from the list so the next spin picks someone else."
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "title": "Where this wheel spinner stops",
+      "body": "Knowing the edges saves a surprise in the middle of an event.",
+      "items": [
+        {
+          "title": "No images on slices",
+          "body": "Entries are text. The wheel draws names, teams, numbers or short answers, not pictures or logos."
+        },
+        {
+          "title": "No saved wheel on the free tier",
+          "body": "The free tier loads the wheel in your browser and keeps no library of named wheels between sessions. Saving wheels, keeping a draw history and syncing devices are what [Plus](/pricing/) adds."
+        },
+        {
+          "title": "It stays in the browser",
+          "body": "Nothing is sent anywhere, which also means another device cannot join the same spin. That is why synced devices start on Plus."
+        },
+        {
+          "title": "One wheel at a time",
+          "body": "The page spins one list, one result at a time. Drawing several winners in a set order is the [raffle wheel](/raffle-wheel/), and a weighted list goes to the [picker wheel](/picker-wheel/)."
+        },
+        {
+          "title": "Bring your own list",
+          "body": "There is no database of names to search. Every draw starts from the lines you paste, so a mislabelled entry shows up on a slice exactly as you typed it."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is this wheel spinner free?",
+      "answer": "Yes. Pasting names, spinning and reading the result cost nothing and need no account. The free tier runs the wheel in the browser."
+    },
+    {
+      "question": "Can the result be predicted from the list order?",
+      "answer": "No. The winner is drawn from the whole list with the browser's secure random numbers, not from where a slice sits, so moving names around does not change any entry's chance. The [fairness page](/fairness/) explains the method and lets you run 10,000 draws yourself."
+    },
+    {
+      "question": "Does it work offline?",
+      "answer": "Once the page has loaded, the spin and the draw run on your device with no network call, so a dropped connection does not disturb a spin already in progress. Loading the page for the first time still needs a connection."
+    },
+    {
+      "question": "How many names can I paste?",
+      "answer": "You can paste a long class list or raffle sheet. Past a few dozen names the labels on the slices shrink, so the result card is the reliable place to read the winner and its chance."
+    },
+    {
+      "question": "What happens to my names after I close the page?",
+      "answer": "They stay on your device as the wheel's last list and are not uploaded to a server. Signing in is only needed to save named wheels to your account across devices."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Wheel Spinner",
+        "description": "A free wheel spinner that runs in your browser: paste names, spin, and get one winner with its chance.",
+        "author": {
+          "@type": "Organization",
+          "name": "Wheel of Names"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Wheel of Names"
+        },
+        "mainEntityOfPage": "https://site.example/wheel-spinner/"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is this wheel spinner free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Pasting names, spinning and reading the result cost nothing and need no account. The free tier runs the wheel in the browser."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can the result be predicted from the list order?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The winner is drawn from the whole list with the browser's secure random numbers, not from where a slice sits, so moving names around does not change any entry's chance. The fairness page explains the method and lets you run 10,000 draws yourself."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work offline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Once the page has loaded, the spin and the draw run on your device with no network call, so a dropped connection does not disturb a spin already in progress. Loading the page for the first time still needs a connection."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many names can I paste?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can paste a long class list or raffle sheet. Past a few dozen names the labels on the slices shrink, so the result card is the reliable place to read the winner and its chance."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens to my names after I close the page?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "They stay on your device as the wheel's last list and are not uploaded to a server. Signing in is only needed to save named wheels to your account across devices."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "title": "Is Wheel of Names Random? How a Winner Is Drawn",
+  "description": "Yes. Wheel of Names draws the winner with your browser's cryptographic random source before the wheel moves, and you can check it with 10,000 draws.",
+  "h1": "Fairness: is Wheel of Names random?",
+  "heroText": "The winner is chosen before the wheel starts turning. Wheel of Names fills a wheel from your pasted list, draws one slice with the browser's cryptographic random number generator, then spins 5-7 seconds to land on that slice. Nothing is uploaded, so the draw runs on your own device. The check ships with the tool: the fairness test on [the fairness page](/fairness/) draws 10,000 times from your current list and shows each name's observed count beside its expected 1-in-N share. For a yes-or-no answer with the numbers behind it, read on.",
+  "ctas": [
+    {
+      "label": "Run the fairness test",
+      "href": "/wheel-spinner/",
+      "primary": true
+    },
+    {
+      "label": "Set each name's chance",
+      "href": "/picker-wheel/",
+      "primary": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "answer",
+      "title": "The short answer",
+      "body": "Yes, when the list is unweighted: every name has the same chance and no slice is favoured by where it sits on the wheel.",
+      "items": [
+        {
+          "title": "The draw happens first",
+          "body": "The winning slice is picked from the list in one step, then the wheel is animated to that slice. Watching the spin tells you nothing about the odds, because the outcome already exists."
+        },
+        {
+          "title": "Position on the wheel is cosmetic",
+          "body": "Names are drawn from the list, not from an angle. Put the same name first, last or in the middle and its chance stays 1 in N, however many names N is."
+        },
+        {
+          "title": "A spin can repeat a name",
+          "body": "Each spin draws from the full current list, so a name can win twice in a row. That is what fair with replacement looks like: the [raffle wheel](/raffle-wheel/) page covers the other rule, where a winner is drawn once and stays out."
+        },
+        {
+          "title": "Weights are a stated lottery",
+          "body": "Give entries weights from 1 to 10 and the wheel stops being equal on purpose: an entry given weight 3 in a list totalling 10 wins 30% of the time. The percentage is printed on the slice, so nobody has to guess."
+        }
+      ]
+    },
+    {
+      "id": "algorithm",
+      "title": "How the winner is actually chosen",
+      "body": "Wheel of Names asks your browser for random bytes, turns them into one slice, and only then moves the wheel. No server takes part, and every draw starts from fresh bytes.",
+      "steps": [
+        {
+          "title": "Read random bytes from the browser",
+          "body": "The page calls crypto.getRandomValues() and fills a 32-bit array with cryptographically strong values. The [MDN reference for getRandomValues](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues) describes that source as suitable for cryptographic purposes, and it has been available in every major browser since July 2015."
+        },
+        {
+          "title": "Reject the values that would bias the draw",
+          "body": "A 32-bit value spans 4,294,967,296 numbers, which rarely divides evenly by the slice count. Values at the top of the range that would leave a remainder go back and are drawn again, so every slice keeps the same number of winning values. Wheel makers that skip this step quietly favour the first slices."
+        },
+        {
+          "title": "Map the surviving value to a slice",
+          "body": "The accepted value is divided by the slice count and the remainder points at one entry. Nothing about the entry's text, its position or the order it was pasted in enters that calculation."
+        },
+        {
+          "title": "Animate to the slice already drawn",
+          "body": "The chosen slice sets the final angle and the wheel turns to reach it. The motion exists so a room can watch the result arrive; if the wheel stuttered or was skipped entirely, the same name would still have won."
+        },
+        {
+          "title": "Weights resize the slices of the range",
+          "body": "On a weighted wheel, each entry's share of the total weight becomes its share of the range. Four names at weights 5, 3, 1 and 1 total 10, so the first wins 50% of the time, the second 30%, and the last two 10% each."
+        },
+        {
+          "title": "Several winners are separate draws",
+          "body": "A draw of 3 winners repeats the whole procedure three times against the list as it stands at each step, and records draw order and time for each one. Drawing the whole order in advance would be the same thing statistically, but showing each spin separately lets the room watch it happen."
+        }
+      ]
+    },
+    {
+      "id": "verify",
+      "title": "How to check it yourself",
+      "body": "You do not have to take any of this on trust. The test runs inside the page on your list and prints the result.",
+      "items": [
+        {
+          "title": "Read the count against the expectation",
+          "body": "For each entry the table shows how many times it came up, what share that is, and the 1-in-N share of a perfect draw, plus the entry that wandered furthest. On 10 names and 10,000 draws, each expected count is 1,000."
+        },
+        {
+          "title": "Expect scatter, not a flat line",
+          "body": "Real draws wobble. With 1,000 expected wins a name commonly lands a few dozen either side, and two names can differ by 100 with nothing wrong. A run that splits evenly to the last unit is the unusual result."
+        },
+        {
+          "title": "Look for shape, not size",
+          "body": "The failure worth catching is a pattern: counts that fall in the same order as the wheel's layout, a first slice that always leads, or neighbouring names winning together. Run the test on two or three different list sizes; a bias in the mapping shows up across all of them."
+        },
+        {
+          "title": "Run it again after a change",
+          "body": "If you switched weights on, or deleted duplicates, run the test once more. The expected share changes with the total weight, and the comparison is only meaningful against the current list."
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "title": "Where fairness stops",
+      "body": "A fair draw removes the wheel's own bias. It cannot fix a process people already distrust, and four limits are worth knowing before you promise anyone a fair result.",
+      "items": [
+        {
+          "title": "Pseudo-random, not perfect",
+          "body": "Browser generators are not truly random: they are seeded from real entropy and then produce a stream of values too long to predict in practice. The [MDN note on Math.random](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) explains why the weaker function is not suitable for security, which is why the wheel uses the cryptographic source instead."
+        },
+        {
+          "title": "Your browser is the trust boundary",
+          "body": "The draw runs on your device, so a modified browser, an injected script or an extension that rewrites the page can change any local result. No web page can defend against a machine its owner has changed."
+        },
+        {
+          "title": "Your list decides the odds",
+          "body": "Duplicate names, trailing spaces and weights are choices you made. A name pasted twice gets two slices unless you clean the list first, and a weight of 10 against 1 makes one name ten times as likely by design."
+        },
+        {
+          "title": "A draw is not a decision",
+          "body": "The spin picks a name; it does not decide the rules. Agree before the first spin on whether winners stay in, what a winner receives, and what happens if the person drawn is absent. A classroom cold call and a prize draw need different rules, and the [classroom name picker](/classroom-name-picker/) page sets out the first."
+        },
+        {
+          "title": "Offline and on a big screen",
+          "body": "Once the page has loaded, a spin the wheel on a plane or in a hall with no wifi still works, because the draw never leaves the device. Put it on the projector and use the browser's full screen mode: the slice labels stay legible, and nothing is uploaded to make that happen."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Wheel of Names random or just animated?",
+      "answer": "Random, and the animation is not part of it. The winning slice is drawn first, then the wheel turns to it. Reloading the page, changing how long the spin lasts or reordering the names changes nobody's odds."
+    },
+    {
+      "question": "Can I prove the wheel is not rigged?",
+      "answer": "Run the built-in test on your own list. Each entry shows its observed count, its share and the 1-in-N share it should sit near, plus the largest deviation. A gap of a few dozen on an expected 1,000 is ordinary scatter, not evidence of bias."
+    },
+    {
+      "question": "Does removing the winner change the odds?",
+      "answer": "Yes, and both rules can be fair. Keeping the winner makes every spin independent, so someone can win twice. Removing the winner makes later spins conditional on the earlier ones. Decide which rule you are using before the first spin."
+    },
+    {
+      "question": "Why not use a simple random number generator?",
+      "answer": "A general-purpose generator is built for speed and speed alone, and its output can be predicted once its internal state is known. The cryptographic source the wheel uses is designed so that a value cannot be anticipated from earlier values, which matters when a prize or a grade depends on the result."
+    },
+    {
+      "question": "Do weights make the wheel unfair?",
+      "answer": "Only if the weights are secret. Every sliced percentage shows on the wheel and on the result card, so a weighted spin is a lottery with printed odds. Set the weights back to 1 when you want an even field."
+    },
+    {
+      "question": "Does a big screen or a projector change the result?",
+      "answer": "No. Screen size, full screen and the audience watching are display only; the draw happens the same way on a phone in a hallway as on a projector in a hall."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Is Wheel of Names Random? How a Winner Is Drawn",
+        "description": "Yes. Wheel of Names draws the winner with your browser's cryptographic random source before the wheel moves, and you can check it with 10,000 draws.",
+        "mainEntityOfPage": "https://site.example/fairness/",
+        "author": {
+          "@type": "Organization",
+          "name": "Wheel of Names"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Wheel of Names"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Wheel of Names random or just animated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Random, and the animation is not part of it. The winning slice is drawn first, then the wheel turns to it. Reloading the page, changing how long the spin lasts or reordering the names changes nobody's odds."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I prove the wheel is not rigged?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Run the built-in test on your own list. Each entry shows its observed count, its share and the 1-in-N share it should sit near, plus the largest deviation. A gap of a few dozen on an expected 1,000 is ordinary scatter, not evidence of bias."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does removing the winner change the odds?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, and both rules can be fair. Keeping the winner makes every spin independent, so someone can win twice. Removing the winner makes later spins conditional on the earlier ones. Decide which rule you are using before the first spin."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why not use a simple random number generator?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A general-purpose generator is built for speed and speed alone, and its output can be predicted once its internal state is known. The cryptographic source the wheel uses is designed so that a value cannot be anticipated from earlier values, which matters when a prize or a grade depends on the result."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do weights make the wheel unfair?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Only if the weights are secret. Every sliced percentage shows on the wheel and on the result card, so a weighted spin is a lottery with printed odds. Set the weights back to 1 when you want an even field."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does a big screen or a projector change the result?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Screen size, full screen and the audience watching are display only; the draw happens the same way on a phone in a hallway as on a projector in a hall."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

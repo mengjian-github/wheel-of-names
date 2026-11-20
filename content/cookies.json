@@ -1,0 +1,79 @@
+{
+  "title": "Cookie Policy — Wheel of Names",
+  "description": "Every cookie Wheel of Names sets, what each one does, how long it lasts and how to remove it or use the site without it.",
+  "h1": "Cookie Policy",
+  "heroText": "This page lists the cookies the site sets, why each one exists and what happens when you remove it. Pasted entry lists are not stored in a cookie.",
+  "ctas": [
+    {
+      "label": "Use the wheel",
+      "href": "/",
+      "primary": true
+    },
+    {
+      "label": "Clear a cookie-related session problem",
+      "href": "/contact/",
+      "primary": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-a-cookie-does-here",
+      "title": "What a cookie does here",
+      "body": "Cookies do two jobs on this site: they keep a signed-in session alive and they remember settings between visits. Nothing in a cookie holds the names you paste into the wheel."
+    },
+    {
+      "id": "the-cookies-set",
+      "title": "The cookies set",
+      "body": "Three cookies, each with one job.",
+      "items": [
+        {
+          "title": "Sign-in cookie",
+          "body": "Keeps you signed in as you move between pages. Set when you sign in; lasts until you sign out or the session ends."
+        },
+        {
+          "title": "Settings cookie",
+          "body": "Remembers your last wheel options and screen size preference. Set when you change an option; lasts one year."
+        },
+        {
+          "title": "Checkout cookie",
+          "body": "Confirms a completed payment when you come back from checkout. Set when you buy a plan; clears once the purchase is confirmed."
+        }
+      ]
+    },
+    {
+      "id": "no-advertising-cookies",
+      "title": "No advertising cookies",
+      "body": "The site sets no advertising or cross-site tracking cookies and does not hand cookie data to a data broker. The draw runs in the browser with crypto.getRandomValues, and that randomness has nothing to do with cookies or a visitor identifier."
+    },
+    {
+      "id": "removing-cookies",
+      "title": "Removing or blocking cookies",
+      "body": "Every browser lets you view, delete and block cookies in its settings, usually under Privacy. Blocking the session cookie ends the signed-in state, so saved wheels will not load until cookies are allowed again. Blocking the settings cookie means options go back to their defaults on the next visit. The wheel itself still spins without any cookie because the draw happens on the page."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Do cookies decide which name wins?",
+      "answer": "No. A cookie is never read while the winner is drawn. The winner comes from the browser's crypto.getRandomValues source, the same source used on every visit and in the fairness test that runs 10,000 draws, so a name cannot be nudged by what a browser remembers. Deleting cookies changes nothing about the odds."
+    },
+    {
+      "question": "Can I use the wheel with cookies turned off?",
+      "answer": "Yes. Pasting a list and spinning works with cookies blocked, and so does a raffle draw. What stops working is signing in, and with it saved wheels and long draw records, because the site cannot tell which account the browser belongs to."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Cookie Policy — Wheel of Names",
+        "url": "https://site.example/cookies/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Wheel of Names",
+          "url": "https://site.example/"
+        }
+      }
+    ]
+  }
+}

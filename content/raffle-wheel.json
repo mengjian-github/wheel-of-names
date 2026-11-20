@@ -1,0 +1,207 @@
+{
+  "title": "Raffle Wheel — Draw Multiple Winners in Order",
+  "description": "Paste ticket numbers or names, draw several winners in order on a raffle wheel, and copy a results table with draw order and time. Free, no sign-up.",
+  "h1": "Raffle Wheel: draw multiple winners in order",
+  "heroText": "Most giveaways stop at the first winner and leave the second and third draw to guesswork. This raffle wheel fixes the order for you: paste the entries, ask for the number of winners, and the tool draws them one at a time, then writes each name, its draw order and the time into a table you can copy as plain text. Use your ticket numbers instead of names if that is what your raffle sold, and keep draws for [giveaway](/random-name-picker/) nights, club fundraisers and staff prize draws in one place. It runs in your browser with no sign-up, and pasted entries never leave the page.",
+  "ctas": [
+    {
+      "label": "Set up my raffle draw",
+      "href": "/raffle-wheel/",
+      "primary": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "answer",
+      "title": "How the draw works",
+      "body": "A raffle needs an order, not just a winner: first prize, second prize, third prize, each drawn without a name coming up twice. The tool takes the list you paste and the number of winners you ask for.",
+      "steps": [
+        {
+          "title": "Draw them one at a time",
+          "body": "Each winner is picked from the entries that have not won yet. Nobody appears twice in the same draw, which is the rule most raffles run on."
+        },
+        {
+          "title": "Paste the ticket numbers or names",
+          "body": "One entry per line, however your raffle sold tickets. Two hundred entries and two thousand entries are both a single paste."
+        },
+        {
+          "title": "Say how many winners you need",
+          "body": "Enter the number of prizes. Ask for 3 winners and you get exactly 3; ask for 15 and the draw walks down all 15 prize places in one go."
+        },
+        {
+          "title": "Copy the results table",
+          "body": "Every winner lands in a table with its draw order and the time it was drawn. Copy it as text and send it to your committee, print it, or attach it to the prize hand-over."
+        }
+      ]
+    },
+    {
+      "id": "multi-winner",
+      "title": "Why the order matters",
+      "body": "Prizes are rarely equal, so the order of the draw is the result. Drawing first, second and third separately from the same list with a fresh [name wheel](/picker-wheel/) each time risks the same person winning twice; a single ordered draw does not.",
+      "items": [
+        {
+          "title": "One draw, several prizes",
+          "body": "Set the number of winners once and the tool walks down the list of prizes: the first name drawn gets first pick."
+        },
+        {
+          "title": "A printable record",
+          "body": "The results table carries draw order beside each name, so the 3rd-prize winner is not mistaken for the 1st in the email you send afterwards."
+        },
+        {
+          "title": "Who is in the pool",
+          "body": "Every entry you paste is in the draw. Leave out volunteers, organisers or anyone the raffle rules exclude before you paste, not after the first winner appears."
+        }
+      ]
+    },
+    {
+      "id": "records",
+      "title": "What each row records",
+      "body": "The table is the part you keep after the moment of the draw. Each row holds one winner: the name or ticket number exactly as you pasted it, the place in the draw, and the clock time the entry was drawn.",
+      "items": [
+        {
+          "title": "Name as pasted",
+          "body": "The entry keeps its original spelling and spacing, including leading zeros on ticket numbers such as 0007."
+        },
+        {
+          "title": "Draw order",
+          "body": "Numbered from 1 for the first draw, so a 50th prize in a long list is easy to find when you hand out gifts."
+        },
+        {
+          "title": "Time per draw",
+          "body": "Each row carries the local time it was drawn, which anchors the result to the moment your committee or audience saw it."
+        },
+        {
+          "title": "Copy as text",
+          "body": "One action copies the whole table as plain lines that drop straight into a spreadsheet, an email or a club newsletter without reformatting."
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "title": "Where a raffle draw needs care",
+      "body": "Drawing on screen is a fair way to pick a winner, but three habits make it defensible if someone asks how the result was reached.",
+      "items": [
+        {
+          "title": "Keep the entry list fixed",
+          "body": "Add or remove a single entry after the draw and the recorded result no longer matches the list you pasted. Save the list with the results."
+        },
+        {
+          "title": "Show the screen",
+          "body": "Run the draw where the people who entered can see it, or share the copied table straight afterwards; a result nobody watched is a result someone will question."
+        },
+        {
+          "title": "Weighting is for a different job",
+          "body": "A plain raffle gives every ticket the same chance. If some entries should count more, use the [weighted picker wheel](/picker-wheel/) and tell your entrants the odds first."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Does the order of the draw match the prizes?",
+      "answer": "Yes. Draw 1 is first prize, draw 2 is second prize, and so on down your prize list. Your prize sheet and the results table line up row by row, so the second name drawn hands over the second prize without a discussion about which came first."
+    },
+    {
+      "question": "What happens if I ask for more winners than entries?",
+      "answer": "The tool will not run a draw larger than the list. With 30 ticket numbers pasted, 30 is the ceiling; if a 31st prize exists it has to come from a bigger list or a separate rule you announce in advance."
+    },
+    {
+      "question": "Where does the results table go when I copy it?",
+      "answer": "It copies as plain text, one winner per line with its draw order and time. That pastes cleanly into a spreadsheet, an email or a printed sheet, so you can file the draw with your raffle records."
+    },
+    {
+      "question": "Is the draw random enough to use for a real raffle?",
+      "answer": "Each winner is chosen with the browser's crypto.getRandomValues function and rejection sampling, which removes the small bias that a plain modulo shortcut leaves behind. That is the same randomness source browsers use for security, applied to your list."
+    },
+    {
+      "question": "Do I need an account to run a raffle draw?",
+      "answer": "No. The page is ready when it loads: paste, choose the number of winners, and copy the table. Saving named wheels and keeping draw records beyond the session are part of the paid plans on [pricing](/pricing/), not a requirement to run one draw."
+    },
+    {
+      "question": "Can I use ticket numbers instead of names?",
+      "answer": "Yes, and it is the common way to run it. Paste the ticket numbers one per line, including leading zeros, and the wheel draws numbers rather than names. Winners then look up which ticket they hold."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Wheel of Names raffle wheel",
+        "url": "https://site.example/raffle-wheel/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any browser",
+        "description": "A raffle wheel that draws multiple winners in order from a pasted list and records each name with its draw order and time in a copyable results table.",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "Draws a requested number of distinct winners one at a time",
+          "Records each winner with draw order and time",
+          "Copies the results table as text",
+          "Uses crypto.getRandomValues with rejection sampling"
+        ],
+        "publisher": {
+          "@type": "Organization",
+          "name": "Wheel of Names"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does the order of the draw match the prizes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Draw 1 is first prize, draw 2 is second prize, and so on down your prize list. Your prize sheet and the results table line up row by row, so the second name drawn hands over the second prize without a discussion about which came first."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens if I ask for more winners than entries?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The tool will not run a draw larger than the list. With 30 ticket numbers pasted, 30 is the ceiling; if a 31st prize exists it has to come from a bigger list or a separate rule you announce in advance."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where does the results table go when I copy it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It copies as plain text, one winner per line with its draw order and time. That pastes cleanly into a spreadsheet, an email or a printed sheet, so you can file the draw with your raffle records."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the draw random enough to use for a real raffle?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each winner is chosen with the browser's crypto.getRandomValues function and rejection sampling, which removes the small bias that a plain modulo shortcut leaves behind. That is the same randomness source browsers use for security, applied to your list."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need an account to run a raffle draw?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The page is ready when it loads: paste, choose the number of winners, and copy the table. Saving named wheels and keeping draw records beyond the session are part of the paid plans on pricing, not a requirement to run one draw."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use ticket numbers instead of names?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, and it is the common way to run it. Paste the ticket numbers one per line, including leading zeros, and the wheel draws numbers rather than names. Winners then look up which ticket they hold."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

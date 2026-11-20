@@ -1,0 +1,214 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-20T15:05:43.289Z",
+  "assets": {
+    "/images/class-call.png": {
+      "path": "/images/class-call.png",
+      "width": 1880,
+      "height": 1253,
+      "orientation": "landscape",
+      "dominantColors": [
+        "#282726",
+        "#aa988a",
+        "#8d8787",
+        "#574d47",
+        "#3a3938"
+      ],
+      "contentDescription": "A teacher stands before a chalkboard reading Classwork while students at desks raise their hands.",
+      "subjectTags": [
+        "teacher",
+        "students",
+        "classroom",
+        "raised hands",
+        "chalkboard",
+        "lesson"
+      ],
+      "composition": "full-scene",
+      "textDensity": "some",
+      "qualityScore": 89,
+      "suitableRoles": [
+        "hero-subject",
+        "section-media",
+        "gallery-media"
+      ],
+      "usage": "page",
+      "annotator": "vlm",
+      "annotatedAt": "2026-11-20T15:05:43.289Z",
+      "sourceEtag": "30e458b4a6a8feacfc0e1245e3144144"
+    },
+    "/images/class-roster-phone.png": {
+      "path": "/images/class-roster-phone.png",
+      "width": 867,
+      "height": 1300,
+      "orientation": "portrait",
+      "dominantColors": [
+        "#4c4338",
+        "#645847",
+        "#584838",
+        "#38352c",
+        "#4a3e34"
+      ],
+      "contentDescription": "A seated boy holds up a smartphone for a selfie with a smiling teacher and two girls in a classroom with plants and bookshelves.",
+      "subjectTags": [
+        "teacher",
+        "students",
+        "smartphone",
+        "selfie",
+        "classroom"
+      ],
+      "composition": "full-scene",
+      "textDensity": "none",
+      "qualityScore": 78,
+      "suitableRoles": [
+        "hero-subject",
+        "section-media",
+        "gallery-media"
+      ],
+      "usage": "page",
+      "annotator": "vlm",
+      "annotatedAt": "2026-11-20T15:05:43.289Z",
+      "sourceEtag": "a7d00ffdef3638a61c595776e56e054d"
+    },
+    "/images/hall-draw.png": {
+      "path": "/images/hall-draw.png",
+      "width": 1880,
+      "height": 1058,
+      "orientation": "landscape",
+      "dominantColors": [
+        "#778486",
+        "#a4adb6",
+        "#7a8a95",
+        "#d4c8b7",
+        "#c2ccd9"
+      ],
+      "contentDescription": "An empty classroom with rows of white desks and blue benches facing a projection screen, chalkboard, and Chinese banner.",
+      "subjectTags": [
+        "classroom",
+        "desks",
+        "benches",
+        "projector screen",
+        "chalkboard",
+        "school"
+      ],
+      "composition": "full-scene",
+      "textDensity": "some",
+      "qualityScore": 88,
+      "suitableRoles": [
+        "atmospheric-background",
+        "hero-subject",
+        "section-media",
+        "gallery-media"
+      ],
+      "usage": "page",
+      "annotator": "vlm",
+      "annotatedAt": "2026-11-20T15:05:43.289Z",
+      "sourceEtag": "0881ff487a3a117910257540fdb17664"
+    },
+    "/images/list-pasted.png": {
+      "path": "/images/list-pasted.png",
+      "width": 1880,
+      "height": 1255,
+      "orientation": "landscape",
+      "dominantColors": [
+        "#a9a9a9",
+        "#555555",
+        "#b4b4b4",
+        "#e6e6e6",
+        "#c7c7c7"
+      ],
+      "contentDescription": "Black-and-white close-up of two hands typing on a laptop keyboard beside a bright window.",
+      "subjectTags": [
+        "hands",
+        "typing",
+        "laptop",
+        "keyboard",
+        "desk",
+        "monochrome"
+      ],
+      "composition": "full-scene",
+      "textDensity": "none",
+      "qualityScore": 86,
+      "suitableRoles": [
+        "atmospheric-background",
+        "hero-subject",
+        "section-media",
+        "gallery-media"
+      ],
+      "usage": "page",
+      "annotator": "vlm",
+      "annotatedAt": "2026-11-20T15:05:43.289Z",
+      "sourceEtag": "8043b9f1665c19776e0696f9a9013409"
+    },
+    "/images/room-after.png": {
+      "path": "/images/room-after.png",
+      "width": 867,
+      "height": 1300,
+      "orientation": "portrait",
+      "dominantColors": [
+        "#160603",
+        "#590201",
+        "#4c0100",
+        "#790301",
+        "#260900"
+      ],
+      "contentDescription": "A carnival game counter under red lighting, with walls of hanging dolls, donut-shaped prizes, and colorful plush toys.",
+      "subjectTags": [
+        "carnival booth",
+        "prizes",
+        "plush toys",
+        "dolls",
+        "game counter",
+        "red lighting"
+      ],
+      "composition": "full-scene",
+      "textDensity": "some",
+      "qualityScore": 80,
+      "suitableRoles": [
+        "atmospheric-background",
+        "hero-subject",
+        "section-media",
+        "gallery-media"
+      ],
+      "usage": "page",
+      "annotator": "vlm",
+      "annotatedAt": "2026-11-20T15:05:43.289Z",
+      "sourceEtag": "96f15917bc9917c51caf5a2e8ff90b3c"
+    },
+    "/images/tickets-drawn.png": {
+      "path": "/images/tickets-drawn.png",
+      "width": 1880,
+      "height": 1253,
+      "orientation": "landscape",
+      "dominantColors": [
+        "#56584b",
+        "#666d67",
+        "#5b625a",
+        "#646255",
+        "#252923"
+      ],
+      "contentDescription": "A tattooed hand holds two long strips of numbered raffle tickets above a blurred floor scattered with colorful ticket pieces.",
+      "subjectTags": [
+        "raffle tickets",
+        "hand",
+        "tattoo",
+        "numbers",
+        "confetti"
+      ],
+      "composition": "full-scene",
+      "textDensity": "some",
+      "qualityScore": 92,
+      "suitableRoles": [
+        "hero-subject",
+        "section-media",
+        "gallery-media"
+      ],
+      "usage": "page",
+      "annotator": "vlm",
+      "annotatedAt": "2026-11-20T15:05:43.289Z",
+      "sourceEtag": "dbea157b1c5bbb4caefcf15e36787da4"
+    }
+  },
+  "vision": {
+    "lastVlmSuccessAt": "2026-11-20T15:05:43.289Z"
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "title": "Picker Wheel with Weights — See Each Name's Chance",
+  "description": "A picker wheel where every entry can carry a weight from 1 to 10. See each name's percent chance on the wheel before you spin, and the chance on the winner card.",
+  "h1": "Picker wheel with weights: see each name's chance first",
+  "heroText": "Paste your list and this picker wheel shows every line as a slice whose size follows its weight, so the chance each name carries is visible before the wheel moves. Give an entry a weight from 1 to 10 and its percentage rises with it; a weight of 2 gets twice the chance of a weight of 1. One winner is drawn in proportion to the total weight with the browser's random number source, and the result card reports the chance it had.",
+  "ctas": [
+    {
+      "label": "Open the weighted wheel",
+      "href": "/picker-wheel/",
+      "primary": true
+    },
+    {
+      "label": "Spin an equal-chance wheel",
+      "href": "/",
+      "primary": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "answer",
+      "title": "How weights change the wheel",
+      "body": "An equal wheel gives every line the same slice. Set weights and the slice sizes follow them, and every entry's percentage is shown on the wheel before the spin.",
+      "steps": [
+        {
+          "title": "Paste the entries",
+          "body": "One entry per line. Each line starts at a weight of 1, so the wheel opens with equal slices until you change something."
+        },
+        {
+          "title": "Set a weight from 1 to 10",
+          "body": "Raise an entry to 3 and it holds three times the weight of a 1. The percentages on the wheel redraw as you go."
+        },
+        {
+          "title": "Read the chance before spinning",
+          "body": "With weights of 3, 3, 2 and 2, the two 3s each read 30 percent and the two 2s each read 20 percent. The total is always 100 percent."
+        },
+        {
+          "title": "Spin and read the result card",
+          "body": "The winner is drawn in proportion to total weight, and the card states the chance that entry held on this wheel."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "title": "How to use the weighted wheel",
+      "body": "Weights are a way to say one entry counts for more without pasting it several times. Change the numbers, watch the percentages move, then spin.",
+      "steps": [
+        {
+          "title": "Start from a list you already have",
+          "body": "Paste a class roster or a list of raffle entrants, one per line. Nothing is uploaded; the list stays in this browser."
+        },
+        {
+          "title": "Adjust one weight at a time",
+          "body": "Move an entry from 1 to 2 and its share of the wheel doubles against the rest. The percentages update on the wheel face, so the shape of the odds is visible to everyone watching."
+        },
+        {
+          "title": "Keep the screen readable",
+          "body": "On a projector, a list of 20 entries keeps its labels legible; a very long list shrinks the labels, which is the moment to drop to the handful of entries that matter for this draw."
+        },
+        {
+          "title": "Switch jobs with one link",
+          "body": "The [home wheel](/) draws equal chances. The list can move between the two pages without retyping."
+        }
+      ]
+    },
+    {
+      "id": "weights",
+      "title": "Choosing weights that mean something",
+      "body": "A weight is a ratio, not a percentage. Only the weights relative to each other decide the draw; the entry count decides the starting point when each line begins at 1.",
+      "items": [
+        {
+          "title": "Doubling a weight doubles the odds",
+          "body": "An entry at 4 against one at 1 is four times as likely. Two entries at 3 against two at 1 each hold three times the chance of a 1."
+        },
+        {
+          "title": "Repeats and weights agree",
+          "body": "A name pasted three times on an equal wheel carries the same chance as the same name set to 3 here. If a list already has repeats, the weights and the repeats multiply."
+        },
+        {
+          "title": "A total you can check",
+          "body": "Add the weights, then divide one weight by the total. Entries at 5, 3, 1 and 1 add to 10, so the first name reads 50 percent, the second 30 and each of the last two 10. That arithmetic is the number the card reports."
+        },
+        {
+          "title": "What weights cannot do",
+          "body": "They shape the odds; they do not withhold a winner or track who has already won. Taking an entry off the list is still the way to keep a name out of the next draw."
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "title": "Picker wheel limits",
+      "body": "The weights are integers from 1 to 10, and every entry on the wheel needs one. A decimal weight or a weight of zero is outside what the wheel does.",
+      "items": [
+        {
+          "title": "Weights stay whole numbers",
+          "body": "If you need finer odds, repeat an entry or use a bigger list so the ratios carry the difference."
+        },
+        {
+          "title": "No account for a weighted draw",
+          "body": "Paste, set weights, spin: no sign-in at any step. An account only comes in for keeping named wheels across devices, which [the plans](/pricing/) describe."
+        },
+        {
+          "title": "Equal chance on the home wheel",
+          "body": "If every entry should have the same odds, the [equal-chance wheel](/) is the faster place to start."
+        },
+        {
+          "title": "No list of past winners",
+          "body": "The weighted wheel keeps no history of who has been drawn. A numbered record of several winners belongs to the [raffle wheel](/raffle-wheel/)."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "What is the chance of a weight of 2 against three entries at 1?",
+      "answer": "Five units in total, so the weighted entry reads 40 percent and each of the other three reads 20 percent. The wheel shows those four numbers before you spin, and the winner card repeats the one that won."
+    },
+    {
+      "question": "Can I use weights for a raffle where one person bought extra tickets?",
+      "answer": "Yes. That is the case the weights are for: paste the entrant once, set a weight that follows the number of tickets, and the chance on the wheel matches the ticket share."
+    },
+    {
+      "question": "What is the difference from the home wheel?",
+      "answer": "The home wheel gives every line the same slice. This one sizes each slice by weight from 1 to 10 and shows the percentages before the spin, which suits a raffle where one entrant paid for extra chances or a class where a quieter student gets an extra entry."
+    },
+    {
+      "question": "Does the weighted draw stay in my browser?",
+      "answer": "Yes. The list, the weights and the result are handled on the device, and the chance on the result card is worked out there too. Nothing about the entries is sent anywhere."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Picker Wheel with Weights",
+    "url": "https://site.example/picker-wheel/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any modern web browser",
+    "description": "A picker wheel that assigns each pasted entry an integer weight from 1 to 10, shows each entry's percentage chance on the wheel, and draws one winner in proportion to total weight in the browser.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Wheel of Names"
+    },
+    "mainEntity": {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the chance of a weight of 2 against three entries at 1?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Five units in total, so the weighted entry reads 40 percent and each of the other three reads 20 percent. The wheel shows those four numbers before you spin, and the winner card repeats the one that won."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use weights for a raffle where one person bought extra tickets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. That is the case the weights are for: paste the entrant once, set a weight that follows the number of tickets, and the chance on the wheel matches the ticket share."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference from the home wheel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The home wheel gives every line the same slice. This one sizes each slice by weight from 1 to 10 and shows the percentages before the spin, which suits a raffle where one entrant paid for extra chances or a class where a quieter student gets an extra entry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the weighted draw stay in my browser?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The list, the weights and the result are handled on the device, and the chance on the result card is worked out there too. Nothing about the entries is sent anywhere."
+          }
+        }
+      ]
+    }
+  }
+}

@@ -294,15 +294,10 @@ export default function WeightedWheelTool() {
             <div className="wn-wheel-wrap">
               <div className="wn-pointer" aria-hidden="true" />
               <canvas ref={canvasRef} className="wn-wheel-canvas" aria-hidden="true" width={400} height={400} />
-              <button
-                type="button"
-                className="wn-hub"
-                onClick={spin}
-                disabled={spinning}
-                aria-label={spinning ? "Spinning" : "Spin the weighted wheel"}
-              >
-                {spinning ? "…" : "Spin"}
-              </button>
+              <div className="wn-hub" aria-hidden="true">
+                <span>{rows.length}</span>
+                <em>{rows.length === 1 ? "entry" : "entries"}</em>
+              </div>
             </div>
             {spinning ? (
               <div

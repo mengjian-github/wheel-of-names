@@ -678,7 +678,7 @@ body[data-atmosphere="true"]::before{display:none}
 }
 /* rev8: the phone keeps the whole loop — input, wheel, start, slip — in the first screen */
 @media (max-width:760px){
-  body[data-atmosphere="true"] main > *{padding-top:6px;padding-bottom:2px}
+  body[data-atmosphere="true"] main > *{padding-top:14px;padding-bottom:0}
   .wn-wheel-wrap{max-width:128px}
   .wn-input{min-height:64px}
   .wn-page-head{margin-bottom:10px}

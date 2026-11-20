@@ -50,7 +50,7 @@
         },
         {
           "title": "Adjust one weight at a time",
-          "body": "Move an entry from 1 to 2 and its share of the wheel doubles against the rest. The percentages update on the wheel face, so the shape of the odds is visible to everyone watching."
+          "body": "Raise an entry's weight and its share grows: with one other entry at weight 1, moving an entry from 1 to 2 takes it from one chance in two (50%) to two in three (66.7%). The percentages update on the wheel face, so the shape of the odds is visible to everyone watching."
         },
         {
           "title": "Keep the screen readable",

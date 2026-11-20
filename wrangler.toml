@@ -19,6 +19,14 @@ binding = "CF_VERSION_METADATA"
 NEXT_PUBLIC_SITE_URL = "https://prj-f45e7fee-046-wheel-of-names.shipsite-preview.dev"
 SHIPSITE_ENVIRONMENT = "production"
 
+# The Worker reads DB on every environment (contact form, sign-in, saved
+# documents). The root block is what a plain `wrangler deploy` (and the dev
+# Worker) binds; preview and production keep their own database below.
+[[d1_databases]]
+binding = "DB"
+database_name = "shipsite-pay-prj_f45e7fee-046-preview"
+database_id = "81c17e29-6039-44ef-b1ab-8481cdeaa72f"
+
 [env.preview]
 name = "shipsite-site-prj-f45e7fee-046-wheel-of-names-preview"
 workers_dev = true

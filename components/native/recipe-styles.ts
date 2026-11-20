@@ -21,7 +21,7 @@ export const recipeStyles = `
   --fs-display:clamp(34px,4.4vw,56px);
   --wn-radius:14px;
   --wn-radius-sm:10px;
-  --wn-max:1240px;
+  --wn-max:1360px;
   --wn-gap:20px;
   --wn-font:var(--font-albert,"Albert Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif);
   --wn-display:var(--font-imbue,"Imbue",Georgia,serif);
@@ -41,7 +41,7 @@ h1,h2,h3,h4,p{margin:0}
 img{max-width:100%;height:auto}
 button{font:inherit;color:inherit}
 .wn-main{max-width:var(--wn-max);margin:0 auto;padding:0 28px}
-.wn-skip{position:absolute;left:0;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;background:var(--wn-pink);color:var(--wn-pink-ink);z-index:60}
+.wn-skip{position:absolute;left:16px;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;background:var(--wn-pink);color:var(--wn-pink-ink);z-index:60}
 .wn-skip:focus{width:auto;height:auto;clip:auto;overflow:visible;padding:10px 16px;border-radius:0 0 8px 0}
 
 /* ---------------- chrome ---------------- */
@@ -170,7 +170,11 @@ footer[data-node="footer"]{
 .wn-btn-primary{background:var(--wn-pink);color:var(--wn-pink-ink);font-weight:600}
 .wn-btn-primary:hover{background:#ffb9d1}
 .wn-btn-primary:active{background:#e98cae}
-.wn-btn-primary:disabled,.wn-btn-primary[aria-disabled="true"]{
+.wn-chances{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:2px;max-height:132px;overflow:auto}
+.wn-chances li{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;line-height:1.5;padding:2px 0;color:#dfe5f3}
+.wn-chance-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.wn-chance-pct{font-variant-numeric:tabular-nums;color:#f9a3c0;font-weight:600;flex:none}
+.wn-btn-primary:disabled,.wn-btn-primary[aria-disabled="true"],.wn-btn-primary[data-ready="false"]{
   background:rgba(249,163,192,.22);color:#ffd3e3;border-color:rgba(249,163,192,.55);
   cursor:not-allowed;
 }
@@ -537,5 +541,99 @@ footer[data-node="footer"]{
 @media (max-width:520px){
   .footer-groups{grid-template-columns:1fr}
   .wn-item-list{grid-template-columns:1fr}
+}
+
+/* ---- rev4: the wheel at the drawing's size, settings inside the panel ---- */
+.wn-page-head{background:none;padding:0}
+.wn-bench{
+  grid-template-columns:minmax(0,300px) minmax(0,1fr) minmax(0,300px);
+  grid-template-areas:"editor stage slip" "action stage slip" "options stage slip";
+  gap:14px 18px;padding:14px;align-items:start;
+}
+.wn-stage{height:100%;justify-content:center;padding:0;background:none}
+.wn-wheel-wrap{max-width:622px}
+.wn-label{font-family:var(--wn-font);font-size:14px;font-weight:600;letter-spacing:0;line-height:1.4;color:var(--wn-ink);text-decoration:none}
+.wn-count{font-size:14px}
+.wn-options{grid-area:options;margin:0;background:var(--wn-panel-2);border-radius:12px;overflow:hidden}
+.wn-options > summary{display:flex;align-items:center;min-height:40px;padding:0 12px;cursor:pointer;font-family:var(--wn-font);font-size:14px;font-weight:600;color:var(--wn-ink);list-style:none}
+.wn-options > summary::-webkit-details-marker{display:none}
+.wn-options > summary::after{content:"+";margin-left:auto;font-size:16px;color:var(--wn-soft)}
+.wn-options[open] > summary::after{content:"\u2013"}
+.wn-options-body{display:grid;grid-template-columns:1fr;gap:6px;padding:2px 12px 12px}
+.wn-opt{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:32px}
+.wn-opt-block{flex-direction:column;align-items:flex-start;gap:6px}
+.wn-opt-label{font-size:13.5px;color:var(--wn-soft);font-weight:500}
+.wn-opt .wn-seg{flex:0 0 auto;width:148px}
+.wn-opt .wn-range{flex:0 0 150px;display:flex;align-items:center;gap:8px}
+.wn-opt .wn-range input{flex:1 1 auto;min-width:0}
+.wn-opt .wn-range output{min-width:26px;text-align:right;font-size:13px;color:var(--wn-soft);font-variant-numeric:tabular-nums}
+.wn-opt .wn-switch{min-height:32px;gap:6px}
+.wn-opt .wn-swatches{gap:6px}
+.wn-opt .wn-swatch span{width:22px;height:22px}
+.wn-draws-foot{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;padding-top:10px;border-top:1px solid var(--wn-line-soft, #E3E7F2)}
+.wn-draws-foot .wn-btn{min-height:32px;font-size:13px;padding:0 10px}
+a.wn-btn{justify-content:center;text-decoration:none;display:inline-flex;align-items:center}
+.wn-embed-box{margin-top:8px;font-size:13.5px;color:var(--wn-soft)}
+.wn-embed-box > summary{cursor:pointer;font-size:13.5px;font-weight:600;color:var(--wn-ink);min-height:32px;display:flex;align-items:center}
+.wn-embed-box .wn-embed{margin-top:6px;width:100%;min-height:0;font-size:12.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;padding:6px 8px}
+.wn-file-hidden{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+@media (max-width:1200px){
+  .wn-bench{grid-template-columns:minmax(0,270px) minmax(0,1fr) minmax(0,270px);gap:12px}
+}
+@media (max-width:1080px){
+  .wn-bench{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"editor stage" "action stage" "slip slip" "options options"}
+}
+@media (max-width:900px){
+  .wn-bench{grid-template-columns:1fr;grid-template-areas:"editor" "action" "slip" "stage" "options";gap:12px}
+  .wn-wheel-wrap{max-width:320px;margin:0 auto}
+  .wn-stage{padding:10px}
+  .wn-opt .wn-seg{width:auto}
+  .wn-opt .wn-range{flex:1 1 auto;max-width:180px}
+}
+
+/* ---- rev5: compact the panel so input, spin, result and settings share one screen ---- */
+.wn-editor-col{justify-content:flex-start;gap:8px;height:auto;padding-top:0}
+.wn-editor-col .wn-panel-head{margin-bottom:0}
+.wn-input{min-height:116px}
+.wn-hint{margin:0;font-size:12.5px;line-height:1.45}
+.wn-editor-actions{margin:0}
+.wn-action{margin:0;gap:6px}
+.wn-spin-btn{min-height:48px}
+.wn-progress-track{height:4px}
+.wn-progress-line{min-height:20px;font-size:13px}
+.wn-slip-col{display:flex;flex-direction:column;gap:10px}
+.wn-options-body{gap:4px;padding:0 12px 10px}
+.wn-opt{min-height:30px}
+.wn-options > summary{min-height:36px}
+
+/* ---- rev6: phone — keep input, spin and the slip in the first screen ---- */
+@media (max-width:520px){
+  .wn-bench{padding:10px;gap:10px}
+  .wn-input{min-height:92px}
+  .wn-hint{font-size:12px;line-height:1.4}
+  .wn-editor-actions .wn-btn{min-height:38px}
+  .wn-spin-btn{min-height:46px}
+  .wn-slip{padding:12px}
+  .wn-slip-name{font-size:clamp(26px,7.6vw,34px)}
+  .wn-stage{padding:8px}
+  .wn-wheel-wrap{max-width:268px}
+  .wn-options-body{gap:2px}
+}
+
+.wn-seg input[type="radio"]{
+  position:static;opacity:1;appearance:none;width:16px;height:16px;margin:0;flex:0 0 auto;
+  border:1.5px solid #8d93a6;border-radius:50%;background:var(--wn-panel);cursor:pointer;
+}
+.wn-seg input[type="radio"]:checked{
+  border-color:var(--wn-pink);background:var(--wn-pink);
+  box-shadow:inset 0 0 0 3px var(--wn-panel);
+}
+.wn-seg label{display:inline-flex;align-items:center;gap:7px}
+.wn-swatch input[type="radio"]{
+  position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:1;appearance:none;
+  border-radius:inherit;background:transparent;cursor:pointer;
+}
+.wn-swatch input[type="radio"]:checked{
+  box-shadow:inset 0 0 0 3px var(--wn-bg),inset 0 0 0 5px #ffffff;
 }
 `;

@@ -70,7 +70,8 @@ export default function RaffleTool() {
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const entries = useMemo(() => parseNames(text).flatMap((e) => Array.from({ length: e.count }, () => e.name)), [text]);
-  const state = drawing ? "drawing" : error ? "error" : winners.length ? "done" : "idle";
+  const state = drawing ? "working" : error ? "error" : entries.length < 2 ? "error" : "success";
+  const resultState = drawing ? "working" : winners.length ? "done" : "idle";
 
   useEffect(() => {
     canvasRef.current && drawRaffleWheel(canvasRef.current, entries, -1);
@@ -142,7 +143,7 @@ export default function RaffleTool() {
   const removedNote = claimed.length ? `${claimed.length} removed from the pool` : "";
 
   return (
-    <div className="wn-tool" data-capability="raffle-draw" data-operation="draw">
+    <div className="wn-tool" data-capability="raffle-draw" data-operation="draw" data-state={state}>
       <div className="wn-bench wn-bench-raffle" data-tool-output data-state={state}>
         <section className="wn-panel">
           <div className="wn-panel-head">
@@ -203,7 +204,15 @@ export default function RaffleTool() {
               <canvas ref={canvasRef} className="wn-wheel-canvas" aria-hidden="true" width={340} height={340} />
             </div>
             <div className="wn-progress-line" style={{ width: "100%", marginTop: 8 }}>
-              <strong>{drawing ? "Drawing winners…" : winners.length ? `${winners.length} drawn` : "Ready"}</strong>
+              <strong>{drawing
+                ? "Drawing winners…"
+                : error
+                  ? "Could not draw"
+                  : entries.length < 2
+                    ? "Add entries to draw"
+                    : winners.length
+                      ? `${winners.length} drawn`
+                      : "Ready"}</strong>
               <span>{entries.length - winners.length} left in the pool</span>
             </div>
           </div>
@@ -215,7 +224,7 @@ export default function RaffleTool() {
               <h2 className="wn-label">Winners in order</h2>
               <span className="wn-count" data-draw-count>{winners.length} {winners.length === 1 ? "winner" : "winners"}</span>
             </div>
-            <div data-results data-state={state}>
+            <div data-results data-state={resultState}>
               {winners.length ? (
                 <ol style={{ listStyle: "none", margin: 0, padding: 0, display: "grid", gap: 6 }}>
                   {winners.map((winner, index) => (
@@ -265,7 +274,7 @@ export default function RaffleTool() {
       </div>
 
       <div className="wn-toolbar">
-        <a className="wn-plus" href="/pricing/" data-shipsite-checkout data-product="plus">
+        <a className="wn-plus" href="/api/pay/checkout?plan=plus" data-shipsite-checkout data-product="plus">
           Save the draw record · Plus
         </a>
       </div>

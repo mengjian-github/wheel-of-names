@@ -111,7 +111,7 @@
     },
     {
       "question": "What happens to my names after I close the page?",
-      "answer": "They stay on your device as the wheel's last list and are not uploaded to a server. Signing in is only needed to save named wheels to your account across devices."
+      "answer": "They stay on your device as the wheel's last list and are not uploaded to a server. There is nothing to sign in for: names stay in this browser tab and no entry text is sent anywhere."
     }
   ],
   "schema": {
@@ -171,7 +171,7 @@
             "name": "What happens to my names after I close the page?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "They stay on your device as the wheel's last list and are not uploaded to a server. Signing in is only needed to save named wheels to your account across devices."
+              "text": "They stay on your device as the wheel's last list and are not uploaded to a server. There is nothing to sign in for: names stay in this browser tab and no entry text is sent anywhere."
             }
           }
         ]

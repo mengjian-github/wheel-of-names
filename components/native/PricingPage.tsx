@@ -96,16 +96,34 @@ export default function PricingPage({ route, content, config }: PageProps) {
                       <a className="wn-btn wn-btn-ghost" href="/">
                         Use the free wheel
                       </a>
-                    ) : price ? (
-                      <a
-                        className="wn-btn wn-btn-primary"
-                        href={`/api/pay/checkout?plan=${price.id}`}
-                        data-shipsite-checkout=""
-                        data-product={price.id}
-                      >
-                        {def.name === "Event Pass" ? "Buy the Event Pass" : `Choose ${def.name}`}
-                      </a>
-                    ) : null}
+                    ) : (
+                      <>
+                        {def.monthly ? (
+                          <a
+                            className="wn-btn wn-btn-primary"
+                            href={`/api/pay/checkout?plan=${def.monthly.id}`}
+                            data-shipsite-checkout=""
+                            data-product={def.monthly.id}
+                            data-period="month"
+                            style={period === "month" ? undefined : { display: "none" }}
+                          >
+                            {def.name === "Event Pass" ? "Buy the Event Pass" : `Choose ${def.name} monthly`}
+                          </a>
+                        ) : null}
+                        {def.annual ? (
+                          <a
+                            className="wn-btn wn-btn-primary"
+                            href={`/api/pay/checkout?plan=${def.annual.id}`}
+                            data-shipsite-checkout=""
+                            data-product={def.annual.id}
+                            data-period="year"
+                            style={period === "year" ? undefined : { display: "none" }}
+                          >
+                            {`Choose ${def.name} yearly`}
+                          </a>
+                        ) : null}
+                      </>
+                    )}
                     {def.monthly && def.annual ? (
                       <p className="wn-plan-billing-note">
                         {period === "year"

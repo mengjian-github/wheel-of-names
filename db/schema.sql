@@ -64,3 +64,26 @@ CREATE TABLE IF NOT EXISTS "shipsite_pay_state" (
   "value" TEXT NOT NULL,
   "updated_at" TEXT NOT NULL
 );
+
+-- Tables the Worker creates on first use (shipsite.store and the contact
+-- form), written here so every environment has them after a schema apply.
+CREATE TABLE IF NOT EXISTS "shipsite_user_documents" (
+  "user_sub" TEXT NOT NULL,
+  "collection" TEXT NOT NULL,
+  "doc_id" TEXT NOT NULL,
+  "data" TEXT NOT NULL,
+  "updated_at" TEXT NOT NULL,
+  PRIMARY KEY ("user_sub", "collection", "doc_id")
+);
+CREATE TABLE IF NOT EXISTS "shipsite_contact_messages" (
+  "id" TEXT PRIMARY KEY,
+  "path" TEXT,
+  "payload" TEXT NOT NULL,
+  "created_at" TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS "shipsite_contact_counts" (
+  "period" TEXT NOT NULL,
+  "bucket" TEXT NOT NULL,
+  "count" INTEGER NOT NULL,
+  PRIMARY KEY ("period", "bucket")
+);

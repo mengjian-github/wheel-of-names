@@ -78,6 +78,8 @@ export default function WeightedWheelTool() {
   const [rows, setRows] = useState<Row[]>([]);
   const [error, setError] = useState("");
   const [spinning, setSpinning] = useState(false);
+  const [freshWinner, setFreshWinner] = useState(false);
+  const freshTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [winner, setWinner] = useState<{ index: number; name: string; weight: number; unit: number; total: number; when: string } | null>(null);
   const [paletteId, setPaletteId] = useState(DEFAULT_PALETTE.id);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -87,7 +89,8 @@ export default function WeightedWheelTool() {
 
   const palette = PALETTES.find((p) => p.id === paletteId) ?? DEFAULT_PALETTE;
   const total = rows.reduce((sum, row) => sum + row.weight, 0);
-  const state = spinning ? "spinning" : error ? "error" : winner ? "winner" : "ready";
+  const invalid = Boolean(error) || rows.length < 2;
+  const state = spinning ? "working" : invalid ? "error" : freshWinner ? "winner" : "success";
 
   const syncFromText = useCallback((value: string) => {
     setText(value);
@@ -95,6 +98,7 @@ export default function WeightedWheelTool() {
     setRows(parsed.entries);
     setError(parsed.ok ? "" : parsed.error);
     setWinner(null);
+    setFreshWinner(false);
   }, []);
 
   useEffect(() => {
@@ -113,6 +117,7 @@ export default function WeightedWheelTool() {
 
   useEffect(() => () => {
     if (raf.current) cancelAnimationFrame(raf.current);
+    if (freshTimer.current) clearTimeout(freshTimer.current);
   }, []);
 
   const setWeight = (index: number, weight: number) => {
@@ -156,6 +161,9 @@ export default function WeightedWheelTool() {
         rotation.current = target % 360;
         setSpinning(false);
         setWinner({ index, name: chosen.name, weight: chosen.weight, unit: randomIntUnit(chosen.weight), total, when: timeNow() });
+        setFreshWinner(true);
+        if (freshTimer.current) clearTimeout(freshTimer.current);
+        freshTimer.current = setTimeout(() => setFreshWinner(false), 700);
       }
     };
     raf.current = requestAnimationFrame(frame);
@@ -171,7 +179,7 @@ export default function WeightedWheelTool() {
   const winnerShare = winner ? winner.weight / winner.total : 0;
 
   return (
-    <div className="wn-tool" data-capability="weighted-picker-wheel" data-operation="spin">
+    <div className="wn-tool" data-capability="weighted-picker-wheel" data-operation="spin" data-state={state}>
       <div className="wn-bench wn-bench-weighted" data-tool-output data-state={state}>
         <section className="wn-panel">
           <div className="wn-panel-head">
@@ -202,6 +210,16 @@ export default function WeightedWheelTool() {
           {error ? (
             <p role="alert" className="wn-error" style={{ color: "#ffd0e0", fontSize: 13.5, marginTop: 8 }}>{error}</p>
           ) : null}
+          {rows.length ? (
+            <ul className="wn-chances" aria-label="Chance for each entry">
+              {rows.map((row, i) => (
+                <li key={`chance-${row.name}-${i}`}>
+                  <span className="wn-chance-name">{row.name}</span>
+                  <span className="wn-chance-pct">{total ? pct(row.weight / total) : "—"}</span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </section>
 
         <div className="wn-wheel-col">
@@ -229,8 +247,15 @@ export default function WeightedWheelTool() {
               data-primary
               data-jtbd-action="run"
               data-tool-action="spin"
-              onClick={spin}
-              disabled={spinning || rows.length < 2}
+              onClick={() => {
+                if (spinning) return;
+                if (rows.length < 2 || error) {
+                  inputRef.current?.focus();
+                  return;
+                }
+                spin();
+              }}
+              data-ready={spinning || rows.length < 2 || error ? "false" : "true"}
             >
               {spinning ? "Spinning…" : rows.length < 2 ? "Add 2+ entries to spin" : "Spin the weighted wheel"}
             </button>
@@ -245,14 +270,14 @@ export default function WeightedWheelTool() {
                 <span>{winner ? winner.when : "—"}</span>
               </div>
               {winner ? (
-                <>
-                  <div className="wn-slip-name" data-winner>{winner.name}</div>
+                <div data-winner>
+                  <div className="wn-slip-name">{winner.name}</div>
                   <div className="wn-slip-facts">
                     <span><strong>{pct(winnerShare)}</strong> chance before the spin</span>
                     <span>{winner.unit} of {winner.weight} units of this entry</span>
                     <span>{winner.weight} of {winner.total} units on the wheel</span>
                   </div>
-                </>
+                </div>
               ) : (
                 <>
                   <div className="wn-slip-name is-empty">Your winner lands here</div>
@@ -339,7 +364,7 @@ export default function WeightedWheelTool() {
       </section>
 
       <div className="wn-toolbar">
-        <a className="wn-plus" href="/pricing/" data-shipsite-checkout data-product="plus">
+        <a className="wn-plus" href="/api/pay/checkout?plan=plus" data-shipsite-checkout data-product="plus">
           Save weights &amp; export · Plus
         </a>
       </div>

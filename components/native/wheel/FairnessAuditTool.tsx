@@ -12,7 +12,8 @@ export default function FairnessAuditTool() {
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
 
-  const state = busy ? "running" : error ? "error" : rows ? "done" : "idle";
+  const entryCount = parseNames(text).length;
+  const state = busy ? "working" : error || entryCount < 2 ? "error" : "success";
 
   const audit = () => {
     const entries = parseNames(text);
@@ -49,7 +50,7 @@ export default function FairnessAuditTool() {
     : null;
 
   return (
-    <div className="wn-tool" data-capability="fairness-audit" data-operation="audit">
+    <div className="wn-tool" data-capability="fairness-audit" data-operation="audit" data-state={state}>
       <div className="wn-bench wn-bench-audit" data-tool-output data-state={state}>
         <section className="wn-panel">
           <div className="wn-panel-head">
@@ -104,7 +105,7 @@ export default function FairnessAuditTool() {
         </section>
 
         <div className="wn-wheel-col" style={{ gridColumn: "span 2" }}>
-          <div className="wn-panel" style={{ width: "100%" }} data-audit>
+          <div className="wn-panel" style={{ width: "100%" }} data-audit data-state={rows ? "done" : busy ? "working" : "idle"}>
             <div className="wn-panel-head">
               <h2 className="wn-label">Observed share against the 1-in-N expectation</h2>
               <span className="wn-count">{rows ? `${runs.toLocaleString("en-US")} draws` : "No run yet"}</span>
@@ -116,7 +117,7 @@ export default function FairnessAuditTool() {
                     {maxDeviation ? `Largest gap ${Math.abs(maxDeviation.share - expected) * 100 < 0.01 ? "<0.01" : (Math.abs(maxDeviation.share - expected) * 100).toFixed(2)} points` : "—"}
                   </strong>
                   <span style={{ color: "#93a0c6", fontSize: 13.5 }}>
-                    {rows.length} names · expected {pct(expected)} each · {runs.toLocaleString("en-US")} draws
+                    {rows.length} names · expected {pct(expected)} each ({Math.round(runs / rows.length).toLocaleString("en-US")} of {runs.toLocaleString("en-US")} draws)
                   </span>
                 </div>
                 <div style={{ display: "grid", gap: 6 }}>

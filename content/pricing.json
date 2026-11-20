@@ -125,8 +125,8 @@
             "cells": [
               "Billing",
               "Never charged",
-              "Monthly or yearly, renews",
-              "Monthly or yearly, renews"
+              "Charged once, does not renew",
+              "Charged once, does not renew"
             ],
             "status": "working",
             "recordKey": "billing",

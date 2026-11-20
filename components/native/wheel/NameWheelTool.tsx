@@ -21,7 +21,7 @@ const STORE = "won.options.v1";
 
 type Options = { duration: 4 | 6 | 8; sound: boolean; volume: number; palette: string; projector: boolean };
 
-const DEFAULT_OPTIONS: Options = { duration: 4, sound: true, volume: 55, palette: DEFAULT_PALETTE.id, projector: false };
+const DEFAULT_OPTIONS: Options = { duration: 6, sound: true, volume: 55, palette: DEFAULT_PALETTE.id, projector: false };
 
 function readOptions(): Options {
   const base = { ...DEFAULT_OPTIONS };
@@ -106,9 +106,9 @@ function drawWheel(canvas: HTMLCanvasElement, slices: Slice[], palette: Palette,
     const room = Math.max(24, r * 0.74);
     let label = slices[i].name;
     if (ctx.measureText(label).width > room) {
-      let cut = label;
-      while (cut.length > 1 && ctx.measureText(cut + "…").width > room) cut = cut.slice(0, -1);
-      label = cut.length > 1 ? cut.trimEnd() + "…" : label.slice(0, 1);
+      let cut = Array.from(label);
+      while (cut.length > 1 && ctx.measureText(cut.join("") + "…").width > room) cut.pop();
+      label = cut.length > 1 ? cut.join("").trimEnd() + "…" : Array.from(label)[0];
     }
     ctx.fillText(label, r - 10, 0);
     ctx.restore();
@@ -169,6 +169,9 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
   const [highlight, setHighlight] = useState(-1);
   const [toast, setToast] = useState("");
   const [undoRaw, setUndoRaw] = useState<string | null>(null);
+  const [freshWinner, setFreshWinner] = useState(false);
+  const [triedEmpty, setTriedEmpty] = useState(false);
+  const freshTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [reduced, setReduced] = useState(false);
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -184,25 +187,33 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
   const drawNo = useRef(0);
   const barRef = useRef<HTMLDivElement | null>(null);
   const barTrack = useRef<HTMLDivElement | null>(null);
+  const optionsRef = useRef<HTMLDetailsElement | null>(null);
 
   const entries = useMemo(() => parseNames(raw), [raw]);
   const slices = useMemo(() => toSlices(entries), [entries]);
   const palette = PALETTES.find((p) => p.id === options.palette) ?? DEFAULT_PALETTE;
   const n = slices.length;
-  const state: "error" | "ready" | "spinning" | "winner" = spinning
-    ? "spinning"
+  const state: "error" | "success" | "working" | "winner" = spinning
+    ? "working"
     : n < 2
       ? "error"
       : result
-        ? "winner"
-        : "ready";
+        ? freshWinner
+          ? "winner"
+          : "success"
+        : "success";
 
   useEffect(() => {
+    if (optionsRef.current && window.innerWidth >= 1080) optionsRef.current.open = true;
     setOptions(readOptions());
-    setReduced(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduced(mq.matches);
+    const onMq = (event: MediaQueryListEvent) => setReduced(event.matches);
+    mq.addEventListener?.("change", onMq);
     const fromHash = decodeList(window.location.hash);
     if (fromHash && fromHash.length) setRaw(fromHash.join("\n"));
     else inputRef.current?.focus();
+    return () => mq.removeEventListener("change", onMq);
   }, []);
 
   useEffect(() => {
@@ -266,6 +277,9 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
       setSpinning(false);
       setProgress(1);
       setLeft(0);
+      setFreshWinner(true);
+      if (freshTimer.current) clearTimeout(freshTimer.current);
+      freshTimer.current = setTimeout(() => setFreshWinner(false), 700);
       if (options.sound) {
         const ctx = audioCtx();
         if (ctx) {
@@ -303,6 +317,7 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
     settled.current = false;
     setResult(null);
     setHighlight(-1);
+    setFreshWinner(false);
     setSpinning(true);
     setProgress(0);
     const duration = reduced ? 260 : options.duration * 1000;
@@ -365,6 +380,7 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
   useEffect(() => () => {
     if (raf.current) cancelAnimationFrame(raf.current);
     if (spinTimer.current) clearTimeout(spinTimer.current);
+    if (freshTimer.current) clearTimeout(freshTimer.current);
   }, []);
 
   // The draw is settled before the wheel turns, so stopping only ends the show:
@@ -382,7 +398,7 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
   }, []);
 
   const removeWinner = useCallback(
-    (andSpin: boolean) => {
+    () => {
       if (!result) return;
       const snapshot = raw;
       const next = entries
@@ -393,7 +409,6 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
       setUndoRaw(snapshot);
       clearResult();
       showToast(`${result.name} removed · ${next.reduce((sum, e) => sum + e.count, 0)} left`);
-      if (andSpin) setTimeout(() => spinRef.current(), 60);
     },
     [clearResult, entries, raw, result],
   );
@@ -560,7 +575,7 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
   const dupes = entries.filter((e) => e.count > 1);
 
   return (
-    <div className={`wn-tool${options.projector ? " is-projector" : ""}`} data-capability="name-wheel" data-operation="spin">
+    <div className={`wn-tool${options.projector ? " is-projector" : ""}`} data-capability="name-wheel" data-operation="spin" data-state={state}>
       <div className="wn-bench" data-tool-output data-state={state}>
         {/* ---------- list editor ---------- */}
         <section className="wn-editor-col" aria-labelledby="wn-list-title">
@@ -587,7 +602,9 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
           {dupes.length > 0 ? (
             <div className="wn-dup" aria-label="Names that appear more than once">
               {dupes.map((entry) => (
-                <span className="wn-dup-chip" key={entry.key}>{entry.name} x{entry.count}</span>
+                <span className="wn-dup-chip" key={entry.key}>
+                  {entry.name} x{entry.count} · {pct(n ? entry.count / n : 0)}
+                </span>
               ))}
             </div>
           ) : null}
@@ -613,10 +630,18 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
             data-primary
             data-jtbd-action="run"
             data-tool-action="spin"
-            onClick={() => (spinning ? stopSpin() : spin())}
-            disabled={!spinning && n < 2}
+            onClick={() => {
+              if (spinning) return stopSpin();
+              if (n < 2) {
+                setTriedEmpty(true);
+                inputRef.current?.focus();
+                return;
+              }
+              spin();
+            }}
+            data-ready={!spinning && n < 2 ? "false" : "true"}
           >
-            {spinning ? "Stop spin" : result ? "Spin again" : "Spin my list"}
+            {spinning ? "Stop spin" : result ? "Spin again" : n < 2 ? "Add names to spin" : "Spin my list"}
           </button>
           <div
             className="wn-progress"
@@ -631,7 +656,17 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
               <div className="wn-progress-bar" ref={barRef} style={{ width: `${Math.round(progress * 100)}%` }} />
             </div>
             <div className="wn-progress-line">
-              <strong>{spinning ? "Spinning…" : result ? "Winner drawn" : n < 2 ? "Add at least two names to spin" : "Ready to spin"}</strong>
+              <strong {...(!spinning && n < 2 && triedEmpty ? { role: "alert", "data-tool-error": "" } : {})}>
+                {spinning
+                  ? "Spinning…"
+                  : result
+                    ? "Winner drawn"
+                    : n < 2
+                      ? triedEmpty
+                        ? "Add at least two names to spin"
+                        : "Paste at least two names"
+                      : "Ready to spin"}
+              </strong>
               <span>{spinning ? `${left}s left` : n >= 2 ? `${n} slices · ${pct(chanceEach)} each` : "0 names"}</span>
             </div>
           </div>
@@ -669,8 +704,8 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
             <div className="wn-slip-actions">
               {result ? (
                 <>
-                  <button type="button" className="wn-btn" onClick={() => removeWinner(true)}>
-                    Remove &amp; spin again
+                  <button type="button" className="wn-btn wn-btn-remove" onClick={() => removeWinner()}>
+                    Remove winner
                   </button>
                   <div className="wn-slip-row">
                     <button type="button" className="wn-btn wn-btn-ghost wn-btn-sm" onClick={() => { void copyDraws(); }}>
@@ -716,6 +751,37 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
             ) : (
               <p className="wn-draws-empty">Every name the wheel picks is listed here, in order, with its time.</p>
             )}
+            <div className="wn-draws-foot">
+              <button type="button" className="wn-btn wn-btn-ghost wn-btn-sm" onClick={() => void shareList()}>
+                Share link
+              </button>
+              <button type="button" className="wn-btn wn-btn-ghost wn-btn-sm" onClick={downloadJson}>
+                Save .json
+              </button>
+              <button type="button" className="wn-btn wn-btn-ghost wn-btn-sm" onClick={() => fileRef.current?.click()}>
+                Import
+              </button>
+              <input
+                ref={fileRef}
+                type="file"
+                accept=".json,.txt,application/json,text/plain"
+                className="wn-file-hidden"
+                aria-label="Import a name list"
+                onChange={(event) => {
+                  const file = event.target.files?.[0];
+                  if (file) importList(file);
+                  event.target.value = "";
+                }}
+              />
+              <a className="wn-btn wn-btn-ghost wn-btn-sm" href="/api/pay/checkout?plan=plus" data-shipsite-checkout data-product="plus">
+                CSV export (Plus)
+              </a>
+            </div>
+            <details className="wn-embed-box">
+              <summary>Embed code</summary>
+              <p className="wn-hint">Put this iframe where the wheel should appear. The list rides inside the link, so no new page is added.</p>
+              <textarea className="wn-embed" readOnly rows={3} aria-label="Embed code" value={embedCode} />
+            </details>
           </section>
         </div>
 
@@ -737,131 +803,80 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
             ) : null}
           </div>
         </div>
-      </div>
 
-      {/* ---------- settings ---------- */}
-      <details className="wn-options">
-        <summary>Wheel options</summary>
-        <div className="wn-options-body">
-          <fieldset className="wn-fieldset">
-            <legend>Spin length</legend>
-            <div className="wn-seg">
-              {([4, 6, 8] as const).map((seconds) => (
-                <label key={seconds}>
-                  <input
-                    type="radio"
-                    name="wn-duration"
-                    value={seconds}
-                    checked={options.duration === seconds}
-                    onChange={() => setOption("duration", seconds)}
-                  />
-                  <span>{seconds} s</span>
-                </label>
-              ))}
+        {/* ---------- settings, inside the panel beside the wheel ---------- */}
+        <details className="wn-options" ref={optionsRef}>
+          <summary>Wheel options</summary>
+          <div className="wn-options-body">
+            <div className="wn-opt" role="group" aria-label="Spin length">
+              <span className="wn-opt-label" aria-hidden="true">Spin length</span>
+              <div className="wn-seg">
+                {([4, 6, 8] as const).map((seconds) => (
+                  <label key={seconds}>
+                    <input
+                      type="radio"
+                      name="wn-duration"
+                      value={seconds}
+                      checked={options.duration === seconds}
+                      onChange={() => setOption("duration", seconds)}
+                    />
+                    <span>{seconds} s</span>
+                  </label>
+                ))}
+              </div>
             </div>
-          </fieldset>
-          <fieldset className="wn-fieldset">
-            <legend>Sound</legend>
-            <label className="wn-switch">
-              <input type="checkbox" checked={options.sound} onChange={(event) => setOption("sound", event.target.checked)} />
-              <span className="track" aria-hidden="true" />
-              <span>Ticks and a cheer</span>
-            </label>
-            <div className="wn-range" style={{ marginTop: 8 }}>
-              <input
-                type="range"
-                min={0}
-                max={100}
-                step={5}
-                value={options.volume}
-                aria-label="Volume"
-                onChange={(event) => setOption("volume", Number(event.target.value))}
-              />
-              <output>{options.volume}</output>
+            <div className="wn-opt">
+              <span className="wn-opt-label">Sound</span>
+              <label className="wn-switch">
+                <input type="checkbox" checked={options.sound} onChange={(event) => setOption("sound", event.target.checked)} />
+                <span className="track" aria-hidden="true" />
+                <span className="wn-plain">{options.sound ? "On" : "Off"}</span>
+              </label>
             </div>
-          </fieldset>
-          <fieldset className="wn-fieldset">
-            <legend>Palette</legend>
-            <div className="wn-swatches">
-              {PALETTES.map((item) => (
-                <label className="wn-swatch" key={item.id} title={item.name}>
-                  <input
-                    type="radio"
-                    name="wn-palette"
-                    value={item.id}
-                    checked={options.palette === item.id}
-                    onChange={() => setOption("palette", item.id)}
-                    aria-label={item.name}
-                  />
-                  <span style={{ background: `conic-gradient(${item.fills[0]} 0 25%, ${item.fills[1]} 25% 50%, ${item.fills[2]} 50% 75%, ${item.fills[3]} 75% 100%)` }} />
-                </label>
-              ))}
+            <div className="wn-opt">
+              <label className="wn-opt-label" htmlFor="wn-volume">Volume</label>
+              <div className="wn-range">
+                <input
+                  id="wn-volume"
+                  type="range"
+                  min={0}
+                  max={100}
+                  step={5}
+                  value={options.volume}
+                  onChange={(event) => setOption("volume", Number(event.target.value))}
+                />
+                <output htmlFor="wn-volume">{options.volume}</output>
+              </div>
             </div>
-            <p className="wn-hint" style={{ marginTop: 6 }}>{palette.name}</p>
-          </fieldset>
-          <fieldset className="wn-fieldset">
-            <legend>Projector</legend>
-            <label className="wn-switch">
-              <input type="checkbox" checked={options.projector} onChange={(event) => setOption("projector", event.target.checked)} />
-              <span className="track" aria-hidden="true" />
-              <span>Bigger wheel for a class</span>
-            </label>
-          </fieldset>
-          <fieldset className="wn-fieldset wn-fieldset-wide">
-            <legend>Share, save and embed</legend>
-            <p className="wn-hint" style={{ marginTop: 0 }}>
-              The share link carries the names after the #, so nothing is stored on a server.
-            </p>
-            <div className="wn-more-row">
-              <button type="button" className="wn-btn wn-btn-ghost wn-btn-sm" onClick={() => void shareList()}>
-                Copy share link
-              </button>
-              <button type="button" className="wn-btn wn-btn-ghost wn-btn-sm" onClick={downloadJson}>
-                Download list (.json)
-              </button>
-              <button type="button" className="wn-btn wn-btn-ghost wn-btn-sm" onClick={() => fileRef.current?.click()}>
-                Import list
-              </button>
-              <input
-                ref={fileRef}
-                type="file"
-                accept=".json,.txt,application/json,text/plain"
-                hidden
-                onChange={(event) => {
-                  const file = event.target.files?.[0];
-                  if (file) importList(file);
-                  event.target.value = "";
-                }}
-              />
-              <a className="wn-plus" href="/pricing/" data-shipsite-checkout data-product="plus">
-                CSV export · Plus
-              </a>
+            <div className="wn-opt wn-opt-block" role="radiogroup" aria-label="Palette">
+              <span className="wn-opt-label" aria-hidden="true">Palette</span>
+              <div className="wn-swatches">
+                {PALETTES.map((item) => (
+                  <label className="wn-swatch" key={item.id} title={item.name}>
+                    <input
+                      type="radio"
+                      name="wn-palette"
+                      value={item.id}
+                      checked={options.palette === item.id}
+                      onChange={() => setOption("palette", item.id)}
+                      aria-label={item.name}
+                    />
+                    <span style={{ background: `conic-gradient(${item.fills[0]} 0 25%, ${item.fills[1]} 25% 50%, ${item.fills[2]} 50% 75%, ${item.fills[3]} 75% 100%)` }} />
+                  </label>
+                ))}
+              </div>
             </div>
-            <label className="wn-label" htmlFor="wn-embed-code" style={{ marginTop: 12 }}>
-              Embed code
-            </label>
-            <p className="wn-hint" style={{ marginTop: 0 }}>
-              Paste this iframe where the wheel should appear. The names ride inside the link, so no route is added.
-            </p>
-            <textarea id="wn-embed-code" className="wn-embed" readOnly value={embedCode} rows={3} />
-            <button
-              type="button"
-              className="wn-btn wn-btn-ghost wn-btn-sm"
-              style={{ marginTop: 8 }}
-              onClick={async () => {
-                try {
-                  await navigator.clipboard.writeText(embedCode);
-                  showToast("Embed code copied");
-                } catch {
-                  showToast("Could not reach the clipboard");
-                }
-              }}
-            >
-              Copy embed code
-            </button>
-          </fieldset>
-        </div>
-      </details>
+            <div className="wn-opt">
+              <span className="wn-opt-label">Projector</span>
+              <label className="wn-switch">
+                <input type="checkbox" checked={options.projector} onChange={(event) => setOption("projector", event.target.checked)} />
+                <span className="track" aria-hidden="true" />
+                <span className="wn-plain">{options.projector ? "On" : "Off"}</span>
+              </label>
+            </div>
+          </div>
+        </details>
+      </div>
 
       <div className={`wn-toast${toast ? " is-on" : ""}`} role="status" aria-live="polite">
         {toast}

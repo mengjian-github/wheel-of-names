@@ -26,7 +26,7 @@
         },
         {
           "title": "Say how many winners you need",
-          "body": "Enter the number of prizes. Ask for 3 winners and you get exactly 3; ask for 15 and the draw walks down all 15 prize places in one go."
+          "body": "Enter the number of prizes. Ask for 3 winners and you get exactly 3; ask for 15 on a list of 15 or more and the draw walks down all 15 prize places in one go, while a shorter list simply runs out of names."
         },
         {
           "title": "Copy the results table",

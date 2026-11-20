@@ -38,6 +38,11 @@ binding = "CF_VERSION_METADATA"
 NEXT_PUBLIC_SITE_URL = "https://prj-f45e7fee-046-wheel-of-names.shipsite-preview.dev"
 SHIPSITE_ENVIRONMENT = "preview"
 
+[[env.preview.d1_databases]]
+binding = "DB"
+database_name = "shipsite-pay-prj_f45e7fee-046-preview"
+database_id = "81c17e29-6039-44ef-b1ab-8481cdeaa72f"
+
 [env.production]
 name = "shipsite-site-prj-f45e7fee-046-wheel-of-names"
 workers_dev = true
@@ -56,3 +61,8 @@ binding = "CF_VERSION_METADATA"
 [env.production.vars]
 NEXT_PUBLIC_SITE_URL = "https://prj-f45e7fee-046-wheel-of-names.shipsite-preview.dev"
 SHIPSITE_ENVIRONMENT = "production"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "shipsite-pay-prj_f45e7fee-046"
+database_id = "faf62cde-f195-4630-9417-c8773882b940"

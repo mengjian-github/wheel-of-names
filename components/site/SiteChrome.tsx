@@ -102,6 +102,7 @@ export function SiteFooter({ config = siteConfig }: { config?: SiteConfig } = {}
   const groups = config.footerGroups ?? [];
   return (
     <footer data-node="footer" data-chrome="site">
+      <div className="footer-shell">
       {groups.length ? (
         <div className="footer-groups">
           {groups.map((group) => (
@@ -123,6 +124,7 @@ export function SiteFooter({ config = siteConfig }: { config?: SiteConfig } = {}
       {config.footerNote ? <p className="footer-note">{config.footerNote}</p> : null}
       {config.contactEmail ? <p className="footer-contact"><a href={"mailto:" + config.contactEmail}>{config.contactEmail}</a></p> : null}
       <p className="footer-brand">{config.brandName}</p>
+      </div>
     </footer>
   );
 }

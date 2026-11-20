@@ -257,7 +257,7 @@ export default function WeightedWheelTool() {
             ref={inputRef}
             className="wn-input"
             data-tool-input="entries"
-            placeholder={"One entry per line, weight 1–10\nAda, 5\nBo, 3\nChen, 2"}
+            placeholder="One entry per line, weight 1–10"
             value={text}
             onChange={(event) => syncFromText(event.target.value)}
             spellCheck={false}

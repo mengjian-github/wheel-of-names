@@ -168,6 +168,7 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
   const [draws, setDraws] = useState<{ no: number; name: string; chance: number; when: string }[]>([]);
   const [highlight, setHighlight] = useState(-1);
   const [toast, setToast] = useState("");
+  const [manualCopy, setManualCopy] = useState("");
   const [undoRaw, setUndoRaw] = useState<string | null>(null);
   const [freshWinner, setFreshWinner] = useState(false);
   const [triedEmpty, setTriedEmpty] = useState(false);
@@ -238,6 +239,34 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
     observer.observe(canvas);
     return () => observer.disconnect();
   }, [slices, palette, highlight]);
+
+  // The clipboard API needs a secure context and a permission; when it is not
+  // there (an http origin, a browser that refuses it) the visitor still gets
+  // the text, set out where they can select it themselves.
+  const copyText = async (text: string): Promise<boolean> => {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch {
+      /* try the selection route below */
+    }
+    try {
+      const field = document.createElement("textarea");
+      field.value = text;
+      field.setAttribute("readonly", "");
+      field.style.position = "fixed";
+      field.style.top = "0";
+      field.style.left = "0";
+      field.style.opacity = "0";
+      document.body.appendChild(field);
+      field.select();
+      const ok = document.execCommand("copy");
+      document.body.removeChild(field);
+      return ok;
+    } catch {
+      return false;
+    }
+  };
 
   const showToast = (message: string) => {
     setToast(message);
@@ -319,7 +348,7 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
     setFreshWinner(false);
     setSpinning(true);
     setProgress(0);
-    const duration = reduced ? 260 : options.duration * 1000;
+    const duration = reduced ? 120 : options.duration * 1000;
     setLeft(Math.ceil(duration / 1000));
     const ctxSound = options.sound ? audioCtx() : null;
     if (ctxSound) void ctxSound.resume();
@@ -438,11 +467,12 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
       return;
     }
     const text = draws.map((d) => `${d.no}. ${d.name} — ${pct(d.chance)} — ${d.when}`).join("\n");
-    try {
-      await navigator.clipboard.writeText(text);
+    if (await copyText(text)) {
+      setManualCopy("");
       showToast("Draw list copied as plain text");
-    } catch {
-      showToast("Could not reach the clipboard");
+    } else {
+      setManualCopy(text);
+      showToast("Select the draw list below and copy it");
     }
   };
 
@@ -468,11 +498,12 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
       return;
     }
     const url = `${window.location.origin}${window.location.pathname}#l=${encodeList(names)}`;
-    try {
-      await navigator.clipboard.writeText(url);
+    if (await copyText(url)) {
+      setManualCopy("");
       showToast("Share link copied — the list travels inside it");
-    } catch {
-      showToast("Could not reach the clipboard");
+    } else {
+      setManualCopy(url);
+      showToast("Select the link below and copy it");
     }
     try {
       window.history.replaceState(null, "", `#l=${encodeList(names)}`);
@@ -677,7 +708,7 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
             <div>
               <div className="wn-slip-top">
                 <span>{spinning ? "Drawing" : result ? `Drawn No. ${result.no}` : "Winner slip"}</span>
-                <span>{spinning ? `${left}s left` : result ? result.when : "—"}</span>
+                <span>{spinning ? `${left}s left` : result ? result.when : "No draw yet"}</span>
               </div>
               {result ? (
                 <div className="wn-slip-name" data-winner>{result.name}</div>
@@ -752,6 +783,30 @@ export default function NameWheelTool({ embedded = false }: { embedded?: boolean
             ) : (
               <p className="wn-draws-empty">Every name the wheel picks is listed here, in order, with its time.</p>
             )}
+            {manualCopy ? (
+              <div className="wn-manual">
+                <label>
+                  <span className="wn-hint">Copy this</span>
+                  <input
+                    readOnly
+                    value={manualCopy}
+                    onFocus={(event) => event.currentTarget.select()}
+                    aria-label="Text to copy"
+                    style={{
+                      width: "100%",
+                      marginTop: 4,
+                      padding: "9px 11px",
+                      borderRadius: 8,
+                      border: "1px solid var(--wn-line)",
+                      background: "var(--wn-panel-2)",
+                      color: "var(--wn-ink)",
+                      font: "inherit",
+                      fontSize: "var(--fs-xs)",
+                    }}
+                  />
+                </label>
+              </div>
+            ) : null}
             <div className="wn-draws-foot">
               <button type="button" className="wn-btn wn-btn-ghost wn-btn-sm" onClick={() => void shareList()}>
                 Share link

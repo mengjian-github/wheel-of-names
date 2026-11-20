@@ -569,7 +569,7 @@ footer[data-node="footer"]{
   gap:6px 22px;padding:16px;align-items:start;
 }
 .wn-stage{height:auto;justify-content:flex-start;padding:0;background:none}
-.wn-wheel-wrap{max-width:440px;margin:0 auto}
+.wn-wheel-wrap{max-width:380px;margin:0 auto}
 .wn-action{grid-area:action;width:100%;max-width:440px;margin:8px auto 0}
 .wn-label{font-family:var(--wn-font);font-size:14px;font-weight:600;letter-spacing:0;line-height:1.4;color:var(--wn-ink);text-decoration:none}
 .wn-count{font-size:14px}
@@ -655,17 +655,39 @@ a.wn-btn{justify-content:center;text-decoration:none;display:inline-flex;align-i
 
 /* ---- rev7: the slip waits quiet and fills with the brand colour when a draw lands ---- */
 .wn-slip.is-empty{
-  background:var(--wn-panel-2);border:2px solid rgba(249,163,192,.45);color:var(--wn-ink);
+  background:var(--wn-pink);color:var(--pink-ink, #3a2431);
   min-height:150px;justify-content:flex-start;
 }
-.wn-slip.is-empty::before{display:none}
-.wn-slip.is-empty .wn-slip-top{color:var(--wn-soft)}
-.wn-slip.is-empty .wn-slip-name.is-empty{color:var(--wn-pink);font-size:clamp(20px,2vw,24px)}
-.wn-slip.is-empty .wn-slip-note{color:var(--wn-soft);margin-top:auto}
-.wn-slip.is-empty .wn-slip-slot{opacity:.5}
+.wn-slip.is-empty .wn-slip-top{color:#3a2431}
+.wn-slip.is-empty .wn-slip-name.is-empty{color:#141a2e;font-size:clamp(22px,2.2vw,26px)}
+.wn-slip.is-empty .wn-slip-note{color:#3a2431;margin-top:auto}
+.wn-slip.is-empty .wn-slip-slot{opacity:.45}
 /* the field is flat: a wash behind the text is a measured tell, so the atmosphere layer stays off */
 body[data-atmosphere="true"] .atmosphere-layer,
 body[data-atmosphere="true"]::before{display:none}
+
+/* rev8: the primary is one flat pink action with the slip's clipped corner,
+   at every width, so ready/not-ready differ by fill weight, not by shape */
+.wn-btn-primary{border-radius:0;clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%)}
+
+/* rev8: on a desktop the names field is as tall as the wheel beside it, so the
+   editor column fills its side of the bench instead of leaving a dead band */
+@media (min-width:761px){
+  .wn-input{min-height:228px}
+  .wn-lede{max-width:92ch}
+}
+/* rev8: the phone keeps the whole loop — input, wheel, start, slip — in the first screen */
+@media (max-width:760px){
+  body[data-atmosphere="true"] main > *{padding-top:6px;padding-bottom:2px}
+  .wn-wheel-wrap{max-width:128px}
+  .wn-input{min-height:64px}
+  .wn-page-head{margin-bottom:10px}
+  .wn-lede{margin-top:6px;font-size:14px;line-height:1.5}
+  .wn-editor-actions{margin-top:4px;gap:4px}
+  .wn-hint{margin-top:6px;font-size:12.5px;line-height:1.45}
+  .wn-stage{padding:0}
+  .wn-action{margin-top:4px;gap:6px}
+}
 
 
 /* ---- rev8: a refusal answers on the press, visibly, next to the action ---- */

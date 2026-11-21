@@ -19,6 +19,27 @@ export type PageProps = {
 
 const LINK_RE = /\[([^\]]+)\]\(([^)\s]+)\)/g;
 
+/** The day the approved copy for this site was last reviewed. Every page
+ *  carries it as a visible <time>, and the pages' structured data reuses it,
+ *  so the freshness claim on the page and in search match. */
+export const SITE_LAST_UPDATED = "2026-11-20";
+
+export function LastUpdated() {
+  return (
+    <p className="wn-updated">
+      Last updated{" "}
+      <time dateTime={SITE_LAST_UPDATED}>
+        {new Date(`${SITE_LAST_UPDATED}T00:00:00Z`).toLocaleDateString("en-GB", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+          timeZone: "UTC",
+        })}
+      </time>
+    </p>
+  );
+}
+
 /** Copy bodies carry inline [label](href) links; render them as real anchors
  *  and everything else as text. */
 export function richText(text: string, key = "t"): ReactNode {
@@ -63,6 +84,9 @@ export function PageFrame({
       />
       <main id="main" className={`wn-main ${className}`}>
         {children}
+        <div className="wn-page-body wn-updated-row">
+          <LastUpdated />
+        </div>
       </main>
       <SiteFooter config={config} />
     </>
@@ -147,6 +171,28 @@ export function DataTable({ table }: { table: PageTable }) {
                   j === 0 ? (
                     <th key={j} scope="row">
                       {richText(cell, `c${i}-${j}`)}
+                      {row.sourceUrl ? (
+                        <a
+                          className="wn-row-source"
+                          href={row.sourceUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          title={row.observedAt ? `Source, checked ${row.observedAt.slice(0, 10)}` : "Source"}
+                        >
+                          source
+                          {row.observedAt ? (
+                            <time dateTime={row.observedAt.slice(0, 10)}>
+                              {" "}
+                              {new Date(row.observedAt).toLocaleDateString("en-GB", {
+                                day: "numeric",
+                                month: "short",
+                                year: "numeric",
+                                timeZone: "UTC",
+                              })}
+                            </time>
+                          ) : null}
+                        </a>
+                      ) : null}
                     </th>
                   ) : (
                     <td key={j} data-label={table.columns[j] ?? ""}>{richText(cell, `c${i}-${j}`)}</td>

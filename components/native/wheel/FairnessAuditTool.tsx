@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import { parseNames, pct, randomInt } from "@/lib/wheel";
+import { useStoredList } from "@/lib/persist";
 
 type Row = { name: string; count: number; share: number };
 
 export default function FairnessAuditTool() {
-  const [text, setText] = useState("");
+  const [text, setText] = useStoredList("won.fairness.v1");
   const [rows, setRows] = useState<Row[] | null>(null);
   const [runs, setRuns] = useState(10000);
   const [error, setError] = useState("");

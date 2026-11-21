@@ -30,11 +30,11 @@
         },
         {
           "title": "Plus — $6 a month",
-          "body": "Most popular, for teachers and weekly hosts: one list reused across a term, a few devices, and a record of who was drawn. $60 a year on annual billing, the saving shown beside the toggle."
+          "body": "Most popular, for teachers and weekly hosts: one list reused across a term, a few devices, and a record of who was drawn. The billing toggle shows the yearly price and the saving it brings."
         },
         {
           "title": "Pro — $12 a month",
-          "body": "For daily streamers and busy organizers running several lists a day, where the draw records are the point. $120 a year on annual billing."
+          "body": "For daily streamers and busy organizers running several lists a day, where the draw records are the point."
         },
         {
           "title": "Event Pass — $9 once",
@@ -66,7 +66,8 @@
               "Spins per month",
               "Anonymous daily allowance, then free monthly with sign-in",
               "15,000",
-              "50,000"
+              "50,000",
+              "10,000"
             ],
             "status": "working",
             "recordKey": "spins-per-month",
@@ -81,7 +82,8 @@
               "Named wheels saved",
               "Not kept",
               "25",
-              "100"
+              "100",
+              "10"
             ],
             "status": "working",
             "recordKey": "named-wheels",
@@ -96,7 +98,8 @@
               "Draw records kept",
               "Not kept",
               "2,000",
-              "20,000"
+              "20,000",
+              "5,000"
             ],
             "status": "working",
             "recordKey": "draw-records",
@@ -111,7 +114,8 @@
               "Devices synced",
               "1",
               "3",
-              "10"
+              "10",
+              "2"
             ],
             "status": "working",
             "recordKey": "devices",
@@ -125,7 +129,8 @@
             "cells": [
               "Billing",
               "Never charged",
-              "Charged once, does not renew",
+              "Monthly or yearly subscription, renews until cancelled",
+              "Monthly or yearly subscription, renews until cancelled",
               "Charged once, does not renew"
             ],
             "status": "working",
@@ -139,6 +144,7 @@
           {
             "cells": [
               "Weights, ordered raffle draws, fairness test",
+              "Included",
               "Included",
               "Included",
               "Included"

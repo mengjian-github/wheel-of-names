@@ -149,7 +149,7 @@
       "items": [
         {
           "title": "No saved register",
-          "body": "The free picker holds the last list in the open tab. Come back on the same lesson's device after the tab is closed and the roster is gone; keeping a named wheel is a paid feature on the [pricing page](/pricing/)."
+          "body": "The free picker keeps the register on the lesson's device, so the same roster is there next lesson with no pasting. Syncing one named wheel across several devices at once is the paid addition, on the [pricing page](/pricing/)."
         },
         {
           "title": "No attendance or grades",
@@ -177,7 +177,7 @@
     },
     {
       "question": "Is my class list stored or uploaded?",
-      "answer": "No. The names stay on the device and the draw happens in the page, so nothing is sent to a server and deleting the tab clears the list. Saving a class roster between days needs a named wheel on a plan; the pricing route lists what each plan saves."
+      "answer": "No. The names stay on the device and the draw happens in the page, so nothing is sent to a server. The roster is saved in the browser, so it is there on the next lesson and only a new paste or Clear on the device replaces it; syncing it to other devices is a paid addition, on the [pricing page](/pricing/)."
     },
     {
       "question": "Can I use it for group work and not just questions?",
@@ -225,7 +225,7 @@
           "name": "Is my class list stored or uploaded?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. The names stay on the device and the draw happens in the page; saving a roster between days needs a named wheel on a plan."
+            "text": "No. The names stay on the device, the draw happens in the page, and the roster is saved in the browser for the next lesson; syncing it to other devices is a paid addition."
           }
         }
       ]

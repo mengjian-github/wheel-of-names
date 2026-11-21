@@ -182,7 +182,9 @@ footer[data-node="footer"]{
 .wn-btn-primary:hover{background:#ffb9d1}
 .wn-btn-primary:active{background:#e98cae}
 .wn-chances{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:2px;max-height:132px;overflow:auto}
-.wn-chances li{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;line-height:1.5;padding:2px 0;color:#dfe5f3}
+.wn-chances li{display:grid;grid-template-columns:minmax(0,1fr) 52px 54px;gap:8px;align-items:center;font-size:13.5px;line-height:1.5;padding:2px 0;color:#dfe5f3}
+.wn-weight-input{width:52px;min-height:34px;background:#1b2340;color:var(--wn-ink);border:1px solid rgba(238,241,248,.14);border-radius:6px;padding:4px 6px;font:inherit;font-size:13.5px}
+.wn-chances .wn-chance-pct{text-align:right}
 .wn-chance-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .wn-chance-pct{font-variant-numeric:tabular-nums;color:#f9a3c0;font-weight:600;flex:none}
 .wn-btn-primary:disabled,.wn-btn-primary[aria-disabled="true"],.wn-btn-primary[data-ready="false"]{
@@ -707,4 +709,83 @@ body[data-atmosphere="true"]::before{display:none}
 .wn-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.55;background:var(--wn-panel-2);border-radius:8px;padding:12px 14px;overflow-x:auto;white-space:pre-wrap;word-break:break-word;color:var(--wn-soft);margin:0}
 .wn-devtools-body ol li{font-size:14.5px;line-height:1.5}
 
+
+/* ---------- rev10: the whole loop on one screen, one drawer, phone order ---------- */
+.wn-stage{position:relative}
+.wn-more{grid-area:options;margin:10px 0 0;background:var(--wn-panel-2);border:1px solid rgba(238,241,248,.10);border-radius:10px;padding:0 12px}
+.wn-more>summary{padding:10px 2px;font-size:14px;font-weight:600;cursor:pointer;color:var(--wn-ink)}
+.wn-more .wn-options-body{padding:2px 0 12px}
+.wn-more .wn-draws{padding:0 0 12px;margin:0;background:none}
+.wn-more .wn-embed-box{margin:0 0 12px}
+.wn-stage-tool{position:absolute;top:6px;right:6px;z-index:3;appearance:none;background:rgba(26,32,57,.72);border:1px solid rgba(238,241,248,.20);color:var(--wn-soft);font:inherit;font-size:12px;letter-spacing:.02em;padding:5px 9px;border-radius:6px;cursor:pointer}
+.wn-stage-tool:hover{color:var(--wn-ink);border-color:rgba(249,163,192,.6)}
+.wn-stage-tool[aria-pressed="true"]{background:var(--wn-pink);color:#231a24;border-color:var(--wn-pink)}
+@media (min-width:961px){
+  .wn-bench{grid-template-columns:minmax(0,1.08fr) minmax(250px,320px) minmax(230px,300px);grid-template-areas:"editor stage slip" "editor action slip" "options options options";gap:12px 18px}
+  .wn-wheel-wrap{max-width:300px}
+  .wn-slip-name{font-size:clamp(40px,3.4vw,54px);line-height:1.02}
+  .wn-intro h1,.wn-page-head h1{font-size:clamp(30px,3vw,42px);line-height:1.06;max-width:26ch}
+  .wn-intro p,.wn-page-head .wn-lede{font-size:15px;line-height:1.45;margin-top:6px}
+  .wn-page-head,.wn-intro{margin:0 0 10px;padding-bottom:0}
+}
+@media (max-width:960px){
+  .wn-bench{grid-template-columns:minmax(0,1fr);grid-template-areas:"editor" "action" "slip" "stage" "options";gap:10px}
+  .wn-wheel-wrap{max-width:250px}
+  .wn-slip-name{font-size:clamp(34px,10vw,44px)}
+  .wn-slip-actions{gap:6px}
+}
+/* projector is a stage of its own: pinned to the viewport so the wheel and the
+   drawn winner stay in sight however far the page was scrolled when it opened */
+.wn-tool.is-projector{position:fixed;inset:0;z-index:80;margin:0;max-width:none;width:100%;height:100%;overflow:auto;background:var(--wn-bg);padding:14px 22px 20px;display:flex;flex-direction:column}
+.wn-tool.is-projector .wn-bench{flex:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,420px);grid-template-areas:"stage slip" "action slip";gap:14px 24px;align-content:start}
+.wn-tool.is-projector .wn-editor-col,.wn-tool.is-projector .wn-more{display:none}
+.wn-tool.is-projector .wn-stage{padding:16px}
+.wn-tool.is-projector .wn-wheel-wrap{max-width:min(58vh,520px)}
+.wn-tool.is-projector .wn-slip{min-height:0}
+.wn-tool.is-projector .wn-slip-name{font-size:clamp(48px,5.2vw,84px);line-height:1.02}
+.wn-tool.is-projector .wn-slot-line{opacity:.5}
+
+/* freshness + per-row source links */
+.wn-updated-row{margin:26px 0 6px}
+.wn-updated{font-size:var(--fs-xs);color:var(--wn-meta);margin:0}
+.wn-row-source{display:inline-block;margin-left:8px;font-size:11px;font-weight:500;letter-spacing:.02em;color:var(--wn-meta);text-decoration:none;border-bottom:1px dotted currentColor;white-space:nowrap}
+.wn-row-source:hover{color:var(--wn-accent)}
+
+/* ---------- rev11: phone order on the weighted bench, one wheel-options drawer ---------- */
+.wn-wheel-options{grid-area:options;margin:0}
+.wn-wheel-options>summary{padding:10px 2px;font-size:14px;font-weight:600;cursor:pointer;color:var(--wn-ink)}
+@media (max-width:960px){
+  .wn-bench-weighted{display:flex;flex-direction:column;gap:10px}
+  .wn-bench-weighted .wn-wheel-col,
+  .wn-bench-weighted .wn-stage,
+  .wn-bench-weighted .wn-slip-col{display:contents}
+  .wn-bench-weighted .wn-editor-col{order:1}
+  .wn-bench-weighted .wn-progress-line{order:2}
+  .wn-bench-weighted .wn-spin-btn{order:3;width:100%}
+  .wn-bench-weighted .wn-slip{order:4}
+  .wn-bench-weighted .wn-slip-col>.wn-plus{order:5;width:100%;text-align:center}
+  .wn-bench-weighted .wn-wheel-wrap{order:6;margin:0 auto}
+  .wn-bench-weighted .wn-empty-wheel{order:7}
+  .wn-bench-weighted .wn-options{order:8}
+  /* the raffle reads input → draw → winners → wheel on a phone */
+  .wn-bench-raffle{display:flex;flex-direction:column;gap:10px}
+  .wn-bench-raffle>.wn-editor-col{order:1}
+  .wn-bench-raffle>.wn-slip-col{order:2}
+  .wn-bench-raffle>.wn-wheel-col{order:3}
+}
+
+/* ---------- rev12: comparison page, the deciding table on the first screen ---------- */
+.wn-vs-top.has-table{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:30px;align-items:start}
+.wn-vs-top .wn-section{margin:0}
+.wn-vs-top .wn-section h2{font-size:20px;margin:0 0 8px}
+.wn-vs-top .wn-section p{font-size:14.5px;line-height:1.45}
+.wn-vs-top .wn-table th,.wn-vs-top .wn-table td{padding:4px 9px;font-size:13px;line-height:1.25}
+.wn-vs-top .wn-section h2{font-size:18px;margin:0 0 6px}
+.wn-vs-top .wn-section p{margin:0 0 6px}
+.wn-vs-top .wn-section ul,.wn-vs-top .wn-section ol{margin:0}
+.wn-vs-top .wn-table td{vertical-align:top}
+@media (max-width:960px){
+  .wn-vs-top.has-table{display:block}
+  .wn-vs-top .wn-section{margin-top:18px}
+}
 `;

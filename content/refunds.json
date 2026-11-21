@@ -27,8 +27,8 @@
       "body": "Send the request through the form on the [contact page](/contact/) with the plan name, the date of the charge and, if you have it, the checkout receipt reference. The plan's price and term are listed on the [pricing page](/pricing/).",
       "steps": [
         {
-          "title": "Choose the billing subject",
-          "body": "Pick the billing option in the form so the message lands with the charge it concerns."
+          "title": "Choose A paid plan or a billing question as the subject",
+          "body": "The contact form\u2019s Subject field lists A paid plan or a billing question; pick it so the message lands with the charge it concerns."
         },
         {
           "title": "Add the charge details",

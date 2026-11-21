@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { PALETTES, fitLabel, parseNames, pct, randomInt, timeNow } from "@/lib/wheel";
+import { useStoredList } from "@/lib/persist";
 import { DEFAULT_PALETTE } from "@/lib/wheel";
 
 type Winner = { order: number; name: string; odds: number; when: string };
@@ -60,7 +61,7 @@ function drawRaffleWheel(canvas: HTMLCanvasElement, names: string[], highlighted
 }
 
 export default function RaffleTool() {
-  const [text, setText] = useState("");
+  const [text, setText] = useStoredList("won.raffle.v1");
   const [winnersWanted, setWinnersWanted] = useState(1);
   const [winners, setWinners] = useState<Winner[]>([]);
   const [drawing, setDrawing] = useState(false);
@@ -149,7 +150,7 @@ export default function RaffleTool() {
   return (
     <div className="wn-tool" data-capability="raffle-draw" data-operation="draw" data-state={state}>
       <div className="wn-bench wn-bench-raffle" data-tool-output data-state={state}>
-        <section className="wn-panel">
+        <section className="wn-panel wn-editor-col">
           <div className="wn-panel-head">
             <h2 className="wn-label">Raffle entries</h2>
             <span className="wn-count">{entries.length} {entries.length === 1 ? "entry" : "entries"}</span>
@@ -246,7 +247,7 @@ export default function RaffleTool() {
                       data-draw-row
                       style={{
                         display: "grid",
-                        gridTemplateColumns: "28px minmax(0,1fr) 56px",
+                        gridTemplateColumns: "28px minmax(0,1fr) 62px 56px",
                         alignItems: "center",
                         gap: 8,
                         padding: "8px 6px",
@@ -256,6 +257,7 @@ export default function RaffleTool() {
                     >
                       <span style={{ fontSize: 12.5, color: "#93a0c6", fontVariantNumeric: "tabular-nums" }}>{winner.order}</span>
                       <span style={{ fontWeight: 600, overflowWrap: "anywhere" }}>{winner.name}</span>
+                      <span data-draw-time style={{ fontSize: 12.5, color: "#93a0c6", fontVariantNumeric: "tabular-nums" }}>{winner.when}</span>
                       <button
                         type="button"
                         className="wn-btn wn-btn-ghost wn-btn-sm"
@@ -283,13 +285,10 @@ export default function RaffleTool() {
               </div>
             ) : null}
           </div>
+          <a className="wn-plus" href="/api/pay/checkout?plan=plus" data-shipsite-checkout data-product="plus">
+            Save the draw record · Plus
+          </a>
         </div>
-      </div>
-
-      <div className="wn-toolbar">
-        <a className="wn-plus" href="/api/pay/checkout?plan=plus" data-shipsite-checkout data-product="plus">
-          Save the draw record · Plus
-        </a>
       </div>
     </div>
   );

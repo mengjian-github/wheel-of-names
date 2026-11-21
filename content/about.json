@@ -74,7 +74,7 @@
         },
         {
           "title": "No pictures",
-          "body": "Entries are text and a weight; avatars and file imports are not accepted."
+          "body": "Entries stay text and a weight: avatars are not accepted. A list comes in by pasting it, or by importing a .json or .txt file from Results & sharing."
         },
         {
           "title": "No check on who a name is",

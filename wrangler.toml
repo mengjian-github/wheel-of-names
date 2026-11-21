@@ -24,8 +24,8 @@ SHIPSITE_ENVIRONMENT = "production"
 # Worker) binds; preview and production keep their own database below.
 [[d1_databases]]
 binding = "DB"
-database_name = "shipsite-pay-prj_f45e7fee-046-preview"
-database_id = "81c17e29-6039-44ef-b1ab-8481cdeaa72f"
+database_name = "shipsite-pay-prj_f45e7fee-046"
+database_id = "faf62cde-f195-4630-9417-c8773882b940"
 
 [env.preview]
 name = "shipsite-site-prj-f45e7fee-046-wheel-of-names-preview"

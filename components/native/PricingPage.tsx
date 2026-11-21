@@ -26,12 +26,12 @@ const PLANS: PlanDef[] = [
   {
     name: "Plus",
     monthly: { id: "plus", price: "$6", note: "a month, renews monthly" },
-    annual: { id: "plus-annual", price: "$60", note: "a year, $5 a month" },
+    annual: { id: "plus-annual", price: "$60", note: "a year, renews yearly" },
   },
   {
     name: "Pro",
     monthly: { id: "pro", price: "$12", note: "a month, renews monthly" },
-    annual: { id: "pro-annual", price: "$120", note: "a year, $10 a month" },
+    annual: { id: "pro-annual", price: "$120", note: "a year, renews yearly" },
   },
   {
     name: "Event Pass",

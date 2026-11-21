@@ -19,7 +19,7 @@
     {
       "id": "a-result-that-looks-wrong",
       "title": "A result that looks wrong",
-      "body": "If a spin, a weight or a [fairness test](/fairness/) gives something you did not expect, the message can be acted on faster when it carries the exact case.",
+      "body": "A spin, a weight or a [fairness test](/fairness/) that ends unexpectedly is worth reporting, and the details below are the ones that make the report checkable.",
       "steps": [
         {
           "title": "The list and its weights",

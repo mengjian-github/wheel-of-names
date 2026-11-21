@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { DEFAULT_PALETTE, PALETTES, WEIGHT_ERROR, parseWeighted, pct, randomWeighted, timeNow } from "@/lib/wheel";
+import { useStoredList } from "@/lib/persist";
 
 type Row = { name: string; weight: number };
 
@@ -74,7 +75,7 @@ function drawWeightedWheel(canvas: HTMLCanvasElement, rows: Row[], fills: string
 }
 
 export default function WeightedWheelTool() {
-  const [text, setText] = useState("");
+  const [text, setText] = useStoredList("won.weighted.v1");
   const [rows, setRows] = useState<Row[]>([]);
   const [error, setError] = useState("");
   const [spinning, setSpinning] = useState(false);
@@ -258,6 +259,7 @@ export default function WeightedWheelTool() {
             className="wn-input"
             data-tool-input="entries"
             placeholder="One entry per line, weight 1–10"
+            aria-label="Entries, one per line"
             value={text}
             onChange={(event) => syncFromText(event.target.value)}
             spellCheck={false}
@@ -280,13 +282,27 @@ export default function WeightedWheelTool() {
           {rows.length ? (
             <ul className="wn-chances" aria-label="Chance for each entry">
               {rows.map((row, i) => (
-                <li key={`chance-${row.name}-${i}`}>
+                <li key={`chance-${row.name}-${i}`} data-entry>
                   <span className="wn-chance-name">{row.name}</span>
+                  <label className="wn-weight">
+                    <span className="sr-only">Weight for {row.name}</span>
+                    <input
+                      type="number"
+                      min={1}
+                      max={10}
+                      step={1}
+                      value={row.weight}
+                      onChange={(event) => setWeight(i, Number(event.target.value))}
+                      className="wn-weight-input"
+                    />
+                  </label>
                   <span className="wn-chance-pct">{total ? pct(row.weight / total) : "—"}</span>
                 </li>
               ))}
             </ul>
-          ) : null}
+          ) : (
+            <p className="wn-draws-empty">Paste one entry per line and its weight will show here as a percentage.</p>
+          )}
         </section>
 
         <div className="wn-wheel-col">
@@ -394,13 +410,14 @@ export default function WeightedWheelTool() {
               <p className="wn-slip-note">Every slice is as wide as its weight, so the picture is the odds.</p>
             )}
           </div>
+          <a className="wn-plus" href="/api/pay/checkout?plan=plus" data-shipsite-checkout data-product="plus">
+            Save weights &amp; export · Plus
+          </a>
         </div>
-      </div>
 
-      <section className="wn-draws" aria-labelledby="wn-odds-title">
-        <div className="wn-draws-head">
-          <h2 id="wn-odds-title">Chance for each entry</h2>
-          <fieldset className="wn-fieldset" style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <details className="wn-options wn-wheel-options">
+          <summary>Wheel options</summary>
+          <fieldset className="wn-fieldset" style={{ display: "flex", alignItems: "center", gap: 10, paddingTop: 8 }}>
             <legend className="wn-label" style={{ marginBottom: 0 }}>Palette</legend>
             <div className="wn-swatches">
               {PALETTES.map((item) => (
@@ -418,42 +435,7 @@ export default function WeightedWheelTool() {
               ))}
             </div>
           </fieldset>
-        </div>
-        {rows.length ? (
-          <ul className="wn-odds-list" style={{ listStyle: "none", margin: "12px 0 0", padding: 0, display: "grid", gap: 6 }}>
-            {rows.map((row, i) => (
-              <li
-                key={`${row.name}-${i}`}
-                data-entry
-                style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr) 96px 84px", gap: 12, alignItems: "center", padding: "8px 4px", borderRadius: 6, background: i % 2 ? "rgba(238,241,248,.04)" : "transparent" }}
-              >
-                <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", fontWeight: 500 }}>{row.name}</span>
-                <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13.5, color: "#93a0c6" }}>
-                  <span className="sr-only" style={{ position: "absolute", width: 1, height: 1, overflow: "hidden", clip: "rect(0 0 0 0)" }}>Weight for {row.name}</span>
-                  <input
-                    type="number"
-                    min={1}
-                    max={10}
-                    step={1}
-                    value={row.weight}
-                    onChange={(event) => setWeight(i, Number(event.target.value))}
-                    className="wn-weight-input"
-                    style={{ width: 64, minHeight: 40, background: "#1b2340", color: "#eef1f8", border: "1px solid rgba(238,241,248,.14)", borderRadius: 8, padding: "6px 8px", font: "inherit", fontSize: 14 }}
-                  />
-                </label>
-                <span style={{ textAlign: "right", fontVariantNumeric: "tabular-nums", color: "#c6cfe6" }}>{total ? pct(row.weight / total) : "—"}</span>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="wn-draws-empty">Paste one entry per line and its weight will show here as a percentage.</p>
-        )}
-      </section>
-
-      <div className="wn-toolbar">
-        <a className="wn-plus" href="/api/pay/checkout?plan=plus" data-shipsite-checkout data-product="plus">
-          Save weights &amp; export · Plus
-        </a>
+        </details>
       </div>
     </div>
   );

@@ -788,4 +788,25 @@ body[data-atmosphere="true"]::before{display:none}
   .wn-vs-top.has-table{display:block}
   .wn-vs-top .wn-section{margin-top:18px}
 }
+
+
+/* ---------- rev13: closed drawers take no space, one solid primary, legible field edge ---------- */
+details:not([open]) > *:not(summary){display:none}
+.wn-input{border-color:#7b88ad}
+.wn-input:hover{border-color:#9aa6c6}
+.wn-btn.wn-btn-sm{min-height:40px}
+.wn-btn.wn-btn-sm{padding:0 14px}
+.wn-btn-primary:disabled,.wn-btn-primary[aria-disabled="true"],.wn-btn-primary[data-ready="false"]{
+  background:var(--wn-pink);color:var(--wn-pink-ink);border:0;filter:none;cursor:pointer;
+  box-shadow:inset 0 0 0 2px rgba(26,32,57,.26);
+}
+.wn-btn-primary[data-ready="false"]:hover{background:#ffb9d1;box-shadow:inset 0 0 0 2px rgba(26,32,57,.16)}
+.wn-btn-primary[data-ready="false"]:active{background:#e98cae}
+.wn-stage-tool{min-height:34px;padding:0 11px;background:rgba(238,241,248,.10);border-color:rgba(238,241,248,.34);color:var(--wn-ink)}
+.wn-stage-tool:hover{background:rgba(238,241,248,.16)}
+.wn-tool.is-projector .wn-stage-tool{position:fixed;top:14px;right:18px;z-index:400;background:#2b3557;border-color:rgba(238,241,248,.5);color:var(--wn-ink)}
+.wn-tool.is-projector{z-index:300}
+body:has(.wn-tool.is-projector) header[data-chrome="site"]{visibility:hidden}
+body:has(.wn-tool.is-projector) footer{visibility:hidden}
+.wn-tool.is-projector .wn-stage-tool[aria-pressed="true"]{background:var(--wn-pink);color:var(--wn-pink-ink)}
 `;

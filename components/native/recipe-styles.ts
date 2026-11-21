@@ -131,14 +131,16 @@ footer[data-node="footer"]{
   display:grid;grid-template-columns:minmax(230px,290px) minmax(0,1fr) minmax(230px,300px);
   grid-template-areas:"editor stage slip" "editor action slip" "editor options slip";
   gap:10px 16px;align-items:start;
-  background:var(--wn-panel);border-radius:18px;padding:14px;
+  background:none;border-radius:0;padding:14px;
 }
 .wn-editor-col{grid-area:editor;display:flex;flex-direction:column;min-width:0}
 .wn-wheel-col{grid-area:stage;min-width:0}
 .wn-slip-col{grid-area:slip}
 .wn-action{grid-area:action;display:flex;flex-direction:column;gap:8px;min-width:0;margin-top:10px}
 .wn-bench .wn-panel{background:none;padding:0}
-.wn-tool{min-width:0}
+/* the tool is one bounded panel: the surface sits on the wrapper, whose box is
+   exactly the bench's, so the panel's edge is the shared content edge (x=68) */
+.wn-tool{min-width:0;background:var(--wn-panel);border-radius:18px}
 .wn-list-title{font-size:15px;font-weight:600;color:var(--wn-ink);margin:0}
 .wn-options{grid-area:options;margin:0;background:var(--wn-panel-2);border-radius:12px;padding:0 12px}
 .wn-options>summary{list-style:none;cursor:pointer;min-height:44px;display:flex;align-items:center;justify-content:space-between;font-size:14px;color:var(--wn-soft)}

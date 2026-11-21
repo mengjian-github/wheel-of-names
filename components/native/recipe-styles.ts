@@ -811,4 +811,12 @@ details:not([open]) > *:not(summary){display:none}
 body:has(.wn-tool.is-projector) header[data-chrome="site"]{visibility:hidden}
 body:has(.wn-tool.is-projector) footer{visibility:hidden}
 .wn-tool.is-projector .wn-stage-tool[aria-pressed="true"]{background:var(--wn-pink);color:var(--wn-pink-ink)}
+
+/* The platform's phone scrim (body[data-atmosphere="true"] main > :not(...),
+   specificity 0,6,2) repaints every direct child of <main> in the page colour at
+   92%, which erased the tool panel's own surface on a phone: the controls then
+   sat in no box with a visible edge. The tool keeps its surface at that width. */
+@media (max-width:700px){
+  body[data-atmosphere="true"] main > .wn-tool{background:var(--wn-panel)!important;border-radius:18px}
+}
 `;
